@@ -1,0 +1,24 @@
+#include <iostream>
+
+using std::cout;
+using std::type_info;
+using std::endl;
+using std::string;
+
+int main() {
+	int arr[] = { 1, 2, 3 };
+
+	//infers i to be int
+	//type inference or type deduction
+	for (auto i : arr) {
+		cout << i;
+	}
+	cout << endl;
+
+	auto i = 5; //infers int
+	cout << (typeid(i) == typeid(int)) << endl; //prints out 1 for true
+
+	auto j = 5.0; //infers double
+	cout << (typeid(j) == typeid(double)); //prints out 1 for true
+
+}
