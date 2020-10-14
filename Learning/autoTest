@@ -5,6 +5,7 @@ using std::type_info;
 using std::endl;
 using std::string;
 
+//learning about the keyword auto
 int main() {
 	int arr[] = { 1, 2, 3 };
 
