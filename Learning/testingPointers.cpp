@@ -22,7 +22,6 @@ int main() {
 	//point++; //you can't do this
 
 
-
 	//define Rectangle pointer
 	Rectangle* rectPtr = nullptr;
 
@@ -43,5 +42,4 @@ int main() {
 	//this gets built on the stack
 	//calls the default constructor
 	//once main ends, this will be deleted
-
 }
