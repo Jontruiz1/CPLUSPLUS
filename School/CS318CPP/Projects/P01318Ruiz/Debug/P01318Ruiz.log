@@ -1,0 +1,4 @@
+﻿  main.cpp
+H:\CS318\Projects\P01318Ruiz\main.cpp(7,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+H:\CS318\Projects\P01318Ruiz\main.cpp(8,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  P01318Ruiz.vcxproj -> H:\CS318\Projects\Debug\P01318Ruiz.exe

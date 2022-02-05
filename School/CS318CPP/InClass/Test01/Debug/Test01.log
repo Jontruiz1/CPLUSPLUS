@@ -1,0 +1,4 @@
+﻿  QuadraticRoots.cpp
+H:\CS318\InClass\Test01\QuadraticRoots.cpp(1,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+H:\CS318\InClass\Test01\QuadraticRoots.cpp(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  Test01.vcxproj -> H:\CS318\InClass\Debug\Test01.exe

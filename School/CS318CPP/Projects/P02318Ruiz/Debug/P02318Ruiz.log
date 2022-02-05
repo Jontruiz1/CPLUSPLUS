@@ -1,0 +1,12 @@
+﻿  main.cpp
+H:\CS318\Projects\P02318Ruiz\main.cpp(8,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+H:\CS318\Projects\P02318Ruiz\main.cpp(9,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+H:\CS318\Projects\P02318Ruiz\main.cpp(10,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+H:\CS318\Projects\P02318Ruiz\main.cpp(11,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+H:\CS318\Projects\P02318Ruiz\main.cpp(50,21): warning C4018: '<': signed/unsigned mismatch
+H:\CS318\Projects\P02318Ruiz\main.cpp(61,22): warning C4018: '<': signed/unsigned mismatch
+H:\CS318\Projects\P02318Ruiz\main.cpp(96,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+H:\CS318\Projects\P02318Ruiz\main.cpp(115,20): warning C4018: '<': signed/unsigned mismatch
+H:\CS318\Projects\P02318Ruiz\main.cpp(130,21): warning C4018: '<': signed/unsigned mismatch
+H:\CS318\Projects\P02318Ruiz\main.cpp(141,20): warning C4018: '<': signed/unsigned mismatch
+  P02318Ruiz.vcxproj -> H:\CS318\Projects\Debug\P02318Ruiz.exe

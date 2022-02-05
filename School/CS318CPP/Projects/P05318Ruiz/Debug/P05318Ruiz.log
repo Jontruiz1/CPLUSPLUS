@@ -1,0 +1,18 @@
+﻿  main.cpp
+H:\CS318\Projects\P05318Ruiz\circular_buffer.h(36,3): warning C4101: 'c': unreferenced local variable
+H:\CS318\Projects\P05318Ruiz\circular_buffer.h(30): message : while compiling class template member function 'CircularBuffer<int,5,std::array<T,5>>::CircularBuffer(void)'
+          with
+          [
+              T=int
+          ]
+H:\CS318\Projects\P05318Ruiz\main.cpp(21): message : see reference to function template instantiation 'CircularBuffer<int,5,std::array<T,5>>::CircularBuffer(void)' being compiled
+          with
+          [
+              T=int
+          ]
+H:\CS318\Projects\P05318Ruiz\main.cpp(21): message : see reference to class template instantiation 'CircularBuffer<int,5,std::array<T,5>>' being compiled
+          with
+          [
+              T=int
+          ]
+  P05318Ruiz.vcxproj -> H:\CS318\Projects\Debug\P05318Ruiz.exe

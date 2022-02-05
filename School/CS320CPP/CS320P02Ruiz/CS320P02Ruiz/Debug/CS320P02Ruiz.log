@@ -1,0 +1,66 @@
+﻿  CS320P02Ruiz.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.28.29333\include\tuple(163,47): warning C4244: 'initializing': conversion from 'double' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.28.29333\include\tuple(245): message : see reference to function template instantiation 'std::_Tuple_val<_This>::_Tuple_val<double&>(_Other)' being compiled
+          with
+          [
+              _This=int,
+              _Other=double &
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.28.29333\include\tuple(245): message : see reference to function template instantiation 'std::_Tuple_val<_This>::_Tuple_val<double&>(_Other)' being compiled
+          with
+          [
+              _This=int,
+              _Other=double &
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.28.29333\include\tuple(245): message : see reference to function template instantiation 'std::tuple<int>::tuple<std::_Exact_args_t,double&,,0>(_Tag,_This2)' being compiled
+          with
+          [
+              _Tag=std::_Exact_args_t,
+              _This2=double &
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.28.29333\include\tuple(245): message : see reference to function template instantiation 'std::tuple<int>::tuple<std::_Exact_args_t,double&,,0>(_Tag,_This2)' being compiled
+          with
+          [
+              _Tag=std::_Exact_args_t,
+              _This2=double &
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.28.29333\include\tuple(245): message : see reference to function template instantiation 'std::tuple<Point,int>::tuple<std::_Exact_args_t,Point&,double&,0>(_Tag,_This2,double &)' being compiled
+          with
+          [
+              _Tag=std::_Exact_args_t,
+              _This2=Point &
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.28.29333\include\tuple(245): message : see reference to function template instantiation 'std::tuple<Point,int>::tuple<std::_Exact_args_t,Point&,double&,0>(_Tag,_This2,double &)' being compiled
+          with
+          [
+              _Tag=std::_Exact_args_t,
+              _This2=Point &
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.28.29333\include\tuple(326): message : see reference to function template instantiation 'std::tuple<Point,Point,int>::tuple<std::_Exact_args_t,Point&,Point&,double&,0>(_Tag,_This2,Point &,double &)' being compiled
+          with
+          [
+              _Tag=std::_Exact_args_t,
+              _This2=Point &
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.28.29333\include\tuple(326): message : see reference to function template instantiation 'std::tuple<Point,Point,int>::tuple<std::_Exact_args_t,Point&,Point&,double&,0>(_Tag,_This2,Point &,double &)' being compiled
+          with
+          [
+              _Tag=std::_Exact_args_t,
+              _This2=Point &
+          ]
+H:\CS320CPP\CS320P02Ruiz\CS320P02Ruiz\CS320P02Ruiz.cpp(89): message : see reference to function template instantiation 'std::tuple<Point,Point,int>::tuple<Point&,Point&,double&,0>(_This2,Point &,double &) noexcept(false)' being compiled
+          with
+          [
+              _This2=Point &
+          ]
+H:\CS320CPP\CS320P02Ruiz\CS320P02Ruiz\CS320P02Ruiz.cpp(89): message : see reference to function template instantiation 'std::tuple<Point,Point,int>::tuple<Point&,Point&,double&,0>(_This2,Point &,double &) noexcept(false)' being compiled
+          with
+          [
+              _This2=Point &
+          ]
+H:\CS320CPP\CS320P02Ruiz\CS320P02Ruiz\CS320P02Ruiz.cpp(108): warning C4715: 'closest': not all control paths return a value
+  CS320P02Ruiz.vcxproj -> H:\CS320CPP\CS320P02Ruiz\Debug\CS320P02Ruiz.exe

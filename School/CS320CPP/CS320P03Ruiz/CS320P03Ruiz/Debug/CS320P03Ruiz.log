@@ -1,0 +1,5 @@
+﻿  ScannerForIdents.cpp
+  main.cpp
+C:\Users\jontc\Desktop\CS320P03Ruiz\CS320P03Ruiz\main.cpp(27,6): warning C4101: 'lineNum': unreferenced local variable
+  Generating Code...
+  CS320P03Ruiz.vcxproj -> C:\Users\jontc\Desktop\CS320P03Ruiz\CS320P03Ruiz\Debug\CS320P03Ruiz.exe

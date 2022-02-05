@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Tests">
+      <UniqueIdentifier>{bdc9eba0-213c-4a0e-8f2b-79ed6142167e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="filesys.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test_base.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="tester.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="test_create.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="test_format.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="operations.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test_list.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="test_delete.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="test_rename.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="test_copy.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="test_open.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="handle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test_close.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="test_write.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="test_read.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="test_simplelist.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="filesys.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="handle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="test_base.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

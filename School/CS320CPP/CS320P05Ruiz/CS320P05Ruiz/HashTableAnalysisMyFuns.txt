@@ -1,0 +1,156 @@
+****Starting analysis of HashTable<unsigned> using Linear Probing ****
+Table1 has 300007 buckets. load factor =  0.0999977
+Table2 has 150001 buckets. load factor =  0.199999
+Table3 has 100003 buckets. load factor =  0.299991
+Table4 has 75011 buckets. load factor =  0.399941
+Table5 has 60013 buckets. load factor =  0.499892
+Table6 has 50021 buckets. load factor =  0.599748
+Table7 has 42859 buckets. load factor =  0.69997
+Table8 has 37501 buckets. load factor =  0.799979
+Table9 has 33343 buckets. load factor =  0.899739
+Linear Probing Initial Insertion Results:
+1		2		3		4		5		6		7		8		9		
+33284	36442	39206	44495	52536	62426	104098	174133	723258	
+1.10947	1.21473	1.30687	1.48317	1.7512	2.08087	3.46993	5.80443	24.1086	
+Linear Probing Successful Contains Results:
+1		2		3		4		5		6		7		8		9		
+19002	20856	22587	25459	30255	36092	60403	97116	432371	
+Average Successful Contains: 
+1.11921	1.22841	1.33037	1.49953	1.78201	2.12581	3.55772	5.72011	25.4665	
+Linear Probing Unsuccessful Contains Results:
+1		2		3		4		5		6		7		8		9		
+17229	21116	25771	35959	51525	80230	221589	758971	6317557	
+Average Unsuccessful Contains: 
+1.32307	1.62156	1.97904	2.7614	3.95677	6.16111	17.0165	58.2838	485.145	
+****Finished analysis of HashTable<unsigned> using Linear Probing ****
+
+****Starting analysis of HashTable<unsigned> Quadratic Probing ****
+Table1 has 300007 buckets. load factor =  0.0999977
+Table2 has 150001 buckets. load factor =  0.199999
+Table3 has 100003 buckets. load factor =  0.299991
+Table4 has 75011 buckets. load factor =  0.399941
+Table5 has 60013 buckets. load factor =  0.499892
+Table6 has 50021 buckets. load factor =  0.599748
+Table7 has 42859 buckets. load factor =  0.69997
+Table8 has 37501 buckets. load factor =  0.799979
+Table9 has 33343 buckets. load factor =  0.899739
+Quadratic Probing Initial Insertion Results:
+1		2		3		4		5		6		7		8		9		
+65071	70342	75287	83506	95402	110435	159998	241012	815940	
+2.16903	2.34473	2.50957	2.78353	3.18007	3.68117	5.33327	8.03373	27.198	
+Quadratic Probing Successful Contains Results:
+1		2		3		4		5		6		7		8		9		
+18001	19145	20452	22079	24193	27017	31585	37746	52801	
+Average Successful Contains: 
+1.06025	1.12764	1.20462	1.30045	1.42496	1.59129	1.86035	2.22323	3.10997	
+Quadratic Probing Unsuccessful Contains Results:
+1		2		3		4		5		6		7		8		9		
+14723	16889	19256	22931	28334	36230	51456	84225	207176	
+Average Unsuccessful Contains: 
+1.13063	1.29696	1.47873	1.76094	2.17586	2.78221	3.95147	6.4679	15.9097	
+****Finished analysis of HashTable<unsigned> using Quadratic Probing ****
+
+****Starting analysis of HashTable<unsigned> Separate Chaining ****
+Table1 has 300007 buckets. load factor =  0.0999977
+Table2 has 150001 buckets. load factor =  0.199999
+Table3 has 100003 buckets. load factor =  0.299991
+Table4 has 75011 buckets. load factor =  0.399941
+Table5 has 60013 buckets. load factor =  0.499892
+Table6 has 50021 buckets. load factor =  0.599748
+Table7 has 42859 buckets. load factor =  0.69997
+Table8 has 37501 buckets. load factor =  0.799979
+Table9 has 33343 buckets. load factor =  0.899739
+Separate Chaining Initial Insertion Results:
+1		2		3		4		5		6		7		8		9		
+96488	103269	109524	119183	132546	149274	200273	282546	859271	
+3.21627	3.4423	3.6508	3.97277	4.4182	4.9758	6.67577	9.4182	28.6424	
+Separate Chaining Successful Contains Results:
+1		2		3		4		5		6		7		8		9		
+17774	18571	19371	20164	20948	21930	22747	23453	24471	
+Average Successful Contains: 
+1.04688	1.09383	1.14095	1.18765	1.23383	1.29167	1.33979	1.38138	1.44134	
+Separate Chaining Unsuccessful Contains Results:
+1		2		3		4		5		6		7		8		9		
+14245	15576	16723	17956	19255	20636	21906	23223	24417	
+Average Unsuccessful Contains: 
+1.09392	1.19613	1.28421	1.3789	1.47865	1.5847	1.68223	1.78337	1.87506	
+****Finished analysis of HashTable<unsigned> using Separate Chaining ****
+
+****Starting analysis of HashTable<string> using Linear Probing****
+Table1 has 300007 buckets. load factor =  0.0999977
+Table2 has 150001 buckets. load factor =  0.199999
+Table3 has 100003 buckets. load factor =  0.299991
+Table4 has 75011 buckets. load factor =  0.399941
+Table5 has 60013 buckets. load factor =  0.499892
+Table6 has 50021 buckets. load factor =  0.599748
+Table7 has 42859 buckets. load factor =  0.69997
+Table8 has 37501 buckets. load factor =  0.799979
+Table9 has 33343 buckets. load factor =  0.899739
+HT<string> Linear Probing Initial Insertion of strings:
+1		2		3		4		5		6		7		8		9		
+31728	33838	36271	40609	45989	52932	66444	91043	170265	
+1.0576	1.12793	1.20903	1.35363	1.53297	1.7644	2.2148	3.03477	5.6755	
+HT<string> Linear probing Successful 'Contains' Probes Totals:
+1		2		3		4		5		6		7		8		9		
+18098	19302	20746	23055	26111	30268	37671	52201	98165	
+HT<string> Linear probing Average Successful 'Contains': 
+1.05632	1.1266	1.21088	1.34565	1.52402	1.76665	2.19874	3.04681	5.72959	
+HT<string> Linear probing  Unsuccessful 'Contains' Probe Totals: 
+1		2		3		4		5		6		7		8		9		
+14403	16613	19905	25130	33735	48971	85256	175800	642907	
+HT<string> Linear probing Average Unsuccessful Contains: 
+1.11938	1.29113	1.54698	1.95306	2.62182	3.80594	6.62594	13.6629	49.9656	
+****Finished analysis of HashTable<string> using Linear probing****
+
+****Starting analysis of HashTable<string> using Quadratic Probing****
+Table1 has 300007 buckets. load factor =  0.0999977
+Table2 has 150001 buckets. load factor =  0.199999
+Table3 has 100003 buckets. load factor =  0.299991
+Table4 has 75011 buckets. load factor =  0.399941
+Table5 has 60013 buckets. load factor =  0.499892
+Table6 has 50021 buckets. load factor =  0.599748
+Table7 has 42859 buckets. load factor =  0.69997
+Table8 has 37501 buckets. load factor =  0.799979
+Table9 has 33343 buckets. load factor =  0.899739
+HT<string> Quadratic Probing Initial Insertion of strings:
+1		2		3		4		5		6		7		8		9		
+31709	33710	35953	39507	43489	47958	55139	64331	84334	
+1.05697	1.12367	1.19843	1.3169	1.44963	1.5986	1.83797	2.14437	2.81113	
+HT<string> Quadratic Probing Successful 'Contains' Probes Totals:
+1		2		3		4		5		6		7		8		9		
+18091	19210	20553	22411	24725	27469	31255	36790	48124	
+HT<string> Quadratic Probing Average Successful 'Contains': 
+1.05592	1.12123	1.19961	1.30806	1.44312	1.60328	1.82426	2.14732	2.80885	
+HT<string> Quadratic Probing Unsuccessful 'Contains' Probe Totals: 
+1		2		3		4		5		6		7		8		9		
+14373	16367	19145	22926	27907	35405	48985	73689	150123	
+HT<string> Quadratic Probing Average Unsuccessful Contains: 
+1.11704	1.27201	1.48791	1.78177	2.16888	2.75161	3.80703	5.72698	11.6673	
+****Finished analysis of HashTable<string> using Quadratic Probing****
+
+****Starting analysis of HashTable<string> using Separate Chaining****
+Table1 has 300007 buckets. load factor =  0.0999977
+Table2 has 150001 buckets. load factor =  0.199999
+Table3 has 100003 buckets. load factor =  0.299991
+Table4 has 75011 buckets. load factor =  0.399941
+Table5 has 60013 buckets. load factor =  0.499892
+Table6 has 50021 buckets. load factor =  0.599748
+Table7 has 42859 buckets. load factor =  0.69997
+Table8 has 37501 buckets. load factor =  0.799979
+Table9 has 33343 buckets. load factor =  0.899739
+HT<string> Separate Chaining Initial Insertion of strings:
+1		2		3		4		5		6		7		8		9		
+31491	33008	34314	36102	37706	38999	40535	41937	43301	
+1.0497	1.10027	1.1438	1.2034	1.25687	1.29997	1.35117	1.3979	1.44337	
+HT<string> Separate Chaining Successful 'Contains' Probes Totals:
+1		2		3		4		5		6		7		8		9		
+17965	18813	19607	20550	21478	22329	23073	23942	24655	
+HT<string> Separate Chaining Average Successful 'Contains': 
+1.04856	1.09806	1.1444	1.19944	1.2536	1.30327	1.3467	1.39742	1.43904	
+HT<string> Separate Chaining Unsuccessful 'Contains' Probe Totals: 
+1		2		3		4		5		6		7		8		9		
+14108	15462	16760	17964	19284	20539	21792	23101	24218	
+HT<string> Separate Chaining Average Unsuccessful Contains: 
+1.09645	1.20168	1.30256	1.39613	1.49872	1.59625	1.69363	1.79537	1.88218	
+****Finished analysis of HashTable<string> using Separate Chaining****
+

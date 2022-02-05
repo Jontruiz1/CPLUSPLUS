@@ -1,0 +1,9 @@
+cin         6   
+cout        7   
+endl        7   
+include     1   
+iostream    1   
+main        3   
+std         2   
+x           5   6   7   
+y           5   6   7   

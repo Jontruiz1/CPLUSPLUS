@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Tests">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{f5a4cef3-bfa0-49a5-a059-12a68176d87f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Test_HT_string_Chaining.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Test_HT_string_Linear.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Test_HT_string_Quadratic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Test_HT_unsigned_Chaining.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Test_HT_unsigned_Linear.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Test_HT_unsigned_Quadratic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UniformRandom.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LinearProbing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MyHashFunctions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="QuadraticProbing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SeparateChaining.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Test_HT_string_Chaining.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Test_HT_string_Linear.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Test_HT_string_Quadratic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Test_HT_unsigned_Chaining.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Test_HT_unsigned_Linear.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Test_HT_unsigned_Quadratic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TestHashTables.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Utilities.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="HashTableAnalysisDefault.txt">
+      <Filter>Tests</Filter>
+    </Text>
+    <Text Include="Dictionary.txt">
+      <Filter>Resources</Filter>
+    </Text>
+    <Text Include="HashTableAnalysisFormat.txt">
+      <Filter>Resources</Filter>
+    </Text>
+    <Text Include="HashTableAnalysisMyFuns.txt">
+      <Filter>Tests</Filter>
+    </Text>
+    <Text Include="HashTableAnalysis.txt">
+      <Filter>Tests</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,7 @@
+﻿  driver.cpp
+C:\Users\jontc\Desktop\CS-CGE\CS\School-Tutoring-HW\CS320CPP\CS320P04Ruiz\CS320P04Ruiz\driver.cpp(163,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\jontc\Desktop\CS-CGE\CS\School-Tutoring-HW\CS320CPP\CS320P04Ruiz\CS320P04Ruiz\driver.cpp(164,24): warning C4244: 'argument': conversion from 'double' to 'const unsigned int', possible loss of data
+C:\Users\jontc\Desktop\CS-CGE\CS\School-Tutoring-HW\CS320CPP\CS320P04Ruiz\CS320P04Ruiz\driver.cpp(165,24): warning C4244: 'argument': conversion from 'double' to 'const unsigned int', possible loss of data
+C:\Users\jontc\Desktop\CS-CGE\CS\School-Tutoring-HW\CS320CPP\CS320P04Ruiz\CS320P04Ruiz\driver.cpp(168,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\jontc\Desktop\CS-CGE\CS\School-Tutoring-HW\CS320CPP\CS320P04Ruiz\CS320P04Ruiz\driver.cpp(169,27): warning C4018: '<': signed/unsigned mismatch
+  CS320P04Ruiz.vcxproj -> C:\Users\jontc\Desktop\CS-CGE\CS\School-Tutoring-HW\CS320CPP\CS320P04Ruiz\CS320P04Ruiz\Debug\CS320P04Ruiz.exe

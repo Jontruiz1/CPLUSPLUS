@@ -1,0 +1,4 @@
+﻿  main.cpp
+C:\Users\jontc\source\repos\Projects\P04318Ruiz\main.cpp(9,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\jontc\source\repos\Projects\P04318Ruiz\main.cpp(35,27): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  P04318Ruiz.vcxproj -> C:\Users\jontc\source\repos\Projects\Debug\P04318Ruiz.exe
