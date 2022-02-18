@@ -1,6 +1,62 @@
 #include <iostream>
 #include "PuzzleState.h"
 
+bool PuzzleState::canMoveUp() {
+	return true;
+}
+bool PuzzleState::canMoveDown() {
+	return true;
+}
+bool PuzzleState::canMoveLeft() {
+	return true;
+}
+bool PuzzleState::canMoveRight() {
+	return true;
+}
+
+
+PuzzleState PuzzleState::moveBlankUp() {
+	int zero_pos = (rows * blank_position_row) + blank_position_col;
+	int switch_pos = (rows * (blank_position_row-1)) + blank_position_col;
+	int temp = tiles[zero_pos];
+
+	swap(tiles[zero_pos], tiles[switch_pos]);
+	blank_position_row -= 1;
+
+	return *this;
+}
+PuzzleState PuzzleState::moveBlankDown() {
+	int zero_pos = (rows * blank_position_row) + blank_position_col;
+	int switch_pos = (rows * (blank_position_row+1)) + blank_position_col;
+	int temp = tiles[zero_pos];
+
+	swap(tiles[zero_pos], tiles[switch_pos]);
+	blank_position_row += 1;
+
+	return *this;
+}
+PuzzleState PuzzleState::moveBlankLeft() {
+	int zero_pos = (rows * blank_position_row) + blank_position_col;
+	int switch_pos = (rows * blank_position_row) + (blank_position_col-1);
+	int temp = tiles[zero_pos];
+
+	swap(tiles[zero_pos], tiles[switch_pos]);
+	blank_position_col -= 1;
+
+
+	return *this;
+}
+PuzzleState PuzzleState::moveBlankRight() {
+	int zero_pos = (rows * blank_position_row) + blank_position_col;
+	int switch_pos = (rows * blank_position_row) + (blank_position_col + 1);
+	int temp = tiles[zero_pos];
+
+	swap(tiles[zero_pos], tiles[switch_pos]);
+	blank_position_col += 1;
+
+
+	return *this;
+}
 
 bool PuzzleState::operator==(const PuzzleState& rhs) const {
 	return rhs.tiles == this->tiles;
@@ -16,12 +72,16 @@ const PuzzleState& PuzzleState::operator=(const PuzzleState& rhs) {
 	return *this;
 }
 void PuzzleState::read(istream& in) {
-
-	for (size_t i = 0; i < rows * cols; ++i) {
-		in >> tiles[i];
-		
+	int k = 0;
+	for (int i = 0; i < rows; ++i) {
+		for (int j = 0; j < cols; ++j, ++k) {
+			in >> tiles[k];
+			if (tiles[k] == 0) {
+				blank_position_col = j;
+				blank_position_row = i;
+			}
+		}
 	}
-
 }
 
 // 1 3 5 4 2 0 7 8 6
