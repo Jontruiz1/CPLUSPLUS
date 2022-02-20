@@ -25,7 +25,7 @@ int main() {
 	PuzzleState goal;
 	PuzzleState temp;
 
-	
+
 
 	cout << "Enter number of rows and columns: ";
 	cin >> grid_size;
@@ -42,7 +42,7 @@ int main() {
 	cin >> goal;
 	cout << goal;
 
-	
+
 
 	if (initial == goal) {
 		cout << "Solution found immediately: start state is the goal state";
@@ -50,51 +50,60 @@ int main() {
 	else {
 		if (find_solution(initial, goal, solution)) {
 			for (auto i : solution) {
-				cout << (i).getState() << endl;
+				cout <<  (i).getMoveName() << endl << (i).getState() << endl;
 			}
 		}
+		else {
+			cout << "No solution found";
+		}
 	}
+}
+
+bool member_of(PuzzleState curr, list<PuzzleMove> temp) {
+	for (auto a : temp) {
+		if (a.getState() == curr) return true;
+	}
+	return false;
 }
 
 bool find_solution(PuzzleState initial, PuzzleState goal, list<PuzzleMove>& solution) {
-	list<PuzzleMove*> open;
-	list<PuzzleMove*> closed;
-	PuzzleMove* curr_move = new PuzzleMove(initial, initial, nullMove);
+	list<PuzzleMove> open; // current nodes that we are traversing, like the stack
+	list<PuzzleMove> closed; // nodes no longer traversing, like visited nodes
+	list<PuzzleMove> result;
+	PuzzleMove curr_move(initial, initial, nullMove);
 	open.push_back(curr_move);
+
+
 	while (!open.empty()) {
 		curr_move = open.back();
-		closed.push_back(curr_move);
 		open.pop_back();
+		PuzzleState curr_s = curr_move.getState();
+		result.push_back(curr_move);
 
-		if (curr_move->getState() == goal) {
-			cout << "Solution found";
-			return true;
+		if (curr_s.canMoveDown()) {
+			curr_move = PuzzleMove(curr_s.moveBlankDown(), curr_s, down);
+			open.push_front(curr_move);
 		}
-		else {
-			while (curr_move != nullptr) {
-				PuzzleState curr = curr_move->getState();
-
-				if (curr.canMoveDown()) {
-					curr_move = new PuzzleMove(curr.moveBlankDown(), curr, (enum MoveType)0);
-					open.push_front(curr_move);
-				}
-				else if (curr.canMoveLeft()) {
-					curr_move = new PuzzleMove(curr.moveBlankLeft(), curr, (enum MoveType)1);
-					open.push_front(curr_move);
-				}
-				else if (curr.canMoveUp()) {
-					curr_move = new PuzzleMove(curr.moveBlankUp(), curr, (enum MoveType)2);
-					open.push_front(curr_move);
-				}
-				else {
-					curr_move = new PuzzleMove(curr.moveBlankRight(), curr, (enum MoveType)3);
-					open.push_front(curr_move);
-				}
-
-			}
+		if (curr_s.canMoveLeft()) {
+			curr_move = PuzzleMove(curr_s.moveBlankLeft(), curr_s, (enum MoveType)1);
+			open.push_front(curr_move);
 		}
+		if (curr_s.canMoveUp()) {
+			curr_move = PuzzleMove(curr_s.moveBlankUp(), curr_s, up);
+			open.push_front(curr_move);
+		}
+		if (curr_s.canMoveRight()) {
+			curr_move = PuzzleMove(curr_s.moveBlankRight(), curr_s, (enum MoveType)3);
+			open.push_front(curr_move);
+		}
+
+
 
 	}
 
-	return false;
+
+	
+
+	return true;
 }
+

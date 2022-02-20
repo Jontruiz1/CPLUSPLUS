@@ -4,7 +4,7 @@
 #include "PuzzleState.h"
 using namespace std;
 
-enum MoveType { down, left, right, up, nullMove };
+enum MoveType { down, left, up, right, nullMove };
 
 class PuzzleMove {
 public:
