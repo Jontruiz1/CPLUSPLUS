@@ -15,7 +15,8 @@
 // args are 2 puzzle states and list of puzzle moves
 // find next parent, 
 // takes reference to puzzle state and figures out who the parent is
-bool find_solution(PuzzleState, PuzzleState, list<PuzzleMove>&);
+list<PuzzleMove> expand(PuzzleState initial);
+bool find_solution(PuzzleState initial, PuzzleState goal, list<PuzzleMove>& solution);
 
 
 int main() {
@@ -24,8 +25,6 @@ int main() {
 	PuzzleState initial;
 	PuzzleState goal;
 	PuzzleState temp;
-
-
 
 	cout << "Enter number of rows and columns: ";
 	cin >> grid_size;
@@ -48,9 +47,9 @@ int main() {
 		cout << "Solution found immediately: start state is the goal state";
 	}
 	else {
-		if (find_solution(initial, goal, solution)) {
+		if (find_solution(initial, goal, solution) ){
 			for (auto i : solution) {
-				cout <<  (i).getMoveName() << endl << (i).getState() << endl;
+				cout << i.getState();
 			}
 		}
 		else {
@@ -66,44 +65,47 @@ bool member_of(PuzzleState curr, list<PuzzleMove> temp) {
 	return false;
 }
 
-bool find_solution(PuzzleState initial, PuzzleState goal, list<PuzzleMove>& solution) {
-	list<PuzzleMove> open; // current nodes that we are traversing, like the stack
-	list<PuzzleMove> closed; // nodes no longer traversing, like visited nodes
-	list<PuzzleMove> result;
+bool find_solution(PuzzleState initial, PuzzleState goal, list<PuzzleMove>&solution) {
 	PuzzleMove curr_move(initial, initial, nullMove);
-	open.push_back(curr_move);
+	list<PuzzleMove> fringe = {curr_move}; // current nodes that we are traversing, like the stack
+	list<PuzzleMove> closed; // nodes no longer traversing, like visited nodes
+	PuzzleState curr_s;
 
+	while (!fringe.empty()) {
+		list<PuzzleMove> result;
+		curr_move = fringe.front();
+		fringe.pop_front();
+		curr_s = curr_move.getState();
 
-	while (!open.empty()) {
-		curr_move = open.back();
-		open.pop_back();
-		PuzzleState curr_s = curr_move.getState();
-		result.push_back(curr_move);
-
-		if (curr_s.canMoveDown()) {
-			curr_move = PuzzleMove(curr_s.moveBlankDown(), curr_s, down);
-			open.push_front(curr_move);
+		if (curr_s == goal) {
+			// something here to initialize solution
+			solution.push_front(curr_move);
+			for (auto a : closed) {
+				if (a.getState() == curr_move.getParent()) {
+					solution.push_front(a);
+					curr_move = a;
+				}
+			}
+			return true;
 		}
-		if (curr_s.canMoveLeft()) {
-			curr_move = PuzzleMove(curr_s.moveBlankLeft(), curr_s, (enum MoveType)1);
-			open.push_front(curr_move);
-		}
-		if (curr_s.canMoveUp()) {
-			curr_move = PuzzleMove(curr_s.moveBlankUp(), curr_s, up);
-			open.push_front(curr_move);
-		}
-		if (curr_s.canMoveRight()) {
-			curr_move = PuzzleMove(curr_s.moveBlankRight(), curr_s, (enum MoveType)3);
-			open.push_front(curr_move);
-		}
+		else {
+			closed.push_back(curr_move);
 
-
-
+			if (curr_s.canMoveDown() && !member_of(curr_s.moveBlankDown(), closed)) {
+				result.push_back(PuzzleMove(curr_s.moveBlankDown(), curr_s, (enum MoveType)0));
+			}
+			if (curr_s.canMoveLeft() && !member_of(curr_s.moveBlankLeft(), closed)) {
+				result.push_back(PuzzleMove(curr_s.moveBlankLeft(), curr_s, (enum MoveType)1));
+			}
+			if (curr_s.canMoveUp() && !member_of(curr_s.moveBlankUp(), closed)) {
+				result.push_back(PuzzleMove(curr_s.moveBlankUp(), curr_s, (enum MoveType)2));
+			}
+			if (curr_s.canMoveRight() && !member_of(curr_s.moveBlankRight(), closed)) {
+				result.push_back(PuzzleMove(curr_s.moveBlankRight(), curr_s, (enum MoveType)3));
+			}
+			fringe.insert(fringe.begin(), result.begin(), result.end());
+		}
 	}
+	return false;
 
-
-	
-
-	return true;
 }
-
