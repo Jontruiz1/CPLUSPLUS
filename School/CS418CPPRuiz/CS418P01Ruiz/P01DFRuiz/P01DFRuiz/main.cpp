@@ -26,9 +26,12 @@ int main() {
 	PuzzleState goal;
 	PuzzleState temp;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 
 =======
+=======
+>>>>>>> Stashed changes
 	
 >>>>>>> Stashed changes
 
@@ -55,8 +58,13 @@ int main() {
 	else {
 		if (find_solution(initial, goal, solution)) {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			for (auto i : solution) {
 				cout <<  (i).getMoveName() << endl << (i).getState() << endl;
+=======
+			for (auto a : solution) {
+				cout << a.getState() << endl;
+>>>>>>> Stashed changes
 =======
 			for (auto a : solution) {
 				cout << a.getState() << endl;
@@ -71,6 +79,7 @@ int main() {
 list<PuzzleMove> expand(PuzzleState initial) {
 	list<PuzzleMove> neighbors;
 	PuzzleMove s;
+<<<<<<< Updated upstream
 
 <<<<<<< Updated upstream
 bool member_of(PuzzleState curr, list<PuzzleMove> temp) {
@@ -134,11 +143,35 @@ bool find_solution(PuzzleState initial, PuzzleState goal, list<PuzzleMove>& solu
 }
 >>>>>>> Stashed changes
 
+=======
+
+	if (initial.canMoveDown()) {
+		s = PuzzleMove(initial.moveBlankDown(), initial, down);
+		neighbors.push_back(s);
+	}
+	if (initial.canMoveLeft()) {
+		s = PuzzleMove(initial.moveBlankLeft(), initial, (enum MoveType)1);
+		neighbors.push_back(s);
+	}
+	if (initial.canMoveUp()) {
+		s = PuzzleMove(initial.moveBlankUp(), initial, up);
+		neighbors.push_back(s);
+	}
+	if (initial.canMoveRight()) {
+		s = PuzzleMove(initial.moveBlankRight(), initial, (enum MoveType)3);
+		neighbors.push_back(s);
+	}
+	return neighbors;
+
+}
+
+>>>>>>> Stashed changes
 bool member_of(PuzzleMove curr, list<PuzzleMove> closed) {
 	if (closed.empty()) {
 		return false;
 	}
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 
 	
@@ -150,6 +183,21 @@ bool member_of(PuzzleMove curr, list<PuzzleMove> closed) {
 	for (auto a : closed) {
 		if (curr.getState() == a.getState()) return true;
 	}
+=======
+	for (auto a : closed) {
+		if (curr.getState() == a.getState()) return true;
+	}
+	return false;
+}
+
+bool find_solution(PuzzleState initial, PuzzleState goal, list<PuzzleMove>& solution) {
+	PuzzleMove curr_move = PuzzleMove(initial, initial, nullMove);
+	
+	for(auto v : expand(curr_move, solution))
+
+	
+
+>>>>>>> Stashed changes
 	return false;
 }
 
