@@ -2,25 +2,28 @@
 #include "PuzzleState.h"
 
 bool PuzzleState::canMoveUp() {
+	// checks if subtracting 1 from the blank row would go negative
 	return !(blank_position_row - 1 < 0);
 }
 bool PuzzleState::canMoveDown() {
-
+	// checks if adding 1 to blank row would be greater than rows-1
 	return !(blank_position_row + 1 > rows-1);
 }
 bool PuzzleState::canMoveLeft() {
+	// checks if subtracting 1 from blank col would go negative
 	return !(blank_position_col - 1 < 0);
 }
 bool PuzzleState::canMoveRight() {
+	// checks if adding 1 to blank col would be greater than cols-1
 	return !(blank_position_col + 1 > cols-1);
 }
 
 
 PuzzleState PuzzleState::moveBlankUp() {
 	PuzzleState result = *this;
+
 	int zero_pos = (result.rows * result.blank_position_row) + result.blank_position_col;
 	int switch_pos = (result.rows * (result.blank_position_row - 1)) + result.blank_position_col;
-	int temp = result.tiles[zero_pos];
 
 	swap(result.tiles[zero_pos], result.tiles[switch_pos]);
 	result.blank_position_row -= 1;
@@ -29,9 +32,9 @@ PuzzleState PuzzleState::moveBlankUp() {
 }
 PuzzleState PuzzleState::moveBlankDown() {
 	PuzzleState result = *this;
+
 	int zero_pos = (result.rows * result.blank_position_row) + result.blank_position_col;
 	int switch_pos = (result.rows * (result.blank_position_row + 1)) + result.blank_position_col;
-	int temp = result.tiles[zero_pos];
 
 	swap(result.tiles[zero_pos], result.tiles[switch_pos]);
 	result.blank_position_row += 1;
@@ -40,9 +43,9 @@ PuzzleState PuzzleState::moveBlankDown() {
 }
 PuzzleState PuzzleState::moveBlankLeft() {
 	PuzzleState result = *this;
+
 	int zero_pos = (result.rows * result.blank_position_row) + result.blank_position_col;
 	int switch_pos = (result.rows * result.blank_position_row) + (result.blank_position_col-1);
-	int temp = result.tiles[zero_pos];
 
 	swap(result.tiles[zero_pos], result.tiles[switch_pos]);
 	result.blank_position_col -= 1;
@@ -52,9 +55,9 @@ PuzzleState PuzzleState::moveBlankLeft() {
 }
 PuzzleState PuzzleState::moveBlankRight() {
 	PuzzleState result = *this;
+
 	int zero_pos = (result.rows * result.blank_position_row) + result.blank_position_col;
 	int switch_pos = (result.rows * result.blank_position_row) + (result.blank_position_col + 1);
-	int temp = result.tiles[zero_pos];
 
 	swap(result.tiles[zero_pos], result.tiles[switch_pos]);
 	result.blank_position_col += 1;
@@ -64,7 +67,11 @@ PuzzleState PuzzleState::moveBlankRight() {
 }
 
 bool PuzzleState::operator==(const PuzzleState& rhs) const {
-	return rhs.tiles == this->tiles;
+	return (this->tiles == rhs.tiles);
+}
+
+bool PuzzleState::operator!=(const PuzzleState& rhs) const {
+	return !(this->tiles == rhs.tiles);
 }
 
 const PuzzleState& PuzzleState::operator=(const PuzzleState& rhs) {
