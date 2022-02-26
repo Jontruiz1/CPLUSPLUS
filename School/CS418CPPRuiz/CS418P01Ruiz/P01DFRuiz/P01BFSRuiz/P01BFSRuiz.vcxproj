@@ -139,12 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\P01DFRuiz\main.cpp" />
-    <ClCompile Include="..\P01DFRuiz\PuzzleState.cpp" />
+    <ClCompile Include="bfs_source.cpp" />
+    <ClCompile Include="PuzzleState.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\P01DFRuiz\PuzzleMove.h" />
-    <ClInclude Include="..\P01DFRuiz\PuzzleState.h" />
+    <ClInclude Include="PuzzleMove.h" />
+    <ClInclude Include="PuzzleState.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

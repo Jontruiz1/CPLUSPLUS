@@ -15,18 +15,18 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\P01DFRuiz\PuzzleState.cpp">
+    <ClCompile Include="bfs_source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\P01DFRuiz\main.cpp">
+    <ClCompile Include="PuzzleState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\P01DFRuiz\PuzzleMove.h">
+    <ClInclude Include="PuzzleMove.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\P01DFRuiz\PuzzleState.h">
+    <ClInclude Include="PuzzleState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
