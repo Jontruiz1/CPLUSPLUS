@@ -23,7 +23,7 @@
     <ClInclude Include="PuzzleState.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="dfs_source.cpp" />
     <ClCompile Include="PuzzleState.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

@@ -50,7 +50,7 @@ class PuzzleState
 
 	 void read( istream & in );
 	 void print( ostream & out);
-     static PuzzleState NullState;
+	 static PuzzleState NullState;
   private:
 	  int rows;
 	  int cols;

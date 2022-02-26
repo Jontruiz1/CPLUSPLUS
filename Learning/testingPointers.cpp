@@ -1,45 +1,32 @@
 #include <iostream>
-#include "rectangle.h"
+#include <vector>
 
 using std::cout;
 using std::endl;
 
+class Person{
+	
+	public:
+		Person(int ag, std::string fname, std::string lname) : age(ag), f_name(fname), l_name(lname){};
+		int getAge(){return age;}
+		std::string getFName(){return f_name;}
+		std::string getLName(){return l_name;}
+	private:
+		int age;
+		std::string f_name;
+		std::string l_name;
+};
+
 int main() {
-	const int v = 5;
-	const int* ptr = &v; 
-	//declares pointer pointing to constant int
-	//You can modify ptr itself but not v
+	
+	Person test1(15, "John", "Jeffrey");
+	
+	cout << test1.getAge() << " " << test1.getFName() << " " << test1.getLName();
 
-	//*ptr = 5; //you can't do this
-	ptr++; //you can do this
-
-	int c = 10;
-	int *const point = &c;
-	//declares constant pointer pointing to an int.
-	//Can't modify ptr, but can modify c
-
-	*point = 5; //you can do this, sets c = 5
-	//point++; //you can't do this
+	Person* test2 = new Person(15, "John", "Jeffrey");
+	test2->getAge();
+	delete test2;
 
 
-	//define Rectangle pointer
-	Rectangle* rectPtr = nullptr;
-
-	rectPtr = new Rectangle; 
-	// this dynamically allocates a rectangle object
-	//which means this pointer puts the object on the heap
-
-	//store values
-	rectPtr->setWidth(10.0);
-	rectPtr->setLength(15.0);
-
-	//you must delete object from memory at the end of program
-	delete rectPtr;
-	//then set the pointer to null
-	rectPtr = nullptr;
-
-	Rectangle kitchen; 
-	//this gets built on the stack
-	//calls the default constructor
-	//once main ends, this will be deleted
 }
+
