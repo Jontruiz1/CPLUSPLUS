@@ -93,6 +93,7 @@ bool find_solution(PuzzleState initial, PuzzleState goal, vector<PuzzleMove>& so
 	vector<PuzzleMove> fringe = { curr_move };					// current nodes that we are traversing, like the stack
 	vector<PuzzleMove> closed;									// nodes no longer traversing, this will contain the pain used to get to the solution
 	vector<PuzzleMove> temp;									// used to hold the result fromn the expansion of the nodes
+	int nodes_expanded = 0;							
 
 	while (!fringe.empty()) {
 		curr_move = fringe.back();								// get the most recently inserted element
@@ -115,6 +116,8 @@ bool find_solution(PuzzleState initial, PuzzleState goal, vector<PuzzleMove>& so
 					it = closed.rbegin();
 				}
 			}
+
+			cout << "Nodes expanded: " << nodes_expanded << endl;
 			return true;
 		}
 		else {
@@ -122,6 +125,7 @@ bool find_solution(PuzzleState initial, PuzzleState goal, vector<PuzzleMove>& so
 			if (!member_of(curr_s, closed)) {
 				closed.push_back(curr_move);	// 
 				temp = expand(curr_s, closed);
+				nodes_expanded += fringe.size();
 				fringe.insert(fringe.end(), temp.begin(), temp.end());
 			}
 		}
