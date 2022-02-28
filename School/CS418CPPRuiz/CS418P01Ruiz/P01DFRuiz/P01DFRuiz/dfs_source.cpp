@@ -49,7 +49,7 @@ int main() {
 		if (find_solution(initial, goal, solution) ){
 			cout << "Solution:" << endl;
 			for (auto it = solution.rbegin(); it != solution.rend(); ++it) {
-				cout << it->getState();
+				cout << it->getMoveName() << endl << " " << it->getState();
 			}
 		}
 		else {
@@ -88,11 +88,12 @@ vector<PuzzleMove> expand(PuzzleState& curr_s, vector<PuzzleMove>& closed) {
 }
 
 bool find_solution(PuzzleState initial, PuzzleState goal, vector<PuzzleMove>& solution) {
-	PuzzleMove curr_move = PuzzleMove(initial, PuzzleState::NullState, nullMove); // like the current node we're at
+	PuzzleMove curr_move = PuzzleMove(initial, PuzzleState::NullState, nullMove); // the current node we're at
 	PuzzleState curr_s = curr_move.getState();					// the current state 
 	vector<PuzzleMove> fringe = { curr_move };					// current nodes that we are traversing, like the stack
 	vector<PuzzleMove> closed;									// nodes no longer traversing, this will contain the pain used to get to the solution
 	vector<PuzzleMove> temp;									// used to hold the result fromn the expansion of the nodes
+	int nodes_expanded = 0;
 
 	while (!fringe.empty()) {
 		curr_move = fringe.back();								// get the most recently inserted element
@@ -103,7 +104,7 @@ bool find_solution(PuzzleState initial, PuzzleState goal, vector<PuzzleMove>& so
 
 		if (curr_s == goal) {
 			solution.push_back(curr_move);						// push current node into solution
-			
+
 			/* starting from beginning of the vector will access the very first node which has a nullstate parent which is not what we want
 			   the end of the closed list has the most recently inserted nodes, ie, the ones leading up to the solution.
 			   check them to make sure they're actually parents, push if yes and then start again from the end of the list (don't want to miss nodes)
@@ -115,12 +116,15 @@ bool find_solution(PuzzleState initial, PuzzleState goal, vector<PuzzleMove>& so
 					it = closed.rbegin();
 				}
 			}
+
+			cout << "Nodes expanded " << nodes_expanded << endl;
 			return true;
 		}
 		else {
 			// make sure the curr state not already visited
 			if (!member_of(curr_s, closed)) {
 				closed.push_back(curr_move);	// 
+				++nodes_expanded;
 				temp = expand(curr_s, closed);
 				fringe.insert(fringe.end(), temp.begin(), temp.end());
 			}
