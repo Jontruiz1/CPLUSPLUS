@@ -1,2 +1,3 @@
-﻿  main.cpp
-  P01DFRuiz.vcxproj -> C:\Users\jontc\Desktop\CS\CPLUSPLUS\School\CS418CPPRuiz\CS418P01Ruiz\P01DFRuiz\x64\Debug\P01DFRuiz.exe
+﻿  dfs_source.cpp
+C:\Users\jontc\Desktop\CS-CGE\CS\CPLUSPLUS\School\CS418CPPRuiz\CS418P01Ruiz\P01DFRuiz\P01DFRuiz\dfs_source.cpp(128,32): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+  P01DFRuiz.vcxproj -> C:\Users\jontc\Desktop\CS-CGE\CS\CPLUSPLUS\School\CS418CPPRuiz\CS418P01Ruiz\P01DFRuiz\x64\Debug\P01DFRuiz.exe
