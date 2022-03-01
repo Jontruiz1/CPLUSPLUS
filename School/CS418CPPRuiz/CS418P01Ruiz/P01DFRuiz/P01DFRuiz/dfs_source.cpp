@@ -47,9 +47,9 @@ int main() {
 	}
 	else {
 		if (find_solution(initial, goal, solution) ){
-			cout << "Solution:" << endl;
+			cout << "***Solution Found***" << endl;
 			for (auto it = solution.rbegin(); it != solution.rend(); ++it) {
-				cout << it->getMoveName() << endl << " " << it->getState();
+				cout << it->getMoveName() << endl << it->getState();
 			}
 		}
 		else {

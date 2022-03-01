@@ -96,9 +96,9 @@ bool find_solution(PuzzleState initial, PuzzleState goal, vector<PuzzleMove>& so
 	int nodes_expanded = 0;							
 
 	while (!fringe.empty()) {
-		curr_move = fringe.back();								// get the most recently inserted element
+		curr_move = fringe.front();								// get the most recently inserted element
 		curr_s = curr_move.getState();							// get current state
-		fringe.pop_back();										// pop the last element
+		fringe.erase(fringe.begin());					// pop the last element
 
 
 
@@ -109,15 +109,9 @@ bool find_solution(PuzzleState initial, PuzzleState goal, vector<PuzzleMove>& so
 			   the end of the closed list has the most recently inserted nodes, ie, the ones leading up to the solution.
 			   check them to make sure they're actually parents, push if yes and then start again from the end of the list (don't want to miss nodes)
 			*/
-			for (auto it = closed.rbegin(); it != closed.rend() && !(it->getState().isNullState()); ++it) {
-				if (it->getState() == curr_move.getParent()) {
-					solution.push_back(*it);
-					curr_move = *it;
-					it = closed.rbegin();
-				}
-			}
 
-			cout << "Nodes expanded: " << nodes_expanded << endl;
+			cout << "closed size: " << nodes_expanded;
+
 			return true;
 		}
 		else {
@@ -125,7 +119,7 @@ bool find_solution(PuzzleState initial, PuzzleState goal, vector<PuzzleMove>& so
 			if (!member_of(curr_s, closed)) {
 				closed.push_back(curr_move);	// 
 				temp = expand(curr_s, closed);
-				nodes_expanded += fringe.size();
+				nodes_expanded += temp.size();
 				fringe.insert(fringe.end(), temp.begin(), temp.end());
 			}
 		}
