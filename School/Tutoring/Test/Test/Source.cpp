@@ -1,44 +1,33 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
 #include <iostream>
-
+#include <algorithm>
 using namespace std;
 
 
-class List {
-private:
-	int val;
-	List* next;
-public:
-	List(int v) : val(v), next(nullptr) {};
-	List() : val(0), next(nullptr) {};
-	int getVal() {
-		return val;
-	}
-	List* getNext() {
-		return next;
-	}
-	void insert(List* node) {
-		this->next = node;
-	}
-};
+bool isfair(int a, int b) {
+    for (int i = 2; i <= b; i++) {
+        if (a % i == 0) {
+            return true;
+        }
 
+    }
+    return false;
+}
 
 int main() {
+    // a cannot be less than b
+    // a is not equal to b
 
-	List* head = new List(5);
-	head->insert(new List(10));
-	List* curr = head;
-	List* todel;
+    int a;
+    int b;
 
-	while (curr != nullptr) {
-		cout << curr->getVal();
-		curr = curr->getNext();
-	}
-	curr = head;
+    cin >> a;
+    cin >> b;
+    if (a % 2 == 0) {
+        cout << "No";
+    }
 
-	while (curr != nullptr) {
-		todel = curr;
-		curr = curr->getNext();
-		delete todel;
-	}
-
+    return 0;
 }

@@ -7,6 +7,9 @@
 
 
 using namespace std;
+
+
+
 /**
  * Internal method that merges two sorted halves of a subarray.
  * a is an array of Comparable items.
@@ -16,140 +19,189 @@ using namespace std;
  * rightEnd is the right-most index of the subarray.
  */
 template <typename Comparable>
-void merge(vector<Point>& a, vector<Point>& tmpArray, size_t leftPos, size_t rightPos, size_t rightEnd, Comparable compare)
-{
-	size_t leftEnd = rightPos - 1;
-	size_t tmpPos = leftPos;
-	size_t numElements = rightEnd - leftPos + 1;
+void merge(vector<Point>& a, vector<Point>& tmpArray, int leftPos, int rightPos, int rightEnd, Comparable compare) {
+    int leftEnd = rightPos - 1;
+    int tmpPos = leftPos;
+    int numElements = rightEnd - leftPos + 1;
 
-	// Main loop
-	while (leftPos <= leftEnd && rightPos <= rightEnd) {
-		if (compare(a[leftPos], a[rightPos])) {
-			tmpArray[tmpPos++] = move(a[leftPos++]);
-		}
-		else {
-			tmpArray[tmpPos++] = move(a[rightPos++]);
-		}
-	}
+    // Main loop
+    while (leftPos <= leftEnd && rightPos <= rightEnd) {
+        if (compare(a[leftPos], a[rightPos])) {
+            tmpArray[tmpPos++] = move(a[leftPos++]);
+        }
+        else {
+            tmpArray[tmpPos++] = move(a[rightPos++]);
+        }
+    }
 
-	while (leftPos <= leftEnd) {    // Copy rest of first half
-		tmpArray[tmpPos++] = move(a[leftPos++]);
-	}
+    while (leftPos <= leftEnd) {    // Copy rest of first half
+        tmpArray[tmpPos++] = move(a[leftPos++]);
+    }
 
-	while (rightPos <= rightEnd) {  // Copy rest of right half
-		tmpArray[tmpPos++] = move(a[rightPos++]);
-	}
+    while (rightPos <= rightEnd) {  // Copy rest of right half
+        tmpArray[tmpPos++] = move(a[rightPos++]);
+    }
 
-	// Copy tmpArray back
-	for (int i = 0; i < numElements; ++i, --rightEnd) {
-		a[rightEnd] = move(tmpArray[rightEnd]);
-	}
-
-} 
+    // Copy tmpArray back
+    for (int i = 0; i < numElements; ++i, --rightEnd) {
+        a[rightEnd] = move(tmpArray[rightEnd]);
+    }
+}
+/**
+ * Internal method that makes recursive calls.
+ * a is an array of Comparable items.
+ * tmpArray is an array to place the merged result.
+ * left is the left-most index of the subarray.
+ * right is the right-most index of the subarray.
+ */
 template <typename Comparable>
-void mergeSort(vector<Point>& a, vector<Point>& tmpArray, size_t left, size_t right, Comparable compare)
+void mergeSort(vector<Point>& a, vector<Point>& tmpArray, int left, int right, Comparable compare)
 {
-	if (left < right)
-	{
-		size_t center = (left + right) / 2;
-		mergeSort(a, tmpArray, left, center, compare);
-		mergeSort(a, tmpArray, center + 1, right, compare);
-		merge(a, tmpArray, left, center + 1, right, compare);
-	}
+    if (left < right)
+    {
+        int center = (left + right) / 2;
+        mergeSort(a, tmpArray, left, center, compare);
+        mergeSort(a, tmpArray, center + 1, right, compare);
+        merge(a, tmpArray, left, center + 1, right, compare);
+    }
 }
 
-///**
-// * Mergesort algorithm (driver).
-// */
+
+/**
+ * Mergesort algorithm (driver).
+ */
 template <typename Comparable>
-void mergeSort(vector<Point>& a, size_t n, Comparable compare)
+void mergeSort(vector<Point>& a, Comparable compare)
 {
-	vector<Point> tmpArray(n);
-	mergeSort(a, tmpArray, 0, n-1, compare);
+    vector<Point> tmpArray(a.size());
+
+    mergeSort(a, tmpArray, 0, a.size() - 1, compare);
+}
+
+
+/**
+ * Internal method that merges two sorted halves of a subarray.
+ * a is an array of Comparable items.
+ * tmpArray is an array to place the merged result.
+ * leftPos is the left-most index of the subarray.
+ * rightPos is the index of the start of the second half.
+ * rightEnd is the right-most index of the subarray.
+ */
+pair<Point, Point> bruteForce(vector<Point>points, int n)
+{
+    double min = numeric_limits<double>::max();
+    Point p1;
+    Point p2;
+
+
+    for (int i = 0; i < n; ++i) {
+        for (int j = i + 1; j < n; ++j) {
+            if (points[i].distance(points[j]) < min) {
+                min = points[i].distance(points[j]);
+                p1 = points[i];
+                p2 = points[j];
+            }
+        }
+    }
+    return { p1, p2 };
+}
+
+// A utility function to find
+// minimum of two float values
+pair<Point, Point> min(pair<Point, Point> x, pair<Point, Point> y)
+{
+    return (get<0>(x).distance(get<1>(x)) < get<0>(y).distance(get<1>(y)) ? x : y);
+}
+
+
+// A utility function to find the
+// distance between the closest points of
+// strip of given size. All points in
+// strip[] are sorted according to
+// y coordinate. They all have an upper
+// bound on minimum distance as d.
+// Note that this method seems to be
+// a O(n^2) method, but it's a O(n)
+// method as the inner loop runs at most 6 times
+pair<Point, Point> stripClosest(vector<Point>& strip, int size, float d)
+{
+    float min = d; // Initialize the minimum distance as d
+    Point p1;
+    Point p2;
+
+    mergeSort(strip, Point::CompareYCoordinate());
+
+    // Pick all points one by one and try the next points till the difference
+    // between y coordinates is smaller than d.
+    // This is a proven fact that this loop runs at most 6 times
+    for (int i = 0; i < size; ++i) {
+        for (int j = i + 1; j < size && (strip[j].getY() - strip[i].getY()) < min; ++j) {
+            if (strip[j].distance(strip[i]) < min) {
+                min = strip[j].distance(strip[i]);
+                p1 = strip[i];
+                p2 = strip[j];
+            }
+        }
+    }
+    return { p1, p2 };
 }
 
 // A recursive function to find the
 // smallest distance. The array P contains
 // all points sorted according to x coordinate
- 
-pair<Point, Point> bruteForce(vector<Point> points, size_t n) {
-	double min = numeric_limits<double>::min();
-	double curr_d;
-	Point p1;
-	Point p2;
-
-	cout << "this ran";
-
-	for (int i = 0; i < n; ++i) {
-		for (int j = 0; j < n; ++j) {
-			curr_d = points[i].distance(points[j]);
-			if (curr_d < min) {
-				p1 = points[i];
-				p2 = points[j];
-				min = curr_d;
-			}
-		}
-	}
-
-	return { p1, p2 };
-
-}
-
-
-
-pair<Point, Point> closestUtil(vector<Point> points, size_t n)
+pair<Point, Point> closestUtil(vector<Point>& points, int n)
 {
-	// If there are 2 or 3 points, then use brute force
-	if (n <= 4){
-		return bruteForce(points, n);
-	}
+    // If there are 2 or 3 points, then use brute force
+    if (n <= 3) {
+        return bruteForce(points, n);
+    }
 
-	// Find the middle point
-	size_t mid = n / 2;
-	Point midPoint = points[mid];
+    // Find the middle point
+    int mid = n / 2;
+    Point midPoint = points[mid];
 
-	// Consider the vertical line passing
-	// through the middle point calculate
-	// the smallest distance dl on left
-	// of middle point and dr on right side
+    // Consider the vertical line passing
+    // through the middle point calculate
+    // the smallest distance dl on left
 
-	//float dl = closestUtil(points, mid);
-	//float dr = closestUtil(P + mid, n - mid);
+    vector<Point> first(points.begin(), points.begin()+mid);
+    vector<Point> second(points.begin()+mid, points.end());
 
-	// Find the smaller of two distances
-	//float d = min(dl, dr);
 
-	//// Build an array strip[] that contains
-	//// points close (closer than d)
-	//// to the line passing through the middle point
-	//Point strip[n];
-	//int j = 0;
-	//for (int i = 0; i < n; i++)
-	//	if (abs(P[i].x - midPoint.x) < d)
-	//		strip[j] = P[i], j++;
+    pair<Point, Point> dl = closestUtil(first, mid);
+    pair<Point, Point> dr = closestUtil(second, n - mid);
 
-	//// Find the closest points in strip.
-	//// Return the minimum of d and closest
-	//// distance is strip[]
-	//return min(d, stripClosest(strip, j, d));
-	return { 0, 1 };
+    // Find the smaller of two distances
+    pair<Point, Point> d = min(dl, dr);
+
+    // Build an array strip[] that contains
+    // points close (closer than d)
+    // to the line passing through the middle point
+    vector<Point> strip(n);
+    int j = 0;
+    for (int i = 0; i < n; i++) {
+        if (abs(points[i].getX() - midPoint.getX()) < get<0>(d).distance(get<1>(d))) {
+            strip[j] = points[i], j++;
+        }
+    }
+
+    // Find the closest points in strip.
+    // Return the minimum of d and closest
+    // distance is strip[]
+    return min(d, stripClosest(strip, j, get<0>(d).distance(get<1>(d))));
 }
 
 
- //The main function that finds the smallest distance
- //This method mainly uses closestUtil()
+// The main function that finds the smallest distance
+// This method mainly uses closestUtil()
+pair<Point, Point> closest(vector<Point>& points){
+    mergeSort(points, Point::CompareXCoordinate());
 
-pair<Point, Point> closest(vector<Point>& points) {
-	size_t n = points.size();
-	mergeSort(points, n, Point::CompareXCoordinate());
-
-	// Use recursive function closestUtil()
-	// to find the smallest distance
-
-	//return { 0, 1 };
-
-	return closestUtil(points, n);
+    // Use recursive function closestUtil()
+    // to find the smallest distance
+    return closestUtil(points, points.size());
 }
+
 
 int main() {
 	string fileName;
@@ -177,11 +229,6 @@ int main() {
 		}
 	}
 	file.close();
-	closest(points);
-	for (auto i : points) {
-		cout << i << endl;
-	}
-
-
-
+    pair<Point, Point> result = closest(points);
+    cout << get<0>(result);
 }
