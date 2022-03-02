@@ -139,9 +139,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="newmain.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <Text Include="file0.txt" />
     <Text Include="file1.txt" />
     <Text Include="file2.txt" />
@@ -150,6 +147,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Point.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ClosestPointsDriver.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -186,9 +186,10 @@ int readIn(ifstream& file) {
 		cout << fixed << setprecision(2);
 		cout << "Closest points are: (" << p1.getX() << ", " << p1.getY() << ") and (" << p2.getX() << ", " << p2.getY() << ") with distance = " << setprecision(ss) << minDistance;
 	}
+	return 0;
 }
 
-/*
+
 int main() {
 	string fileName;
 	ifstream file;
@@ -200,5 +201,5 @@ int main() {
 	readIn(file);
 	
 }
-*/
+
 
