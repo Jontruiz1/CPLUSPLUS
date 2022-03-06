@@ -37,7 +37,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="newmain.cpp">
+    <ClCompile Include="ClosestPointsDriver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
