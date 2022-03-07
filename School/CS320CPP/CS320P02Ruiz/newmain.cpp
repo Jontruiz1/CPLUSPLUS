@@ -87,7 +87,7 @@ void mergeSort(vector<Point>& a, Comparable compare)
  * rightPos is the index of the start of the second half.
  * rightEnd is the right-most index of the subarray.
  */
-pair<Point, Point> bruteForce(vector<Point>points, int n)
+pair<Point, Point> bruteForce(vector<Point>points, size_t n)
 {
     double min = numeric_limits<double>::max();
     Point p1;
@@ -110,7 +110,11 @@ pair<Point, Point> bruteForce(vector<Point>points, int n)
 // minimum of two float values
 pair<Point, Point> min(pair<Point, Point> x, pair<Point, Point> y)
 {
-    return (get<0>(x).distance(get<1>(x)) < get<0>(y).distance(get<1>(y)) ? x : y);
+    double xdist = get<0>(x).distance(get<1>(x));
+    double ydist = get<0>(y).distance(get<1>(y));
+    pair<Point, Point> result = xdist < ydist ? x : y;
+
+    return result;
 }
 
 
@@ -123,9 +127,9 @@ pair<Point, Point> min(pair<Point, Point> x, pair<Point, Point> y)
 // Note that this method seems to be
 // a O(n^2) method, but it's a O(n)
 // method as the inner loop runs at most 6 times
-pair<Point, Point> stripClosest(vector<Point>& strip, int size, float d)
+pair<Point, Point> stripClosest(vector<Point>& strip, int size, double d)
 {
-    float min = d; // Initialize the minimum distance as d
+    double min = d; // Initialize the minimum distance as d
     Point p1;
     Point p2;
 
@@ -149,10 +153,11 @@ pair<Point, Point> stripClosest(vector<Point>& strip, int size, float d)
 // A recursive function to find the
 // smallest distance. The array P contains
 // all points sorted according to x coordinate
-pair<Point, Point> closestUtil(vector<Point>& points, int n)
+pair<Point, Point> closestUtil(vector<Point> points, size_t n)
 {
+
     // If there are 2 or 3 points, then use brute force
-    if (n <= 3) {
+    if (n <= 4) {
         return bruteForce(points, n);
     }
 
@@ -164,15 +169,14 @@ pair<Point, Point> closestUtil(vector<Point>& points, int n)
     // through the middle point calculate
     // the smallest distance dl on left
 
-    vector<Point> first(points.begin(), points.begin()+mid);
-    vector<Point> second(points.begin()+mid, points.end());
+    pair<Point, Point> dl = closestUtil(vector<Point>(points.begin(), points.begin()+mid), mid);
+    pair<Point, Point> dr = closestUtil(vector<Point>(points.begin()+mid, points.end()), n - mid);
+
+    double dldist = get<0>(dl).distance(get<1>(dl));
+    double drdist = get<0>(dr).distance(get<1>(dr));
 
 
-    pair<Point, Point> dl = closestUtil(first, mid);
-    pair<Point, Point> dr = closestUtil(second, n - mid);
 
-    // Find the smaller of two distances
-    pair<Point, Point> d = min(dl, dr);
 
     // Build an array strip[] that contains
     // points close (closer than d)
@@ -188,9 +192,10 @@ pair<Point, Point> closestUtil(vector<Point>& points, int n)
     // Find the closest points in strip.
     // Return the minimum of d and closest
     // distance is strip[]
-    return min(d, stripClosest(strip, j, get<0>(d).distance(get<1>(d))));
-}
+    pair<Point, Point> stripped = stripClosest(strip, j, get<0>(d).distance(get<1>(d)));
 
+
+}
 
 // The main function that finds the smallest distance
 // This method mainly uses closestUtil()
@@ -231,4 +236,5 @@ int main() {
 	file.close();
     pair<Point, Point> result = closest(points);
     cout << get<0>(result);
+
 }
