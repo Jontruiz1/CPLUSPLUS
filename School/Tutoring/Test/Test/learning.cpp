@@ -4,14 +4,13 @@
 using namespace std;
 
 int main() {
-	string help = "racecar";
-	string reverse = "";
-	for (auto it = help.crbegin(); it != help.crend(); it++) {
-		reverse += *it;
-	}
-
-	if (reverse == help) {
-		cout << "true";
+	int red;
+	int green;
+	int blue;
+	
+	cin >> red >> green >> blue;
+	if (green <= blue && green <= red) {
+		cout << ;
 	}
 
 
