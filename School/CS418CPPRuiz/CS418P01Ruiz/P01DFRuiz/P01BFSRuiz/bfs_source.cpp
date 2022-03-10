@@ -49,7 +49,7 @@ int main() {
 		if (find_solution(initial, goal, solution)) {
 			cout << "Solution:" << endl;
 			for (auto it = solution.rbegin(); it != solution.rend(); ++it) {
-				cout << it->getState() << it->getMoveName() << endl << endl;
+				cout << (it->getMoveName() == 0 ? "down" : it->getMoveName() == 1 ? "left" : it->getMoveName() == 2 ? "up" : it->getMoveName() == 3 ? "right" : "null") << endl << it->getState();
 			}
 		}
 		else {

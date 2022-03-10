@@ -49,7 +49,7 @@ int main() {
 		if (find_solution(initial, goal, solution) ){
 			cout << "***Solution Found***" << endl;
 			for (auto it = solution.rbegin(); it != solution.rend(); ++it) {
-				cout << it->getMoveName() << endl << it->getState();
+				cout << (it->getMoveName() == 0 ? "down" : it->getMoveName() == 1 ? "left" : it->getMoveName() == 2 ? "up" : it->getMoveName() == 3 ? "right" : "null") << endl << it->getState();
 			}
 		}
 		else {
@@ -126,7 +126,7 @@ bool find_solution(PuzzleState initial, PuzzleState goal, vector<PuzzleMove>& so
 				closed.push_back(curr_move);	// 
 				++nodes_expanded;
 				temp = expand(curr_s, closed);
-				fringe.insert(fringe.end(), temp.begin(), temp.end());
+				fringe.insert(fringe.end(), temp.rbegin(), temp.rend());
 			}
 		}
 	}
