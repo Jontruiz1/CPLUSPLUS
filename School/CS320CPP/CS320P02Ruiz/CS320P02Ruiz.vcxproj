@@ -151,6 +151,7 @@
   <ItemGroup>
     <ClCompile Include="ClosestPointsDriver.cpp" />
     <ClCompile Include="newmain.cpp" />
+    <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

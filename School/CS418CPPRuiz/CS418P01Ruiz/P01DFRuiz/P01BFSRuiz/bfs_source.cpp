@@ -51,6 +51,7 @@ int main() {
 			for (auto it = solution.rbegin(); it != solution.rend(); ++it) {
 				cout << it->getState() << it->getMoveName() << endl << endl;
 			}
+			cout << "Moves = " << solution.size()-1; // -1 because we don't need the move of the initial state
 		}
 		else {
 			cout << "No solution found";
@@ -71,17 +72,18 @@ bool member_of(PuzzleState curr, vector<PuzzleMove> temp) {
 vector<PuzzleMove> expand(PuzzleState& curr_s, vector<PuzzleMove>& closed) {
 	vector<PuzzleMove> fringe;
 	
+	// there was a weird ambiguous error with the token names so I just cast them as MoveTypes
 	if (curr_s.canMoveRight() && !member_of(curr_s.moveBlankRight(), closed)) {
-		fringe.push_back(PuzzleMove(curr_s.moveBlankRight(), curr_s, (enum MoveType)(3)));
+		fringe.push_back(PuzzleMove(curr_s.moveBlankRight(), curr_s, (MoveType)(3)));
 	}
 	if (curr_s.canMoveUp() && !member_of(curr_s.moveBlankUp(), closed)) {
-		fringe.push_back(PuzzleMove(curr_s.moveBlankUp(), curr_s, (enum MoveType)(2)));
+		fringe.push_back(PuzzleMove(curr_s.moveBlankUp(), curr_s, (MoveType)(2)));
 	}
 	if (curr_s.canMoveLeft() && !member_of(curr_s.moveBlankLeft(), closed)) {
-		fringe.push_back(PuzzleMove(curr_s.moveBlankLeft(), curr_s, (enum MoveType)(1)));
+		fringe.push_back(PuzzleMove(curr_s.moveBlankLeft(), curr_s, (MoveType)(1)));
 	}
 	if (curr_s.canMoveDown() && !member_of(curr_s.moveBlankDown(), closed)) {
-		fringe.push_back(PuzzleMove(curr_s.moveBlankDown(), curr_s, (enum MoveType)(0)));
+		fringe.push_back(PuzzleMove(curr_s.moveBlankDown(), curr_s, (MoveType)(0)));
 	}
 
 	return fringe;
@@ -96,7 +98,7 @@ bool find_solution(PuzzleState initial, PuzzleState goal, vector<PuzzleMove>& so
 	size_t nodes_expanded = 0;							
 
 	while (!fringe.empty()) {
-		curr_move = fringe.front();								// get the most recently inserted element
+		curr_move = fringe.front();								// get the first element in the vector
 		curr_s = curr_move.getState();							// get current state
 		fringe.erase(fringe.begin());							// pop the first element
 
@@ -115,7 +117,8 @@ bool find_solution(PuzzleState initial, PuzzleState goal, vector<PuzzleMove>& so
 				}
 			}
 
-			cout << "Nodes Expanded: " << nodes_expanded << endl;
+			cout << "***Solution Found***" << endl;
+			cout << "Nodes expanded " << nodes_expanded << endl << endl;
 			return true;
 		}
 		else {

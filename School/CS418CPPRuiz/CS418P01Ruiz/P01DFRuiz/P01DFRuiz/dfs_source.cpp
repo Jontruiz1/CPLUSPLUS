@@ -47,9 +47,16 @@ int main() {
 	}
 	else {
 		if (find_solution(initial, goal, solution) ){
-			cout << "***Solution Found***" << endl;
-			for (auto it = solution.rbegin(); it != solution.rend(); ++it) {
-				cout << it->getMoveName() << endl << it->getState();
+			auto it = solution.rbegin();
+
+			if (it != solution.rend()) {
+				cout << it->getState();
+				++it;
+				for (; it != solution.rend(); ++it) {
+					// I just simply didn't want to make the switch case, the if statements or a new function for this. Sorry.
+					cout << (it->getMoveName() == 0 ? "down" : it->getMoveName() == 1 ? "left" : it->getMoveName() == 2 ? "up" : it->getMoveName() == 3 ? "right" : "null") << endl << endl << it->getState();
+				}
+				cout << "Moves = " << solution.size() - 1; // -1 because we don't need the move of the initial state
 			}
 		}
 		else {
@@ -117,14 +124,15 @@ bool find_solution(PuzzleState initial, PuzzleState goal, vector<PuzzleMove>& so
 				}
 			}
 
-			cout << "Nodes expanded " << nodes_expanded << endl;
+			cout << "***Solution Found***" << endl;
+			cout << "Nodes expanded " << nodes_expanded << endl << endl;
 			return true;
 		}
 		else {
 			// make sure the curr state not already visited
 			if (!member_of(curr_s, closed)) {
-				closed.push_back(curr_move);	// 
-				++nodes_expanded;
+				++nodes_expanded; // we expand a node so we're increasing the expanded nodes
+				closed.push_back(curr_move);
 				temp = expand(curr_s, closed);
 				fringe.insert(fringe.end(), temp.begin(), temp.end());
 			}

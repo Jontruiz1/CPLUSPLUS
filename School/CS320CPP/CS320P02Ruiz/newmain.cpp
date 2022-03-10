@@ -108,13 +108,9 @@ pair<Point, Point> bruteForce(vector<Point>points, size_t n)
 
 // A utility function to find
 // minimum of two float values
-pair<Point, Point> min(pair<Point, Point> x, pair<Point, Point> y)
+float min(float x, float y)
 {
-    double xdist = get<0>(x).distance(get<1>(x));
-    double ydist = get<0>(y).distance(get<1>(y));
-    pair<Point, Point> result = xdist < ydist ? x : y;
-
-    return result;
+    return (x < y) ? x : y;
 }
 
 
@@ -174,9 +170,6 @@ pair<Point, Point> closestUtil(vector<Point> points, size_t n)
 
     double dldist = get<0>(dl).distance(get<1>(dl));
     double drdist = get<0>(dr).distance(get<1>(dr));
-
-
-
 
     // Build an array strip[] that contains
     // points close (closer than d)
