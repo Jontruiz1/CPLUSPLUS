@@ -4,7 +4,7 @@
 using namespace std;
 
 int main() {
-	Track inTrack;
+	
 	int cars;
 	int tracks;
 
@@ -15,9 +15,9 @@ int main() {
 	cout << "Enter number of holding tracks: ";
 	cin >> tracks;
 	cout << endl;
-	
-	cout << "Enter car sequence of input track: ";
-	cin >> inTrack;
+
+	Track inTrack(cars, tracks);
+	inTrack.read();
 
 	cout << inTrack;
 

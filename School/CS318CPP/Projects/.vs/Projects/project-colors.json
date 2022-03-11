@@ -20,7 +20,17 @@
       "ProjectGuid": "02c1de7e-a7c8-40e6-92a3-eb59199935ed",
       "DisplayName": "P04318Ruiz",
       "ColorIndex": 3
+    },
+    "e2aff5de-2c62-4931-874a-9617e6dc83e9": {
+      "ProjectGuid": "e2aff5de-2c62-4931-874a-9617e6dc83e9",
+      "DisplayName": "P02318Ruiz",
+      "ColorIndex": 4
+    },
+    "13db004d-4d27-4de5-b7bc-3973170428c7": {
+      "ProjectGuid": "13db004d-4d27-4de5-b7bc-3973170428c7",
+      "DisplayName": "P03318Ruiz",
+      "ColorIndex": 5
     }
   },
-  "NextColorIndex": 4
+  "NextColorIndex": 6
 }

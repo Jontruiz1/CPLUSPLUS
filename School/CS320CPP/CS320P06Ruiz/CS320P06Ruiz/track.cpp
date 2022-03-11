@@ -1,10 +1,11 @@
 #include "track.h"
 
-void Track::read(istream& in) {
-	int a;
+void Track::read() {
+	track.resize(cars);
 
-	while (in >> a) {
-		track.push_back(a);
+	cout << "Enter car sequence on input track: ";
+	for (int i = 0; i < cars; ++i) {
+		cin >> track[i];
 	}
 }
 
@@ -13,4 +14,14 @@ void Track::print(ostream& out) {
 		out << a;
 	}
 	out;
+}
+
+Track::Track(int cars, int holdingTracks) {
+	this->cars = cars;
+	this->holdingTracks = holdingTracks;
+}
+
+ostream& operator<<(ostream& out, Track& rhs) {
+	rhs.print(out);
+	return out;
 }

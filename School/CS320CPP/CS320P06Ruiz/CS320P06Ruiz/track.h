@@ -11,15 +11,14 @@ using namespace std;
 class Track {
 private:
 	vector<int> track;
+	int cars;
+	int holdingTracks;
 
 public:
-	void read(istream& in);
+	Track(int cars, int tracks);
+	void read();
 	void print(ostream& out);
-	istream& operator>>(istream& in);
 };
 
-istream& Track::operator>>(istream& in) {
-
-}
-
-#endif __TRACK__
+ostream& operator<<(ostream& out, Track& rhs);
+#endif
