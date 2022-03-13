@@ -49,8 +49,9 @@ int main() {
 		if (find_solution(initial, goal, solution) ){
 			cout << "***Solution Found***" << endl;
 			for (auto it = solution.rbegin(); it != solution.rend(); ++it) {
-				cout << (it->getMoveName() == 0 ? "down" : it->getMoveName() == 1 ? "left" : it->getMoveName() == 2 ? "up" : it->getMoveName() == 3 ? "right" : "null") << endl << it->getState();
+				cout << (it->getMoveName() == 0 ? "down\n" : it->getMoveName() == 1 ? "left\n" : it->getMoveName() == 2 ? "up\n" : it->getMoveName() == 3 ? "right\n" : "") << it->getState();
 			}
+			cout << "Moves: " << solution.size()-1 << endl;
 		}
 		else {
 			cout << "No solution found";
@@ -71,6 +72,8 @@ bool member_of(PuzzleState curr, vector<PuzzleMove> temp) {
 vector<PuzzleMove> expand(PuzzleState& curr_s, vector<PuzzleMove>& closed) {
 	vector<PuzzleMove> fringe;
 
+	
+	
 	if (curr_s.canMoveRight() && !member_of(curr_s.moveBlankRight(), closed)) {
 		fringe.push_back(PuzzleMove(curr_s.moveBlankRight(), curr_s, (enum MoveType)(3)));
 	}
@@ -83,10 +86,11 @@ vector<PuzzleMove> expand(PuzzleState& curr_s, vector<PuzzleMove>& closed) {
 	if (curr_s.canMoveDown() && !member_of(curr_s.moveBlankDown(), closed)) {
 		fringe.push_back(PuzzleMove(curr_s.moveBlankDown(), curr_s, (enum MoveType)(0)));
 	}
-
+	
 	return fringe;
 }
 
+// LIFO
 bool find_solution(PuzzleState initial, PuzzleState goal, vector<PuzzleMove>& solution) {
 	PuzzleMove curr_move = PuzzleMove(initial, PuzzleState::NullState, nullMove); // the current node we're at
 	PuzzleState curr_s = curr_move.getState();					// the current state 
@@ -98,9 +102,8 @@ bool find_solution(PuzzleState initial, PuzzleState goal, vector<PuzzleMove>& so
 	while (!fringe.empty()) {
 		curr_move = fringe.back();								// get the most recently inserted element
 		curr_s = curr_move.getState();							// get current state
-		fringe.pop_back();										// pop the last element
-
-
+		fringe.pop_back();										// pop the last element5
+		
 
 		if (curr_s == goal) {
 			solution.push_back(curr_move);						// push current node into solution
@@ -116,19 +119,20 @@ bool find_solution(PuzzleState initial, PuzzleState goal, vector<PuzzleMove>& so
 					it = closed.rbegin();
 				}
 			}
-
+			
 			cout << "Nodes expanded " << nodes_expanded << endl;
 			return true;
 		}
 		else {
-			// make sure the curr state not already visited
+			// make sure the curr state not already
 			if (!member_of(curr_s, closed)) {
-				closed.push_back(curr_move);	// 
-				++nodes_expanded;
+				closed.push_back(curr_move);	
 				temp = expand(curr_s, closed);
-				fringe.insert(fringe.end(), temp.rbegin(), temp.rend());
+				nodes_expanded++;
+				fringe.insert(fringe.end(), temp.begin(), temp.end());
 			}
 		}
+
 	}
 
 	return false;
