@@ -44,15 +44,16 @@ char getMenuChoice() {
 	//  Once a "valid" choice is made, return the choice to "main()"
 
 	while (menuOptions.find(choice) == string::npos) {
+		choice = ' ';
 		cout << "-- Online Shopping Menu --" << endl;
-		cout << "a - Add item to cart" << endl;
-		cout << "d - Remove item from cart" << endl;
-		cout << "c - Change item quantity" << endl;
-		cout << "p - Change item price" << endl;
-		cout << "o - Ouput shopping cart" << endl;
-		cout << "q - Quit" << endl << endl;
+		cout << "\ta - Add item to cart" << endl;
+		cout << "\td - Remove item from cart" << endl;
+		cout << "\tc - Change item quantity" << endl;
+		cout << "\tp - Change item price" << endl;
+		cout << "\to - Ouput shopping cart" << endl;
+		cout << "\tq - Quit" << endl << endl;
 
-		cout << "Choose option: ";
+		cout << "\tChoose option: ";
 		cin >> choice;
 	}
 
@@ -70,16 +71,17 @@ void processMenuChoice(char choice, ShoppingCart& theCart) {
 
 	switch (choice) {
 	case 'a':
+		cin.ignore();
 		// get the item name, price, quantity from user
 		// call addItemToCart with an Item object as an argument
 		cout << endl  << "-- Add Item to Cart --" << endl;
-		cout << "Enter the item name: ";
+		cout << "\tEnter the item name: ";
 		getline(cin, name);
 
-		cout << "Enter the item price : ";
+		cout << "\tEnter the item price : ";
 		cin >> price;
 
-		cout << "Enter the item quanity: ";
+		cout << "\tEnter the item quanity: ";
 		cin >> quantity;
 
 		theCart.addItemToCart(Item(name, price, quantity));
@@ -89,10 +91,11 @@ void processMenuChoice(char choice, ShoppingCart& theCart) {
 	case 'd':
 		// get the item name from user
 		// call removeItemFromCart with name as the argument
-
+		cin.ignore();
 		cout << "-- Remove Item from Cart --" << endl;
 		cout << "Enter name of item to remove: ";
 		getline(cin, name);
+
 
 		theCart.removeItemFromCart(name);
 
@@ -101,7 +104,7 @@ void processMenuChoice(char choice, ShoppingCart& theCart) {
 	case 'c':
 		// get the item name and new quantity from user
 		// call changeItemQuantity with name and new quantity as arguments
-
+		cin.ignore();
 		cout << "-- Change Item Quantity --" << endl;
 		cout << "Enter the item name: ";
 		getline(cin, name);
@@ -116,7 +119,7 @@ void processMenuChoice(char choice, ShoppingCart& theCart) {
 	case 'p':
 		// get the item name and new price from user
 		// call changeItemPrice with name and new price as arguments
-
+		cin.ignore();
 		cout << "-- Change Item Price --" << endl;
 		cout << "Enter the item name: ";
 		getline(cin, name);
