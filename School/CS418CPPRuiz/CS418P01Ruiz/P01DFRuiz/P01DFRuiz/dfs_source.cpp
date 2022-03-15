@@ -103,7 +103,7 @@ bool find_solution(PuzzleState initial, PuzzleState goal, vector<PuzzleMove>& so
 		curr_move = fringe.back();								// get the most recently inserted element
 		curr_s = curr_move.getState();							// get current state
 		fringe.pop_back();										// pop the last element5
-		
+		closed.push_back(curr_move);
 
 		if (curr_s == goal) {
 			solution.push_back(curr_move);						// push current node into solution
@@ -125,12 +125,10 @@ bool find_solution(PuzzleState initial, PuzzleState goal, vector<PuzzleMove>& so
 		}
 		else {
 			// make sure the curr state not already
-			if (!member_of(curr_s, closed)) {
-				closed.push_back(curr_move);	
-				temp = expand(curr_s, closed);
-				nodes_expanded++;
-				fringe.insert(fringe.end(), temp.begin(), temp.end());
-			}
+			closed.push_back(curr_move);	
+			temp = expand(curr_s, closed);
+			nodes_expanded++;
+			fringe.insert(fringe.end(), temp.begin(), temp.end());
 		}
 
 	}
