@@ -108,10 +108,7 @@ bool find_solution(PuzzleState initial, PuzzleState goal, vector<PuzzleMove>& so
 		if (curr_s == goal) {
 			solution.push_back(curr_move);						// push current node into solution
 
-			/* starting from beginning of the vector will access the very first node which has a nullstate parent which is not what we want
-			   the end of the closed list has the most recently inserted nodes, ie, the ones leading up to the solution.
-			   check them to make sure they're actually parents, push if yes and then start again from the end of the list (don't want to miss nodes)
-			*/
+			// starts from end of closed and finds the current parent while setting the curr state to that parent. Pushes these parents to the solution
 			for (auto it = closed.rbegin(); it != closed.rend() && !(it->getState().isNullState()); ++it) {
 				if (it->getState() == curr_move.getParent()) {
 					solution.push_back(*it);
@@ -124,17 +121,14 @@ bool find_solution(PuzzleState initial, PuzzleState goal, vector<PuzzleMove>& so
 			return true;
 		}
 		else {
-			// make sure the curr state not already
+			// make sure the curr state is not closed already
 			if (!member_of(curr_s, closed)) {
 				nodes_expanded++;
 				closed.push_back(curr_move);
 				temp = expand(curr_s, closed);
 				fringe.insert(fringe.end(), temp.begin(), temp.end());
-			}	
+			}
 		}
-
-
-
 	}
 
 	return false;
