@@ -131,8 +131,8 @@ bool find_solution(PuzzleState initial, PuzzleState goal, vector<PuzzleMove>& so
 				fringe.insert(fringe.end(), temp.rbegin(), temp.rend());
 			}
 		}
-		cout << nodes_expanded << endl;
 	}
+	
 
 	return false;
 
