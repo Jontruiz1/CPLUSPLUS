@@ -47,11 +47,10 @@ int main() {
 	}
 	else {
 		if (find_solution(initial, goal, solution) ){
-			cout << "***Solution Found***" << endl;
 			for (auto it = solution.rbegin(); it != solution.rend(); ++it) {
-				cout << (it->getMoveName() == 0 ? "down\n" : it->getMoveName() == 1 ? "left\n" : it->getMoveName() == 2 ? "up\n" : it->getMoveName() == 3 ? "right\n" : "") << it->getState();
+				cout <<(it->getMoveName() == 0 ? "down\n" : it->getMoveName() == 1 ? "left\n" : it->getMoveName() == 2 ? "up\n" : it->getMoveName() == 3 ? "right\n" : "") << endl << it->getState();
 			}
-			cout << "Moves: " << solution.size()-1 << endl;
+			cout << "Moves = " << solution.size() - 1; // -1 because we don't need the move of the initial state
 		}
 		else {
 			cout << "No solution found";
@@ -117,7 +116,8 @@ bool find_solution(PuzzleState initial, PuzzleState goal, vector<PuzzleMove>& so
 				}
 			}
 			
-			cout << "Nodes expanded " << nodes_expanded << endl;
+			cout << "****Solution Found****" << endl;
+			cout << "Nodes Expanded = " << nodes_expanded << endl;
 			return true;
 		}
 		else {
