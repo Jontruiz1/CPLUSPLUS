@@ -1,0 +1,591 @@
+                     P02 SAMPLE RUNS
+
+
+ ************** PLAYLIST MENU **************************
+        a - Add song
+        d - Remove song
+        p - Change position of song
+        s - Output songs by specific artist
+        t - Output total time of playlist (in seconds)
+        o - Output full playlist
+        c - Clear playlist
+        q - Quit
+
+        Choose option: a
+ *******************************************************
+
+        Add Song - Enter song's unique ID: SD123
+                   Enter song's name: Peg
+                   Enter artist's name: Steely Dan
+                   Enter song's length (in seconds): 237
+
+        ------------------------- PLAYLIST ------------------------------
+        Pos  Unique Id   Song                Artist              Time
+        1    SD123       Peg                 Steely Dan           237
+
+ ************** PLAYLIST MENU **************************
+        a - Add song
+        d - Remove song
+        p - Change position of song
+        s - Output songs by specific artist
+        t - Output total time of playlist (in seconds)
+        o - Output full playlist
+        c - Clear playlist
+        q - Quit
+
+        Choose option: a
+ *******************************************************
+
+        Add Song - Enter song's unique ID: SD123
+
+        <<< Duplicate unique ID - not added! >>>
+
+ ************** PLAYLIST MENU **************************
+        a - Add song
+        d - Remove song
+        p - Change position of song
+        s - Output songs by specific artist
+        t - Output total time of playlist (in seconds)
+        o - Output full playlist
+        c - Clear playlist
+        q - Quit
+
+        Choose option: a
+ *******************************************************
+
+        Add Song - Enter song's unique ID: JJ234
+                   Enter song's name: All For You
+                   Enter artist's name: Janet Jackson
+                   Enter song's length (in seconds): 391
+
+        ------------------------- PLAYLIST ------------------------------
+        Pos  Unique Id   Song                Artist              Time
+        1    JJ234       All For You         Janet Jackson        391
+        2    SD123       Peg                 Steely Dan           237
+
+ ************** PLAYLIST MENU **************************
+        a - Add song
+        d - Remove song
+        p - Change position of song
+        s - Output songs by specific artist
+        t - Output total time of playlist (in seconds)
+        o - Output full playlist
+        c - Clear playlist
+        q - Quit
+
+        Choose option: a
+ *******************************************************
+
+        Add Song - Enter song's unique ID: JJ456
+                   Enter song's name: Black Eagle
+                   Enter artist's name: Janet Jackson
+                   Enter song's length (in seconds): 197
+
+        ------------------------- PLAYLIST ------------------------------
+        Pos  Unique Id   Song                Artist              Time
+        1    JJ456       Black Eagle         Janet Jackson        197
+        2    JJ234       All For You         Janet Jackson        391
+        3    SD123       Peg                 Steely Dan           237
+
+ ************** PLAYLIST MENU **************************
+        a - Add song
+        d - Remove song
+        p - Change position of song
+        s - Output songs by specific artist
+        t - Output total time of playlist (in seconds)
+        o - Output full playlist
+        c - Clear playlist
+        q - Quit
+
+        Choose option: a
+ *******************************************************
+
+        Add Song - Enter song's unique ID: SD567
+                   Enter song's name: I Got The News
+                   Enter artist's name: Steely Dan
+                   Enter song's length (in seconds): 306
+
+        ------------------------- PLAYLIST ------------------------------
+        Pos  Unique Id   Song                Artist              Time
+        1    SD567       I Got The News      Steely Dan           306
+        2    JJ456       Black Eagle         Janet Jackson        197
+        3    JJ234       All For You         Janet Jackson        391
+        4    SD123       Peg                 Steely Dan           237
+
+ ************** PLAYLIST MENU **************************
+        a - Add song
+        d - Remove song
+        p - Change position of song
+        s - Output songs by specific artist
+        t - Output total time of playlist (in seconds)
+        o - Output full playlist
+        c - Clear playlist
+        q - Quit
+
+        Choose option: a
+ *******************************************************
+
+        Add Song - Enter song's unique ID: J345
+                   Enter song's name: Canned Heat
+                   Enter artist's name: Jamiroquai
+                   Enter song's length (in seconds): 33
+
+        ------------------------- PLAYLIST ------------------------------
+        Pos  Unique Id   Song                Artist              Time
+        1    J345        Canned Heat         Jamiroquai            33
+        2    SD567       I Got The News      Steely Dan           306
+        3    JJ456       Black Eagle         Janet Jackson        197
+        4    JJ234       All For You         Janet Jackson        391
+        5    SD123       Peg                 Steely Dan           237
+
+ ************** PLAYLIST MENU **************************
+        a - Add song
+        d - Remove song
+        p - Change position of song
+        s - Output songs by specific artist
+        t - Output total time of playlist (in seconds)
+        o - Output full playlist
+        c - Clear playlist
+        q - Quit
+
+        Choose option: o
+ *******************************************************
+
+        ------------------------- PLAYLIST ------------------------------
+        Pos  Unique Id   Song                Artist              Time
+        1    J345        Canned Heat         Jamiroquai            33
+        2    SD567       I Got The News      Steely Dan           306
+        3    JJ456       Black Eagle         Janet Jackson        197
+        4    JJ234       All For You         Janet Jackson        391
+        5    SD123       Peg                 Steely Dan           237
+
+ ************** PLAYLIST MENU **************************
+        a - Add song
+        d - Remove song
+        p - Change position of song
+        s - Output songs by specific artist
+        t - Output total time of playlist (in seconds)
+        o - Output full playlist
+        c - Clear playlist
+        q - Quit
+
+        Choose option: s
+ *******************************************************
+
+        Search Playlist - Enter artist's name: Steely Dan
+
+        ------------------------- PLAYLIST ------------------------------
+        Pos  Unique Id   Song                Artist              Time
+        2    SD567       I Got The News      Steely Dan           306
+        5    SD123       Peg                 Steely Dan           237
+
+ ************** PLAYLIST MENU **************************
+        a - Add song
+        d - Remove song
+        p - Change position of song
+        s - Output songs by specific artist
+        t - Output total time of playlist (in seconds)
+        o - Output full playlist
+        c - Clear playlist
+        q - Quit
+
+        Choose option: s
+ *******************************************************
+
+        Search Playlist - Enter artist's name: The Beatles
+
+        ------------------------- PLAYLIST ------------------------------
+        Pos  Unique Id   Song                Artist              Time
+
+ ************** PLAYLIST MENU **************************
+        a - Add song
+        d - Remove song
+        p - Change position of song
+        s - Output songs by specific artist
+        t - Output total time of playlist (in seconds)
+        o - Output full playlist
+        c - Clear playlist
+        q - Quit
+
+        Choose option: t
+ *******************************************************
+
+        Playlist Total Time - 1164
+
+ ************** PLAYLIST MENU **************************
+        a - Add song
+        d - Remove song
+        p - Change position of song
+        s - Output songs by specific artist
+        t - Output total time of playlist (in seconds)
+        o - Output full playlist
+        c - Clear playlist
+        q - Quit
+
+        Choose option: o
+ *******************************************************
+
+        ------------------------- PLAYLIST ------------------------------
+        Pos  Unique Id   Song                Artist              Time
+        1    J345        Canned Heat         Jamiroquai            33
+        2    SD567       I Got The News      Steely Dan           306
+        3    JJ456       Black Eagle         Janet Jackson        197
+        4    JJ234       All For You         Janet Jackson        391
+        5    SD123       Peg                 Steely Dan           237
+
+ ************** PLAYLIST MENU **************************
+        a - Add song
+        d - Remove song
+        p - Change position of song
+        s - Output songs by specific artist
+        t - Output total time of playlist (in seconds)
+        o - Output full playlist
+        c - Clear playlist
+        q - Quit
+
+        Choose option: p
+ *******************************************************
+
+        Change Song's Playlist Position -
+                Current position (1 through 5): 20
+
+                <<< Invalid current position!  >>>
+
+ ************** PLAYLIST MENU **************************
+        a - Add song
+        d - Remove song
+        p - Change position of song
+        s - Output songs by specific artist
+        t - Output total time of playlist (in seconds)
+        o - Output full playlist
+        c - Clear playlist
+        q - Quit
+
+        Choose option: o
+ *******************************************************
+
+        ------------------------- PLAYLIST ------------------------------
+        Pos  Unique Id   Song                Artist              Time
+        1    J345        Canned Heat         Jamiroquai            33
+        2    SD567       I Got The News      Steely Dan           306
+        3    JJ456       Black Eagle         Janet Jackson        197
+        4    JJ234       All For You         Janet Jackson        391
+        5    SD123       Peg                 Steely Dan           237
+
+ ************** PLAYLIST MENU **************************
+        a - Add song
+        d - Remove song
+        p - Change position of song
+        s - Output songs by specific artist
+        t - Output total time of playlist (in seconds)
+        o - Output full playlist
+        c - Clear playlist
+        q - Quit
+
+        Choose option: p
+ *******************************************************
+
+        Change Song's Playlist Position -
+                Current position (1 through 5): 5
+                New position (1 through 5): 5
+
+                <<< Invalid new position! >>>
+
+ ************** PLAYLIST MENU **************************
+        a - Add song
+        d - Remove song
+        p - Change position of song
+        s - Output songs by specific artist
+        t - Output total time of playlist (in seconds)
+        o - Output full playlist
+        c - Clear playlist
+        q - Quit
+
+        Choose option: o
+ *******************************************************
+
+        ------------------------- PLAYLIST ------------------------------
+        Pos  Unique Id   Song                Artist              Time
+        1    J345        Canned Heat         Jamiroquai            33
+        2    SD567       I Got The News      Steely Dan           306
+        3    JJ456       Black Eagle         Janet Jackson        197
+        4    JJ234       All For You         Janet Jackson        391
+        5    SD123       Peg                 Steely Dan           237
+
+ ************** PLAYLIST MENU **************************
+        a - Add song
+        d - Remove song
+        p - Change position of song
+        s - Output songs by specific artist
+        t - Output total time of playlist (in seconds)
+        o - Output full playlist
+        c - Clear playlist
+        q - Quit
+
+        Choose option: c
+ *******************************************************
+
+        >>> Playlist has been cleared! <<<
+
+ ************** PLAYLIST MENU **************************
+        a - Add song
+        d - Remove song
+        p - Change position of song
+        s - Output songs by specific artist
+        t - Output total time of playlist (in seconds)
+        o - Output full playlist
+        c - Clear playlist
+        q - Quit
+
+        Choose option: o
+ *******************************************************
+
+        ------------------------- PLAYLIST ------------------------------
+        Pos  Unique Id   Song                Artist              Time
+
+        >>> Playlist is empty! <<<
+
+ ************** PLAYLIST MENU **************************
+        a - Add song
+        d - Remove song
+        p - Change position of song
+        s - Output songs by specific artist
+        t - Output total time of playlist (in seconds)
+        o - Output full playlist
+        c - Clear playlist
+        q - Quit
+
+        Choose option: a
+ *******************************************************
+
+        Add Song - Enter song's unique ID: SD567
+                   Enter song's name: I Got The News
+                   Enter artist's name: Steely Dan
+                   Enter song's length (in seconds): 306
+
+        ------------------------- PLAYLIST ------------------------------
+        Pos  Unique Id   Song                Artist              Time
+        1    SD567       I Got The News      Steely Dan           306
+
+ ************** PLAYLIST MENU **************************
+        a - Add song
+        d - Remove song
+        p - Change position of song
+        s - Output songs by specific artist
+        t - Output total time of playlist (in seconds)
+        o - Output full playlist
+        c - Clear playlist
+        q - Quit
+
+        Choose option: a
+ *******************************************************
+
+        Add Song - Enter song's unique ID: JJ456
+                   Enter song's name: Black Eagle
+                   Enter artist's name: Janet Jackson
+                   Enter song's length (in seconds): 197
+
+        ------------------------- PLAYLIST ------------------------------
+        Pos  Unique Id   Song                Artist              Time
+        1    JJ456       Black Eagle         Janet Jackson        197
+        2    SD567       I Got The News      Steely Dan           306
+
+ ************** PLAYLIST MENU **************************
+        a - Add song
+        d - Remove song
+        p - Change position of song
+        s - Output songs by specific artist
+        t - Output total time of playlist (in seconds)
+        o - Output full playlist
+        c - Clear playlist
+        q - Quit
+
+        Choose option: a
+ *******************************************************
+
+        Add Song - Enter song's unique ID: SD123
+                   Enter song's name: Peg
+                   Enter artist's name: Steely Dan
+                   Enter song's length (in seconds): 237
+
+        ------------------------- PLAYLIST ------------------------------
+        Pos  Unique Id   Song                Artist              Time
+        1    SD123       Peg                 Steely Dan           237
+        2    JJ456       Black Eagle         Janet Jackson        197
+        3    SD567       I Got The News      Steely Dan           306
+
+ ************** PLAYLIST MENU **************************
+        a - Add song
+        d - Remove song
+        p - Change position of song
+        s - Output songs by specific artist
+        t - Output total time of playlist (in seconds)
+        o - Output full playlist
+        c - Clear playlist
+        q - Quit
+
+        Choose option: o
+ *******************************************************
+
+        ------------------------- PLAYLIST ------------------------------
+        Pos  Unique Id   Song                Artist              Time
+        1    SD123       Peg                 Steely Dan           237
+        2    JJ456       Black Eagle         Janet Jackson        197
+        3    SD567       I Got The News      Steely Dan           306
+
+ ************** PLAYLIST MENU **************************
+        a - Add song
+        d - Remove song
+        p - Change position of song
+        s - Output songs by specific artist
+        t - Output total time of playlist (in seconds)
+        o - Output full playlist
+        c - Clear playlist
+        q - Quit
+
+        Choose option: p
+ *******************************************************
+
+        Change Song's Playlist Position -
+                Current position (1 through 3): 1
+                New position (1 through 3): 10
+
+                <<< Invalid new position! >>>
+
+ ************** PLAYLIST MENU **************************
+        a - Add song
+        d - Remove song
+        p - Change position of song
+        s - Output songs by specific artist
+        t - Output total time of playlist (in seconds)
+        o - Output full playlist
+        c - Clear playlist
+        q - Quit
+
+        Choose option: p
+ *******************************************************
+
+        Change Song's Playlist Position -
+                Current position (1 through 3): 3
+                New position (1 through 3): 1
+
+        <<< Song moved from position 3 to position 1 >>>
+
+        ------------------------- PLAYLIST ------------------------------
+        Pos  Unique Id   Song                Artist              Time
+        1    SD567       I Got The News      Steely Dan           306
+        2    SD123       Peg                 Steely Dan           237
+        3    JJ456       Black Eagle         Janet Jackson        197
+
+ ************** PLAYLIST MENU **************************
+        a - Add song
+        d - Remove song
+        p - Change position of song
+        s - Output songs by specific artist
+        t - Output total time of playlist (in seconds)
+        o - Output full playlist
+        c - Clear playlist
+        q - Quit
+
+        Choose option: p
+ *******************************************************
+
+        Change Song's Playlist Position -
+                Current position (1 through 3): 2
+                New position (1 through 3): 1
+
+        <<< Song moved from position 2 to position 1 >>>
+
+        ------------------------- PLAYLIST ------------------------------
+        Pos  Unique Id   Song                Artist              Time
+        1    SD123       Peg                 Steely Dan           237
+        2    SD567       I Got The News      Steely Dan           306
+        3    JJ456       Black Eagle         Janet Jackson        197
+
+ ************** PLAYLIST MENU **************************
+        a - Add song
+        d - Remove song
+        p - Change position of song
+        s - Output songs by specific artist
+        t - Output total time of playlist (in seconds)
+        o - Output full playlist
+        c - Clear playlist
+        q - Quit
+
+        Choose option: p
+ *******************************************************
+
+        Change Song's Playlist Position -
+                Current position (1 through 3): 1
+                New position (1 through 3): 2
+
+        <<< Song moved from position 1 to position 2 >>>
+
+        ------------------------- PLAYLIST ------------------------------
+        Pos  Unique Id   Song                Artist              Time
+        1    SD567       I Got The News      Steely Dan           306
+        2    SD123       Peg                 Steely Dan           237
+        3    JJ456       Black Eagle         Janet Jackson        197
+
+ ************** PLAYLIST MENU **************************
+        a - Add song
+        d - Remove song
+        p - Change position of song
+        s - Output songs by specific artist
+        t - Output total time of playlist (in seconds)
+        o - Output full playlist
+        c - Clear playlist
+        q - Quit
+
+        Choose option: d
+ *******************************************************
+
+        Delete Song - Enter song's unique ID: XX111
+
+        <<< Song with unique ID XX111 is not in playlist! >>>
+
+        ------------------------- PLAYLIST ------------------------------
+        Pos  Unique Id   Song                Artist              Time
+        1    SD567       I Got The News      Steely Dan           306
+        2    SD123       Peg                 Steely Dan           237
+        3    JJ456       Black Eagle         Janet Jackson        197
+
+ ************** PLAYLIST MENU **************************
+        a - Add song
+        d - Remove song
+        p - Change position of song
+        s - Output songs by specific artist
+        t - Output total time of playlist (in seconds)
+        o - Output full playlist
+        c - Clear playlist
+        q - Quit
+
+        Choose option: d
+ *******************************************************
+
+        Delete Song - Enter song's unique ID: SD123
+
+        <<< Successfully deleted song with unique ID SD123 >>>
+
+        ------------------------- PLAYLIST ------------------------------
+        Pos  Unique Id   Song                Artist              Time
+        1    SD567       I Got The News      Steely Dan           306
+        2    JJ456       Black Eagle         Janet Jackson        197
+
+ ************** PLAYLIST MENU **************************
+        a - Add song
+        d - Remove song
+        p - Change position of song
+        s - Output songs by specific artist
+        t - Output total time of playlist (in seconds)
+        o - Output full playlist
+        c - Clear playlist
+        q - Quit
+
+        Choose option: q
+ *******************************************************
+
+>>> Exiting Playlist <<<
+
+>>> Playlist destructor called <<<
+

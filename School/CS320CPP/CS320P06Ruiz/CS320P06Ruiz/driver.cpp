@@ -1,24 +1,28 @@
-#include <iostream>
 #include "track.h"
 
 using namespace std;
+
+
 
 int main() {
 	
 	int cars;
 	int tracks;
+	int curr = 0;
+	
 
 	cout << "Enter number of cars: ";
 	cin >> cars;
-	cout << endl;
-
+	
 	cout << "Enter number of holding tracks: ";
 	cin >> tracks;
-	cout << endl;
 
-	Track inTrack(cars, tracks);
-	inTrack.read();
+	Track problem(cars, tracks);
+	cin >> problem;
 
-	cout << inTrack;
+	problem.findSolution();
+
+	cout << problem;
+	
 
 }
