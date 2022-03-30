@@ -131,10 +131,16 @@ bool find_solution(PuzzleState initial, PuzzleState goal, vector<PuzzleMove>& so
 				nodes_expanded++;
 				closed.push_back(curr_move);
 				temp = expand(curr_s, closed);
-				for (PuzzleMove move : temp) fringe.push(move);
+				for (PuzzleMove move : temp) {
+					fringe.push(move);
+				}  
 			}
 		}
 	}
+
+
+	
+
 
 
 	return false;

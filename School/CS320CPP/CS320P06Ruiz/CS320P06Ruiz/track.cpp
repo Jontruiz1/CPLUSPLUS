@@ -50,13 +50,13 @@ bool Track::findSolution() {
 	while (curr != (max)) {
 		i = 0;
 		if (!input.empty() && (input.front() == curr || input.front() == (curr + 1))) {
-			cout << "Move car " << input.front() << " from input track to output track\n";
+			moves += ("Move car " + to_string(input.front()) + " from input track to output track\n");
 			output.push_back(input.front());
 			input.erase(input.begin());
 			++curr;
 		}
 		else if (containsNext(holdingTracks, curr, i)) {
-			cout << "Move car " << holdingTracks[i].top() << " from holding track " << i + 1 << " to output track\n";
+			moves += ("Move car " + to_string(holdingTracks[i].top()) + " from holding track " + to_string(i + 1) + " to output track\n");
 			output.push_back(holdingTracks[i].top());
 			holdingTracks[i].pop();
 			++curr;
@@ -65,7 +65,7 @@ bool Track::findSolution() {
 			i = 0;
 			for (auto track : holdingTracks) {
 				if (track.empty() || (track.top() >= input.front())) {
-					cout << "Move car " << input.front() << " from input track to holding track " << i + 1 << endl;
+					moves += ("Move car " + to_string(input.front() ) + " from input track to holding track " + to_string( i + 1 ) + "\n");
 					holdingTracks[i].push(input.front());
 					input.erase(input.begin());
 					break;
@@ -78,6 +78,8 @@ bool Track::findSolution() {
 			}
 		}
 	}
+
+	cout << moves;
 
 	return true;
 }

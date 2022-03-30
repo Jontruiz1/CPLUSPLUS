@@ -5,6 +5,7 @@
 #include <istream>
 #include <iostream>
 #include <stack>
+#include <string>
 
 using namespace std;
 
@@ -18,6 +19,7 @@ private:
 	int tracks;
 	int max = INT_MIN;
 	int curr = 0;
+	string moves = "";
 
 public:
 	Track(int cars, int tracks);

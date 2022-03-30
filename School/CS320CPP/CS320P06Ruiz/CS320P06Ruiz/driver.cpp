@@ -1,5 +1,4 @@
 #include "track.h"
-
 using namespace std;
 
 
@@ -22,7 +21,7 @@ int main() {
 
 	problem.findSolution();
 
-	cout << problem;
-	
+	cout << endl << problem;
+
 
 }
