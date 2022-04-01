@@ -76,18 +76,23 @@ vector<PuzzleMove> expand(PuzzleState& curr_s, vector<PuzzleMove>& closed) {
 		fringe.push_back(PuzzleMove(curr_s.moveBlankRight(), curr_s, (MoveType)(3)));
 	}
 	if (curr_s.canMoveUp() && !member_of(curr_s.moveBlankUp(), closed)) {
-		fringe.push_back(PuzzleMove(curr_s.moveBlankUp(), curr_s, (MoveType)(2)));
+		fringe.push_back(PuzzleMove(curr_s.moveBlankUp(), curr_s, (MoveType)(2)) );
 	}
 	if (curr_s.canMoveLeft() && !member_of(curr_s.moveBlankLeft(), closed)) {
 		fringe.push_back(PuzzleMove(curr_s.moveBlankLeft(), curr_s, (MoveType)(1)));
 	}
 	if (curr_s.canMoveDown() && !member_of(curr_s.moveBlankDown(), closed)) {
-		fringe.push_back(PuzzleMove(curr_s.moveBlankDown(), curr_s, (MoveType)(0)));
+		fringe.push_back(PuzzleMove(curr_s.moveBlankDown(), curr_s, (MoveType)(0)) );
 	}
 
 	return fringe;
 }
 
+int determineHeuristic(PuzzleState& curr, PuzzleState& goal) {
+
+
+
+}
 
 
 bool find_solution(PuzzleState initial, PuzzleState goal, vector<PuzzleMove>& solution) {
@@ -95,9 +100,7 @@ bool find_solution(PuzzleState initial, PuzzleState goal, vector<PuzzleMove>& so
 	PuzzleState curr_s = curr_move.getState();					// the current state 
 	priority_queue<PuzzleMove> fringe;							// current nodes that we are traversing, like the stack
 	vector<PuzzleMove> closed;									// nodes no longer traversing, this will contain the pain used to get to the solution
-	vector<PuzzleMove> temp;									// used to hold the result fromn the expansion of the nodes
-	size_t nodes_expanded = 0;							
-
+	vector<PuzzleMove> temp;									// used to hold the result fromn the expansion of the nodes					
 	fringe.push(curr_move);
 
 	while (!fringe.empty()) {
@@ -120,15 +123,13 @@ bool find_solution(PuzzleState initial, PuzzleState goal, vector<PuzzleMove>& so
 				}
 			}
 
-			cout << "Solution Found:" << endl;
-			cout << "Nodes Expanded = " << nodes_expanded << endl;
+			cout << "Solution:" << endl;
 			return true;
 		}
 		else {
 			// 1 3 5 4 2 0 7 8 6
 			// make sure the curr state not already visited
 			if (!member_of(curr_s, closed)) {
-				nodes_expanded++;
 				closed.push_back(curr_move);
 				temp = expand(curr_s, closed);
 				for (PuzzleMove move : temp) {

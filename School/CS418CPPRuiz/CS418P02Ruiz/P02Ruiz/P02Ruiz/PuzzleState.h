@@ -57,8 +57,6 @@ private:
 	vector<int> tiles;
 	int blank_position_row;
 	int blank_position_col;
-	int heuristic;
-	int stateEvaluation;
 };
 
 istream& operator>>(istream& in, PuzzleState& rhs);
