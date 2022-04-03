@@ -9,12 +9,12 @@ enum MoveType { down, left, up, right, nullMove };
 class PuzzleMove {
 public:
 	PuzzleMove() { }
-	PuzzleMove(PuzzleState curr, PuzzleState parent, PuzzleState goal, MoveType m, int cost) : state(curr), parent(parent), move(m), gN(cost), hN(setHN(curr, goal)), fN(gN + hN) {}
+	PuzzleMove(PuzzleState curr, PuzzleState& parent, PuzzleState& goal, MoveType m, int cost) : state(curr), parent(parent), move(m), gN(cost), hN(setHN(curr, goal)), fN(gN + hN) {}
 	PuzzleState& getState() { return state; }
 	PuzzleState& getParent() { return parent; }
 	MoveType getMoveName() { return move; }
 	const int getGN() { return gN; }
-	int getFN() const { return fN; }
+	const int getFN() const { return fN; }
 	int setHN(PuzzleState& curr, PuzzleState& goal);
 
 private:

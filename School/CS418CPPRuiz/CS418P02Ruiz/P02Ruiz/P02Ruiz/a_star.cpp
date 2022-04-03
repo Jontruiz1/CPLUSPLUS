@@ -42,14 +42,14 @@ int main() {
 
 
 	if (initial == goal) {
-		cout << "Solution found immediately: start state is the goal state";
+		cout << "Solution found immediately: start state is the goal state" << endl;
 	}
 	else {
 		if (find_solution(initial, goal, solution)) {
 			for (auto it = solution.rbegin(); it != solution.rend(); ++it) {
 				cout << (it->getMoveName() == 0 ? "down\n" : it->getMoveName() == 1 ? "left\n" : it->getMoveName() == 2 ? "up\n" : it->getMoveName() == 3 ? "right\n" : "") << endl << it->getState();
+				//cout << (it->getMoveName() == 0 ? "down\n" : it->getMoveName() == 1 ? "left\n" : it->getMoveName() == 2 ? "up\n" : it->getMoveName() == 3 ? "right\n" : "") << endl;
 			}
-			cout << "Moves = " << solution.size()-1; // -1 because we don't need the move of the initial state
 		}
 		else {
 			cout << "No solution found";
@@ -57,7 +57,7 @@ int main() {
 	}
 }
 
-bool member_of(PuzzleState curr, vector<PuzzleMove> temp) {
+bool member_of(const PuzzleState curr, const vector<PuzzleMove>& temp) {
 	for (auto a : temp) {
 		if (a.getState() == curr) {
 			return true;
@@ -73,18 +73,17 @@ vector<PuzzleMove> expand(PuzzleMove& curr_m, PuzzleState& goal, vector<PuzzleMo
 	PuzzleState curr_s = curr_m.getState();
 	int curr_cost = curr_m.getGN();
 	
-	// there was a weird ambiguous error with the token names so I just cast them as MoveTypes
-	if (curr_s.canMoveRight() && !member_of(curr_s.moveBlankRight(), closed)) {
-		fringe.push_back(PuzzleMove(curr_s.moveBlankRight(), curr_s, goal,  MoveType(3), curr_cost+1));
-	}
-	if (curr_s.canMoveUp() && !member_of(curr_s.moveBlankUp(), closed)) {
-		fringe.push_back(PuzzleMove(curr_s.moveBlankUp(), curr_s, goal, up, curr_cost+1));
+	if (curr_s.canMoveDown() && !member_of(curr_s.moveBlankDown(), closed)) {
+		fringe.push_back(PuzzleMove(curr_s.moveBlankDown(), curr_s, goal, down, curr_cost + 1));
 	}
 	if (curr_s.canMoveLeft() && !member_of(curr_s.moveBlankLeft(), closed)) {
-		fringe.push_back(PuzzleMove(curr_s.moveBlankLeft(), curr_s, goal,  MoveType(1), curr_cost + 1));
+		fringe.push_back(PuzzleMove(curr_s.moveBlankLeft(), curr_s, goal, MoveType(1), curr_cost + 1));
 	}
-	if (curr_s.canMoveDown() && !member_of(curr_s.moveBlankDown(), closed)) {
-		fringe.push_back(PuzzleMove(curr_s.moveBlankDown(), curr_s, goal,  down, curr_cost+1));
+	if (curr_s.canMoveUp() && !member_of(curr_s.moveBlankUp(), closed)) {
+		fringe.push_back(PuzzleMove(curr_s.moveBlankUp(), curr_s, goal, up, curr_cost + 1));
+	}
+	if (curr_s.canMoveRight() && !member_of(curr_s.moveBlankRight(), closed)) {
+		fringe.push_back(PuzzleMove(curr_s.moveBlankRight(), curr_s, goal,  MoveType(3), curr_cost+1));
 	}
 
 	return fringe;
@@ -100,7 +99,8 @@ bool find_solution(PuzzleState initial, PuzzleState goal, vector<PuzzleMove>& so
 	PuzzleState curr_s = curr_move.getState();					// the current state 
 	priority_queue<PuzzleMove> fringe;							// current nodes that we are traversing, like the stack
 	vector<PuzzleMove> closed;									// nodes no longer traversing, this will contain the pain used to get to the solution
-	vector<PuzzleMove> temp;									// used to hold the result fromn the expansion of the nodes					
+	vector<PuzzleMove> temp;									// used to hold the result fromn the expansion of the nodes
+	int nodes_expanded = 0;
 	fringe.push(curr_move);
 
 	while (!fringe.empty()) {
@@ -110,11 +110,8 @@ bool find_solution(PuzzleState initial, PuzzleState goal, vector<PuzzleMove>& so
 
 		if (curr_s == goal) {
 			solution.push_back(curr_move);						// push current node into solution
-			/* starting from beginning of the vector will access the very first node which has a nullstate parent which is not what we want
-			   the end of the closed list has the most recently inserted nodes, ie, the ones leading up to the solution.
-			   check them to make sure they're actually parents, push if yes and then start again from the end of the list (don't want to miss nodes)
-			*/
-
+			
+			// build solution vector
 			for (auto it = closed.rbegin(); it != closed.rend() && !(it->getState().isNullState()); it++) {
 				if (it->getState() == curr_move.getParent()) {
 					solution.push_back(*it);
@@ -130,16 +127,13 @@ bool find_solution(PuzzleState initial, PuzzleState goal, vector<PuzzleMove>& so
 			// 1 3 5 4 2 0 7 8 6
 			// make sure the curr state not already visited
 			if (!member_of(curr_s, closed)) {
+				nodes_expanded++;
 				closed.push_back(curr_move);
 				temp = expand(curr_move, goal,  closed);
-				for (PuzzleMove& move : temp) { fringe.push(move); }  
+				for (PuzzleMove& move : temp) { fringe.push(move); }			// I can't use insert which makes me sad but this works too
 			}
 		}
 	}
-
-
-	
-
 
 
 	return false;
