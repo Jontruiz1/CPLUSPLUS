@@ -1,0 +1,24 @@
+Gulmira
+60 200
+Puente
+180 200
+Wheaton
+80 180
+Rose Hill
+140 180
+Zloda
+20 160
+Wrigley
+100 160
+Laura Creek
+200 160
+Novi Grad
+140 140
+Golden City
+40 120
+Custer's Grove
+100 120
+Westview
+180 100
+River's End
+60 80

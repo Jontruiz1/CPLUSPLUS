@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="a_star.cpp" />
+    <ClCompile Include="PuzzleMove.cpp" />
     <ClCompile Include="PuzzleState.cpp" />
   </ItemGroup>
   <ItemGroup>
