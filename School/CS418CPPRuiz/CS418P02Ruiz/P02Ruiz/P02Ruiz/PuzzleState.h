@@ -48,18 +48,15 @@ public:
 	PuzzleState moveBlankLeft();
 	PuzzleState moveBlankRight();
 
-	const vector<int>& getTiles() { return tiles; }
-	int getRows() { return rows; }
-
 	void read(istream& in);
 	void print(ostream& out);
 	static PuzzleState NullState;
 private:
 	int rows;
 	int cols;
+	vector<int> tiles;
 	int blank_position_row;
 	int blank_position_col;
-	vector<int> tiles;
 };
 
 istream& operator>>(istream& in, PuzzleState& rhs);
