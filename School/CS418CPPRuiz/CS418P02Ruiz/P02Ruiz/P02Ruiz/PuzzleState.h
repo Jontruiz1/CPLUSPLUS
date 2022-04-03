@@ -38,6 +38,9 @@ public:
 	const PuzzleState& operator=(const PuzzleState& rhs); //assignment op
 	bool isNullState() { return rows == 0; }
 
+	const vector<int> getTiles() { return tiles; }
+	const int getRows() { return rows; }
+
 	bool canMoveUp();
 	bool canMoveDown();
 	bool canMoveLeft();
