@@ -1,6 +1,8 @@
 /*
 * Jonathan Ruiz
-* CS418DFSP01
+* CS418AStarP02
+* 
+* Most of the changes made with the PuzzleState and PuzzleMove classes. The heuristic function is created in PuzzleMove.cpp
 */
 
 #include <iostream>
@@ -9,11 +11,6 @@
 #include "PuzzleState.h"
 
 
-
-// protoype for find solution returning true or false
-// args are 2 puzzle states and list of puzzle moves
-// find next parent, 
-// takes reference to puzzle state and figures out who the parent is
 bool find_solution(PuzzleState initial, PuzzleState goal, vector<PuzzleMove>& solution);
 PuzzleState PuzzleState::NullState = PuzzleState(0, 0);
 
@@ -57,6 +54,7 @@ int main() {
 	}
 }
 
+// I probably could have used the .find function in retrospect
 bool member_of(const PuzzleState curr, const vector<PuzzleMove>& temp) {
 	for (auto a : temp) {
 		if (a.getState() == curr) {
@@ -65,7 +63,6 @@ bool member_of(const PuzzleState curr, const vector<PuzzleMove>& temp) {
 	}
 	return false;
 }
-
 
 // checking if the blank space can move in the 4 directions, if it can, push that movement into the fringe
 vector<PuzzleMove> expand(PuzzleMove& curr_m, PuzzleState& goal, vector<PuzzleMove>& closed) {
@@ -89,6 +86,7 @@ vector<PuzzleMove> expand(PuzzleMove& curr_m, PuzzleState& goal, vector<PuzzleMo
 	return fringe;
 }
 
+// comparison operator for the priority queue to sort
 bool operator<(const PuzzleMove& move1, const PuzzleMove& move2) {
 	return (move1.getFN() > move2.getFN());
 }

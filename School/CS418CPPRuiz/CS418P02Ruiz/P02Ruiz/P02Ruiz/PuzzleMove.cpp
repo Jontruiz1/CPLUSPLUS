@@ -12,12 +12,12 @@ int PuzzleMove::setHN(PuzzleState& s, PuzzleState& g) {
 
 	for (int i = 0; i < size; i++) {												// looping through current tiles
 		for (int j = 0; j < size; j++) {											// looping through goal tiles
-			if (sTiles[i] == gTiles[j] && sTiles[i] != 0) {		// check if the current and goal match and maker sure neither has a 0
+			if (sTiles[i] == gTiles[j] && sTiles[i] != 0) {							// check if the current and goal match.
 				srow = (i % N);
-				grow = (j % N);
+				grow = (j % N);														// getting the rows
 
 				scol = (i / N);
-				gcol = (j / N);
+				gcol = (j / N);														// getting the columns
 
 				sSum += abs(srow - grow) + abs(scol - gcol);
 				break;
@@ -27,5 +27,3 @@ int PuzzleMove::setHN(PuzzleState& s, PuzzleState& g) {
 
 	return sSum;
 }
-
-
