@@ -23,7 +23,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="tspdriver.cpp">
+    <ClCompile Include="TSPSADriver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

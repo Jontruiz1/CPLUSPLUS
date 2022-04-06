@@ -1,3 +1,5 @@
+#ifndef __TOURH__
+#define __TOURH__
 #include <vector>
 #include "City.h"
 
@@ -18,3 +20,4 @@ private:
 	vector<City> tour;
 	int distance;
 };
+#endif

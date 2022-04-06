@@ -27,6 +27,7 @@ void Playlist::insertFront(SongNode* songNode) {
 
 	songNode->setNext(head);
 	head = songNode;
+	nodeCount++;
 
 }
 
@@ -120,7 +121,6 @@ void Playlist::insertAfter(SongNode* prevNode, SongNode* newNode) {
 	SongNode* temp = prevNode->getNext();
 	prevNode->setNext(newNode);
 	newNode->setNext(temp);
-	++nodeCount;
 }
 
 // ************************** TO BE COMPLETED ******************************************
@@ -181,6 +181,7 @@ bool Playlist::contains(const string& id) {
 // ************************** TO BE COMPLETED ******************************************
 // Clear the list -- remove all nodes and initialize the playlist again
 void Playlist::clearList() {
+	eraseList(head);
 }
 
 // ************************** TO BE COMPLETED ******************************************
@@ -195,6 +196,14 @@ void Playlist::init() {
 // ************************** TO BE COMPLETED ******************************************
 // Delete all allocated objects
 void Playlist::eraseList(SongNode* head) {
+	SongNode* curr = head;
+	SongNode* prev = curr;
+	while (curr != nullptr) {
+		nodeCount--;
+		prev = curr;
+		curr = curr->getNext();
+		delete prev;
+	}
 }
 
 // COMPLETED -- DO NOT CHANGE
