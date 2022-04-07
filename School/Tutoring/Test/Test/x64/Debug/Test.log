@@ -1,2 +1,3 @@
 ﻿  p03.cpp
+C:\Users\jontc\Desktop\CS-CGE\CS\CPLUSPLUS\School\Tutoring\Test\Test\p03.cpp(40,24): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
   Test.vcxproj -> C:\Users\jontc\Desktop\CS-CGE\CS\CPLUSPLUS\School\Tutoring\Test\x64\Debug\Test.exe

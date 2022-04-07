@@ -135,19 +135,22 @@ void processMenuChoice(char choice, Playlist& playlist) {
 		//		call changeSongPosition
 		//		print out message
 		//		print playlist
+		nodeCount = playlist.getNodeCount();
 
-		if (playlist.getNodeCount() <= 1) {
+		if (nodeCount <= 1) {
 			cout << "<= 1 Nodes \n\n";
 		}
 		else {
-			cout << "Current position (1 through " << playlist.getNodeCount() << ":";
+			cout << "Current position (1 through " << nodeCount << ":";
 			currPosition = getInteger();
-			if (currPosition < 1 || currPosition > playlist.getNodeCount()) {
+			if (currPosition < 1 || currPosition > nodeCount) {
 				cout << "\n<<< Invalid current position! >>>";
 				break;
 			}
+
+			cout << "New position (1 through " << nodeCount << ":";
 			newPosition = getInteger();
-			if (newPosition < 1 || newPosition > playlist.getNodeCount() || newPosition == currPosition) {
+			if (newPosition < 1 || newPosition > nodeCount || newPosition == currPosition) {
 				cout << "\n<<< Invalid new position! >>>";
 				break;
 			}
