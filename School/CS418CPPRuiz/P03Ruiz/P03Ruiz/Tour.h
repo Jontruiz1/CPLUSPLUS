@@ -6,18 +6,19 @@
 class Tour {
 public:
 	Tour();
-	Tour(Tour& rhs);
+	Tour(const vector<City>& tour);
 
-	Tour& getTour();
+	vector<City>& getTour();
 	City& getCity();
+	void setCity(City& city);
 	size_t tourSize();
 	void printTour();
 	double getTotalDistance();
 
 	void generateInitialTour(vector<City>& destinationCities);
 private:
-	static void euclideanDistance(City a, City b);
+	static double euclideanDistance(City a, City b) { return sqrt(pow(b.getX() - a.getX(), 2) + pow(a.getY() - a.getY(), 2)); }
 	vector<City> tour;
-	int distance;
+	double distance;
 };
 #endif

@@ -143,6 +143,7 @@
     <ClInclude Include="Tour.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Tour.cpp" />
     <ClCompile Include="TSPSADriver.cpp" />
   </ItemGroup>
   <ItemGroup>

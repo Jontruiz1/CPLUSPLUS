@@ -2,28 +2,25 @@
 #define __CITY__
 
 #include <string>
+#include <iostream>
 using namespace std;
 
 class City {
 
 public:
 	City() : cityName("Null"), x(0), y(0) {};
-	City(string c, int xc, int yc) : cityName(c), x(xc), y(yc) {};
+	City(string newcity, int newx, int newy) : cityName(newcity), x(newx), y(newy) {};
 	string getCityName() { return cityName; }
 	int getX() { return x; }
 	int getY() { return y; }
-
-
-	
+	void setX(int newx) { x = newx; }
+	void setY(int newy) { y = newy; }
+	void setName(string name) { cityName = name; }
 private:
-	
 	string cityName;
 	int x;
 	int y;
 };
 
-ostream& operator<<(ostream& out, City rhs) {
-	out << rhs.getCityName() << " " << rhs.getX() << " " << rhs.getY();
-	return out;
-}
+
 #endif
