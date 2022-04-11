@@ -8,7 +8,7 @@ public:
 	Tour();
 	Tour(const vector<City>& tour);
 
-	vector<City>& getTour();
+	Tour& getTour();
 	City& getCity();
 	void setCity(City& city);
 	size_t tourSize();

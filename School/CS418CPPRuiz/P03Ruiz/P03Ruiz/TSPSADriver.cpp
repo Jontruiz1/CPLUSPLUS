@@ -8,16 +8,20 @@ ostream& operator<<(ostream& out, City rhs) {
 }
 
 int main() {
+	// seed
+	srand(time(NULL));
+
 	// needed
 	ifstream file;
 	string fileName;
-	Tour* currentSolution = nullptr;
+	Tour* currentSolution = new Tour();
 	Tour* best = nullptr;
 	vector<City> cities;
 
-	double coolingRate, acceptanceProbability;
+	double coolingRate, acceptanceProbability, randDouble;
 	int startingTemp, statesTested = 0, statesAccepted = 0;
-	
+	int rand1 = 0, rand2 = 0;
+
 	// unsure if needed
 	Tour* prevSolution = nullptr;
 
@@ -62,14 +66,29 @@ int main() {
 		best = new Tour(currentSolution->getTour());
 		// cooling
 		while (startingTemp >= 1) {
-			prevSolution = currentSolution;
-			currentSolution = new Tour(currentSolution->getTour());
-			delete prevSolution;
+			size_t currentSize = currentSolution->tourSize();
 
+			// prev solution saved
+			prevSolution = currentSolution;
+			// create new solution from current solution
+			// the new solution here will just be named currentSolution
+			currentSolution = new Tour(currentSolution->getTour());
+
+
+			// randomly choose two cities from currentSolution and swap their locations
+			// calculate currentSolution distance and new solution distance
+			currentSolution->getTotalDistance();
+
+			
+
+			// computer acceptance probabiity for current solution
+
+			// generate rand double between 0 and 1
+			randDouble = ((double)rand()) / RAND_MAX;
 			statesTested++;
 			startingTemp -= coolingRate;
 		}
-		delete currentSolution;
+
 		cout << "Number of new states tested: " << statesTested << endl;
 		cout << "Number of new states accepted: " << statesAccepted << endl << endl;
 
