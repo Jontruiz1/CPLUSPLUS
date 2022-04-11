@@ -39,7 +39,14 @@ int main() {
 			cities.push_back(temp);
 		}
 		cout << "\n\nCities: \n";
-		for (const City& city : cities) { cout << "\t" << city; }
+		for (const City city : cities) { cout << "\t" << city << endl; }
+
+
+		while (startingTemp >= 1) {
+
+			startingTemp -= coolingRate;
+		}
+
 	}
 
 

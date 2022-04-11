@@ -9,7 +9,6 @@ class City {
 public:
 	City() : cityName("Null"), x(0), y(0) {};
 	City(string c, int xc, int yc) : cityName(c), x(xc), y(yc) {};
-
 	string getCityName() { return cityName; }
 	int getX() { return x; }
 	int getY() { return y; }
@@ -17,14 +16,14 @@ public:
 
 	
 private:
-	void print(ostream& out) const { out << cityName << " " << x << " " << y << endl; }
+	
 	string cityName;
 	int x;
 	int y;
 };
 
-ostream& operator<<(ostream& out, const City& rhs) {
-	rhs.print(out);
+ostream& operator<<(ostream& out, City rhs) {
+	out << rhs.getCityName() << " " << rhs.getX() << " " << rhs.getY();
 	return out;
 }
 #endif
