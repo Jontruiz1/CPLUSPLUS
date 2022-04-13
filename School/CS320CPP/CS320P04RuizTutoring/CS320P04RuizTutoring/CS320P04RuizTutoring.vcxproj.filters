@@ -29,4 +29,12 @@
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="CS320P04Specs.pdf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="bitVectors.pdf">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
 </Project>
