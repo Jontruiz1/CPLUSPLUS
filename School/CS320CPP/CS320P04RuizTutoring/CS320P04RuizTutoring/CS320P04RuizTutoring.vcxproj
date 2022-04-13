@@ -142,7 +142,6 @@
     <ClInclude Include="graph.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="bitsets.cpp" />
     <ClCompile Include="test.cpp" />
   </ItemGroup>
   <ItemGroup>

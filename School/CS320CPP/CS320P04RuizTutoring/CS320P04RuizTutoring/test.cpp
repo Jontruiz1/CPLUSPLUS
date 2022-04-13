@@ -4,18 +4,18 @@
 
 class Problem {
 private:
-	vector<vector<int>> M;
+	vector<vector<int>> W;
 	vector<bitset<32>> D;
 	vector<bitset<32>> P;
 public:
 	Problem(Graph& g) {
 		for (int i = 0; i < g.getNumVertices(); ++i) {
 			for (int j = 0; j < g.getNumVertices(); ++j) {
-				M[i][j] = g.getEdgeCost(i, j);
+				W[i][j] = g.getEdgeCost(i, j);
 			}
 		}
 	}
-	unsigned int computeMinTourCost(int i);
+	//unsigned int computeMinTourCost(int i);
 	void travel(int n, bitset<32> S);
 };
 
@@ -25,7 +25,7 @@ void Problem::travel(int n, bitset<32> S) {
 
 	int i, j, k;
 	for (i = 2; i <= n; i++) {
-		D[i][0] = M[i][1];
+		D[i][0] = W[i][0];
 	}
 
 
@@ -70,20 +70,20 @@ void Problem::travel(int n, bitset<32> S) {
 //
 //}
 //
-//int main() {
-//	ifstream file;
-//	
-//	Graph tester;
-//	string fileName = "src1.txt";
-//	file.open(fileName);
-//
-//	tester.read(file);
-//	tester.print();
-//	Problem mainP(tester, tester.getNumVertices());
-//
-//
-//
-//	//mainP.travel(tester.getNumVertices(), );
-//	//unsigned int bestTourCost = mainP.computeMinTourCost(0, V.reset(0));
-//
-//}
+int main() {
+	ifstream file;
+	
+	Graph tester;
+	string fileName = "src1.txt";
+	file.open(fileName);
+
+	tester.read(file);
+	tester.print();
+	Problem mainP(tester);
+
+
+
+	//mainP.travel(tester.getNumVertices(), );
+	//unsigned int bestTourCost = mainP.computeMinTourCost(0, V.reset(0));
+
+}
