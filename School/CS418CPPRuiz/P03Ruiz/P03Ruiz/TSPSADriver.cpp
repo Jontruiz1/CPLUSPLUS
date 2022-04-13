@@ -7,23 +7,27 @@ ostream& operator<<(ostream& out, City rhs) {
 	return out;
 }
 
+double acceptanceProbability(double currDis, double newDis, double temp) {
+	if (newDis < currDis) {
+		return 1.0;
+	}
+	return exp((currDis - newDis) / temp);
+}
+
 int main() {
 	// seed
-	srand(time(NULL));
-
-	// needed
+	srand(unsigned (time(NULL)));																								
 	ifstream file;
 	string fileName;
 	Tour* currentSolution = new Tour();
+	Tour* newSolution = nullptr;
 	Tour* best = nullptr;
 	vector<City> cities;
 
-	double coolingRate, acceptanceProbability, randDouble;
-	int startingTemp, statesTested = 0, statesAccepted = 0;
+	double coolingRate, randDouble, startingTemp;
+	int statesTested = 0, statesAccepted = 0;
 	int rand1 = 0, rand2 = 0;
-
-	// unsure if needed
-	Tour* prevSolution = nullptr;
+	
 
 	cout << "*** TSP using Simulated Annealing ***";
 	cout << "\n\nStarting Temperature: ";
@@ -65,34 +69,42 @@ int main() {
 
 		best = new Tour(currentSolution->getTour());
 		// cooling
-		while (startingTemp >= 1) {
+		while (startingTemp > 1) {
 			size_t currentSize = currentSolution->tourSize();
+			rand1 = rand() % currentSize;
+			rand2 = rand() % currentSize;																			// generate random indecies
+			while (rand1 == rand2) { rand2 = rand() % currentSize; }
 
-			// prev solution saved
-			prevSolution = currentSolution;
-			// create new solution from current solution
-			// the new solution here will just be named currentSolution
-			currentSolution = new Tour(currentSolution->getTour());
+			newSolution = new Tour(currentSolution->getTour());														// create new solution from current 
 
+			City swap1 = newSolution->getCity(rand1);
+			City swap2 = newSolution->getCity(rand2);
 
-			// randomly choose two cities from currentSolution and swap their locations
-			// calculate currentSolution distance and new solution distance
-			currentSolution->getTotalDistance();
+			newSolution->setCity(rand2, swap1);												
+			newSolution->setCity(rand1, swap2);																		// swap randomly chosen cities
+
+			double currDis = currentSolution->getTotalDistance();
+			double newDis = newSolution->getTotalDistance();														// calculate currentSolution distance and new solution distance
 
 			
+			randDouble = ((double)rand()) / RAND_MAX;																// generate rand double between 0 and 1
+			if (acceptanceProbability(currDis, newDis, startingTemp) > randDouble) {								// compute acceptance probabiity for current solution and decide if newSolution is accepted
+				currentSolution = new Tour(newSolution->getTour());
+				++statesAccepted;
+			}
 
-			// computer acceptance probabiity for current solution
+			if (currentSolution->getTotalDistance() < best->getTotalDistance()) {									// update best solution
+				best = currentSolution;
+			}
 
-			// generate rand double between 0 and 1
-			randDouble = ((double)rand()) / RAND_MAX;
-			statesTested++;
-			startingTemp -= coolingRate;
+			++statesTested;																							// cooling and states tested
+			startingTemp *= (1 - coolingRate);
 		}
 
-		cout << "Number of new states tested: " << statesTested << endl;
+		cout << "\nNumber of new states tested: " << statesTested << endl;
 		cout << "Number of new states accepted: " << statesAccepted << endl << endl;
 
-		cout << "Final Solution Distance: " << best->getTotalDistance() << endl;
+		cout << "Final Solution Distance: " << best->getTotalDistance();
 		best->printTour();
 	}
 }

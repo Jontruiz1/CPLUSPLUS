@@ -8,42 +8,31 @@ Tour::Tour() {
 	distance = 0;
 }
 
-Tour::Tour(const Tour& oldTour) {
-	int i;
-
-	tour = oldTour.tour;
-	distance = oldTour.distance;
-	
-
-	for (i = 0; i < tour.size() - 1; ++i) {
-		distance += euclideanDistance(tour[i], tour[i + 1]);
-	}
-
-	distance += euclideanDistance(tour[i], tour[0]);
+Tour::Tour(const vector<City>& oldTour) {
+	tour = oldTour;
 }
 
 
 // I'm not sure what this function and setCity are supposed to do in relation to the Tour
-City& Tour::getCity() {
-	City temp("null", 0, 0);
-	return temp;
+City& Tour::getCity(int index) {
+	return tour[index];
 }
 
-void Tour::setCity(City& city) {
-	
-
+void Tour::setCity(int index, City& city) {
+	tour[index] = city;
+	distance = 0;
 }
 
-// just return the tour I guess?
-Tour& Tour::getTour() {
-	return *this;
+// return tour vector
+vector<City>& Tour::getTour() {
+	return tour;
 }
-// return the size of the tour? This one is probably fine
+// return the size of the tour
 size_t Tour::tourSize() {
 	return tour.size();
 }
 
-// Just print out the tour as shown in the spec, this one is also probably fine
+// prints out tour
 void Tour::printTour() {
 	cout << "\nTour:" << endl;
 	for (int i = 0; i < tour.size(); ++i) {
@@ -56,18 +45,19 @@ void Tour::printTour() {
 
 // Should this just return distance or also calculate the distance?
 double Tour::getTotalDistance() {
-	
+	int i;
+
+	if (distance == 0) {
+		for (i = 0; i < tour.size()-1; ++i) {
+			distance += euclideanDistance(tour[i], tour[i + 1]);
+		}
+		distance += euclideanDistance(tour[i], tour[0]);
+	}
+
 	return distance;
 }
 
 void Tour::generateInitialTour(vector<City>& destinationCities) {
 	tour = destinationCities;
-	int i;
 	shuffle(tour.begin(), tour.end(), default_random_engine(time(NULL)));
-
-
-	for (i = 0; i < tour.size() - 1; ++i) {
-		distance += euclideanDistance(tour[i], tour[i + 1]);
-	}
-	distance += euclideanDistance(tour[i], tour[0]);
 }
