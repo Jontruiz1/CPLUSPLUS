@@ -9,30 +9,61 @@ private:
 	vector<bitset<32>> P;
 public:
 	Problem(Graph& g) {
-		for (int i = 0; i < g.getNumVertices(); ++i) {
-			for (int j = 0; j < g.getNumVertices(); ++j) {
+		size_t verticies = g.getNumVertices();
+		bitset<32> V = ~bitset<32>(1);
+		W.resize(verticies, vector<int>(verticies));
+		D.resize(verticies, bitset<32>(V));
+		P.resize(verticies, bitset<32>(verticies));
+
+		for (int i = 0; i < verticies; ++i) {
+			for (int j = 0; j < verticies; ++j) {
 				W[i][j] = g.getEdgeCost(i, j);
 			}
 		}
 	}
 	//unsigned int computeMinTourCost(int i);
-	void travel(int n, bitset<32> S);
+	void travel(int n, int& minlength);
 };
 
 
-void Problem::travel(int n, bitset<32> S) {
+void Problem::travel(int n, int& minlength) {
 	// 0 is like the nullset for the bitset
 
 	int i, j, k;
-	for (i = 2; i <= n; i++) {
+	vector<bitset<32>> A;
+	
+
+	//
+	for (i = 1; i < n; i++) {
 		D[i][0] = W[i][0];
 	}
 
 
-	for (k = 1; k <= n - 2; k++) {
-		for (;;) {
-			for (;;) {
+	for (k = 1; k <= n - 1; k++) {
 
+		// need to generate a subset of V - {v1}
+		for (j = 1; j < k; ++j) {
+			bitset<32> ono(i);
+			if (ono.count() == k) {
+				A.push_back(bitset<32>());
+			}
+		}
+
+		// go through list of vector of subsets
+		for (auto curr_set : A) {
+			for (i = 1; i < n; ++i) {
+				if (curr_set.test(i)) {
+					continue;
+				}
+				for (j = 1; j < n; ++j) {
+					unsigned int check_min = W[i][j] + D[j][curr_set.reset(j).to_ulong()];
+					int j_min = j;
+
+					if (check_min < D[i][curr_set.to_ulong()]) {
+						D[i][curr_set.to_ulong()] = check_min;
+						P[i][curr_set.to_ulong()] = j;
+					}
+				}
 			}
 		}
 	}
@@ -72,6 +103,7 @@ void Problem::travel(int n, bitset<32> S) {
 //
 int main() {
 	ifstream file;
+	int minlength;
 	
 	Graph tester;
 	string fileName = "src1.txt";
@@ -83,7 +115,7 @@ int main() {
 
 
 
-	//mainP.travel(tester.getNumVertices(), );
+	mainP.travel(tester.getNumVertices(), minlength);
 	//unsigned int bestTourCost = mainP.computeMinTourCost(0, V.reset(0));
 
 }
