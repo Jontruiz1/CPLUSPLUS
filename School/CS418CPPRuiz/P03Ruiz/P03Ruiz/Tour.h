@@ -6,11 +6,11 @@
 class Tour {
 public:
 	Tour();
-	Tour(const vector<City>& tour);
+	Tour(const vector<City>& oldTour);
 
-	Tour& getTour();
-	City& getCity();
-	void setCity(City& city);
+	vector<City>& getTour();
+	City& getCity(int index);
+	void setCity(int index, City& city);
 	size_t tourSize();
 	void printTour();
 	double getTotalDistance();
