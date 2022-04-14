@@ -15,11 +15,11 @@ class Graph
 private:
 	size_t numVertices;
 	vector<string> vertexNames;
-	vector<vector<int>>  adjMatrix;		// This is like the W
+	vector<vector<int>>  adjMatrix;
 
 	struct Edge {
 		unsigned int vDest;
-		int  cost;
+		int cost;
 		Edge(unsigned int v = 0, int c = -1) { vDest = v; cost = c; }
 	};
 
@@ -78,8 +78,9 @@ public:
 			}
 		}
 
-		for (size_t i = 0; i < numVertices; i++)
+		for (size_t i = 0; i < numVertices; i++) {
 			adjMatrix[i][i] = 0;
+		}
 
 		for (size_t i = 0; i < adjList.size(); i++) {
 			for (list<Edge>::iterator itr = adjList.at(i).begin(); itr != adjList[i].end(); itr++) {
