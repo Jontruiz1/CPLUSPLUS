@@ -21,14 +21,15 @@ private:
 		unsigned int bestCost = INT_MAX;
 		unsigned int min_j = INT_MAX;
 
-		for (unsigned k = 1; k < nVertices; k++) {
-			if (S.test(k)) {
+		for (unsigned j = 1; j < nVertices; j++) {
+			if (S.test(j)) {
 				bitset<32> S_Temp = S;
-				aCost = D[i][k] + gCost(k, S_Temp.reset(k), g);
+				S_Temp.flip(j);
+				aCost = D[i][j] + gCost(j, S_Temp, g);
 				if (aCost < bestCost) {
 					found_at_least_one_vertex = true;
 					bestCost = aCost;
-					min_j = k;
+					min_j = j;
 				}
 			}
 		}
@@ -62,9 +63,7 @@ public:
 			S.set(i);
 		}
 
-		S.reset(0);
-
-		minCost = gCost(0, S, g);
+		minCost = gCost(0, S.reset(0), g);
 
 		return minCost;
 	}
@@ -84,5 +83,5 @@ int main() {
 	Problem mainP;
 
 	minlength = mainP.solve(tester);
-	//cout << minlength;
+	cout << minlength;
 }
