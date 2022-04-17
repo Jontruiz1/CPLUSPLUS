@@ -20,7 +20,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="test.cpp">
+    <ClCompile Include="driver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -32,6 +32,12 @@
       <Filter>Resource Files</Filter>
     </Text>
     <Text Include="src3.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="src4.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="src5.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>

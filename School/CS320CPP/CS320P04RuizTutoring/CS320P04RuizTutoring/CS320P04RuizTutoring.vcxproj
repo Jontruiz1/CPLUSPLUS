@@ -142,12 +142,14 @@
     <ClInclude Include="graph.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="test.cpp" />
+    <ClCompile Include="driver.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="src1.txt" />
     <Text Include="src2.txt" />
     <Text Include="src3.txt" />
+    <Text Include="src4.txt" />
+    <Text Include="src5.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="bitVectors.pdf" />
