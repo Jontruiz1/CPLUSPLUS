@@ -84,6 +84,7 @@ int main() {
 	ifstream file;
 	int minlength;
 	tuple<int, vector<string>> result;
+	vector<string> names;
 	
 	Graph tester;
 	string fileName = "src1.txt";
@@ -94,5 +95,19 @@ int main() {
 	Problem mainP;
 
 	result = mainP.solve(tester);
-	cout << "[" << get<0>(result) << ",<" << endl;
+	minlength = get<0>(result);
+	names = get<1>(result);
+
+	cout << "[" << minlength;
+	for (int i = 0; i < names.size(); ++i) {
+		if (i == 0) {
+			cout << ",<";
+		}
+		else if (i == names.size() - 1) {
+			cout << names[i];
+		}
+		else {
+			cout << ","
+		}
+	}
 }
