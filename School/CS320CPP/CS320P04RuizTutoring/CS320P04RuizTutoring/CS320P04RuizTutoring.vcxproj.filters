@@ -28,6 +28,12 @@
     <Text Include="src1.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="src2.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="src3.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <None Include="CS320P04Specs.pdf">

@@ -19,13 +19,13 @@ private:
 		if (D[i][S.to_ulong()] >= 0) return D[i][S.to_ulong()];
 
 		unsigned int bestCost = INT_MAX;
-		unsigned int min_j = INT_MAX;
+		unsigned int min_j = -1;
 
-		for (unsigned j = 1; j < nVertices; j++) {
+		for (unsigned j = 1; j <= nVertices; j++) {
 			if (S.test(j)) {
 				bitset<32> S_Temp = S;
-				S_Temp.flip(j);
-				aCost = D[i][j] + gCost(j, S_Temp, g);
+				S_Temp.reset(j);
+				aCost = g.getEdgeCost(i, j) + gCost(j, S_Temp, g);
 				if (aCost < bestCost) {
 					found_at_least_one_vertex = true;
 					bestCost = aCost;
@@ -43,9 +43,10 @@ private:
 	}
 public:
 	
-	unsigned int /*tuple<int, vector<string>>*/ solve(Graph& g) {
+	tuple<int, vector<string>> solve(Graph& g) {
 		vector<int> v_temp;
 		vector<unsigned> v_pathTemp;
+		vector<string> names;
 		unsigned int nVertices = g.getNumVertices();
 		unsigned int minCost = 0;
 
@@ -62,10 +63,19 @@ public:
 		for (size_t i = 0; i < nVertices; i++) {
 			S.set(i);
 		}
-
 		minCost = gCost(0, S.reset(0), g);
 
-		return minCost;
+		unsigned int i = 0;
+		names.push_back(g.getVertexName(i));
+		while (S.to_ulong() != 0) {
+			i = P[i][S.to_ulong()];
+			names.push_back(g.getVertexName(i));
+			S.reset(i);
+
+		}
+
+
+		return { minCost, names };
 	}
 
 };
@@ -73,6 +83,7 @@ public:
 int main() {
 	ifstream file;
 	int minlength;
+	tuple<int, vector<string>> result;
 	
 	Graph tester;
 	string fileName = "src1.txt";
@@ -82,6 +93,6 @@ int main() {
 	tester.print();
 	Problem mainP;
 
-	minlength = mainP.solve(tester);
-	cout << minlength;
+	result = mainP.solve(tester);
+	cout << "[" << get<0>(result) << ",<" << endl;
 }

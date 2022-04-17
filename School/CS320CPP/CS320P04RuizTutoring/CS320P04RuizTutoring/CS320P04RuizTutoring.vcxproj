@@ -146,6 +146,8 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="src1.txt" />
+    <Text Include="src2.txt" />
+    <Text Include="src3.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="bitVectors.pdf" />
