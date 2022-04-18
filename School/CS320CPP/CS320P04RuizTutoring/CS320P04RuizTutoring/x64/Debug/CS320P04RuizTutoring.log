@@ -1,0 +1,5 @@
+﻿  driver.cpp
+C:\Users\jontc\Desktop\CS-CGE\CS\CPLUSPLUS\School\CS320CPP\CS320P04RuizTutoring\CS320P04RuizTutoring\graph.h(29,32): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\jontc\Desktop\CS-CGE\CS\CPLUSPLUS\School\CS320CPP\CS320P04RuizTutoring\CS320P04RuizTutoring\graph.h(51,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\jontc\Desktop\CS-CGE\CS\CPLUSPLUS\School\CS320CPP\CS320P04RuizTutoring\CS320P04RuizTutoring\driver.cpp(14,16): warning C4101: 'costThru_j': unreferenced local variable
+  CS320P04RuizTutoring.vcxproj -> C:\Users\jontc\Desktop\CS-CGE\CS\CPLUSPLUS\School\CS320CPP\CS320P04RuizTutoring\x64\Debug\CS320P04RuizTutoring.exe
