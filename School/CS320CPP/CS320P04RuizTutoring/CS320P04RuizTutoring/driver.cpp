@@ -48,6 +48,7 @@ public:
 		vector<string> names;
 		unsigned int nVertices = g.getNumVertices();
 		unsigned int minCost = 0;
+		unsigned int k = 0;
 
 		for (unsigned int i = 0; i < nVertices; i++) {
 			v_temp.resize(static_cast<int>(pow(2, nVertices)));
@@ -63,18 +64,14 @@ public:
 			S.set(i);
 		}
 		minCost = gCost(0, S.reset(0), g);
-
-		// S = 1110
-		// while S is not null
-		// get the new i, ie. current node that we're at
-		// store the name of that vertex somewhere
-		// get rid of the i bit in S
-		// we don't need to revist that node
-		unsigned int i = 0;
-		names.push_back(g.getVertexName(i));
 		
-
-
+		names.push_back(g.getVertexName(k));
+		while (S.any()) {
+			k = P[k][S.to_ulong()];
+			S.reset(k);
+			names.push_back(g.getVertexName(k));
+		}
+		
 		return { minCost, names };
 	}
 
