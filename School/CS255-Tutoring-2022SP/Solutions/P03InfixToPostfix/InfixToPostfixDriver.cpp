@@ -16,6 +16,7 @@
 
 using namespace std;
 
+/*
 int main() {
 	// use iexp for infix to postfix conversion
 	InfixToPostfix iexp;
@@ -65,3 +66,15 @@ int main() {
 	return 0;
 } //end main
 
+*/
+
+int main() {
+	ExpressionSymbol curr('c');
+	myStack<ExpressionSymbol> currStack;
+	currStack.push(curr);
+
+	currStack.top().getOp();
+
+
+
+}

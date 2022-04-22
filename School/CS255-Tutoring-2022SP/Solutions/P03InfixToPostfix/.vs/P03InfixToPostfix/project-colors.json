@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "5bc14d65-8100-4ac5-b1d7-12a900ca55a9": {
+      "ProjectGuid": "5bc14d65-8100-4ac5-b1d7-12a900ca55a9",
+      "DisplayName": "P03InfixToPostfix",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
