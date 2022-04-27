@@ -83,8 +83,31 @@ void InfixToPostfix::setInfixExp(const string& infixExp) {
 string InfixToPostfix::postfix() {
 						/**** TO BE COMPLETED *****/
 
-	return "1";
+	for (int i = 0; i < infixExpression.size(); ++i) {
+		char ch = infixExpression[i];
+		ExpressionSymbol op(ch);
 
+		if (isdigit(ch)) {
+			postfixExpression += ch;
+			postfixExpression += ' ';
+		}
+		else if (ch == ')') {
+			outputHigherOrEqual(op);
+			operatorStack.pop();
+		}
+		else if (isOperator(ch) || ch == lParen) {
+			outputHigherOrEqual(op);
+			operatorStack.push(ch);
+		}
+	}
+
+	while (!operatorStack.isEmpty()) {
+		postfixExpression += operatorStack.top().getOp();
+		postfixExpression += ' ';
+		operatorStack.pop();
+	}
+
+	return postfixExpression;
 
 } //end postfix()
 #endif	// INFIX_TO_POSTFIX

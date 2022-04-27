@@ -71,7 +71,17 @@ void PostfixEval::getOperands(int& left, int& right) {
 
 int PostfixEval::compute(int left, int right, char op) const {
 					/**** TO BE COMPLETED *****/
-	return 1;
+	switch (op) {
+	case '+': return left + right; 
+	case '-': return left - right;
+	case '*': return left * right;
+	case '/': 
+		if (right == 0) throw ExpressionError("div by 0");
+		return left / right;
+	case '^': 
+		if (left == 0 && right == 0) throw ExpressionError("indeterminate");
+		return pow(left, right);
+	}
 } // end compute()
 
 bool PostfixEval::isOperator(char ch) const {
@@ -91,6 +101,34 @@ void PostfixEval::setPostfixExp(const string& postfixExp) {
 
 int PostfixEval::evaluate() {
 					/**** TO BE COMPLETED *****/
-	return 1;
+	int left, right;
+	char ch;
+	int finalVal;
+	
+	
+	for (int i = 0; i < postfixExpression.size(); ++i) {
+		ch = postfixExpression[i];
+		ExpressionSymbol op(ch);
+		
+		if (isdigit(ch)) {
+			operandStack.push(ch - '0');
+		}
+		else if (isOperator(ch)) {
+			getOperands(left, right);
+			operandStack.push(compute(left, right, ch));
+		}
+		else if (!isspace(ch)) {
+			throw ExpressionError("stop");
+		}
+
+	}
+	
+	finalVal = operandStack.top();
+	operandStack.pop();
+
+	if (!operandStack.isEmpty()) {
+		throw ExpressionError("something");
+	}
+	return finalVal;
 } // end evaluate();
 #endif	// POSTFIX_EVAL

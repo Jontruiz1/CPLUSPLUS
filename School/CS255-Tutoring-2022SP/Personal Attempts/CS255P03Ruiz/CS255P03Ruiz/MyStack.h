@@ -85,7 +85,7 @@ bool myStack<T>::isEmpty() const {
 template <typename T>
 void myStack<T>::makeEmpty() {
 					/***** TO BE COMPLETED *****/
-	StackNode* prev = topOfStack;
+	StackNode* prev = nullptr;
 	StackNode* curr = topOfStack;
 	while (curr != nullptr) {
 		prev = curr;
@@ -110,6 +110,10 @@ const T& myStack<T>::top() const {
 template <typename T>
 void myStack<T>::pop() {
 					/***** TO BE COMPLETED *****/
+	StackNode* prev = topOfStack;
+	topOfStack = topOfStack->next;
+	delete prev;
+
 }
 
 // Return and remove the most recently inserted item
@@ -124,17 +128,7 @@ T myStack<T>::topAndPop() {
 // Insert x into the stack.
 template <typename T>
 void myStack<T>::push(const T& x) {
-					/***** TO BE COMPLETED *****/
-	if (topOfStack == nullptr) {
-		topOfStack = new StackNode(x, nullptr);
-	}
-	else {
-		StackNode* curr = topOfStack;
-		while (curr->next != nullptr) {
-			curr = curr->next;
-		}
-		curr->element = new StackNode(x, nullptr);
-	}
+	topOfStack = topOfStack == nullptr ? new StackNode(x, nullptr) : new StackNode(x, topOfStack);
 }
 
 // Deep copy.

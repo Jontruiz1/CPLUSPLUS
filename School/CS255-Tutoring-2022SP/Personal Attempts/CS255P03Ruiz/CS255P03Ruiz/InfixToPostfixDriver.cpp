@@ -17,7 +17,7 @@
 #include "CS255Exceptions.h"
 
 using namespace std;
-/*
+
 int main() {
 	// use iexp for infix to postfix conversion
 	InfixToPostfix iexp;
@@ -49,10 +49,10 @@ int main() {
 
 			// use PostfixEval object pexp
 			// store postfileExp string
-			pexp.setPostfixExp(postfixExp);
+			//pexp.setPostfixExp(postfixExp);
 
 			// Evaluate the postfix expression
-			cout << "Value of the expression = " << pexp.evaluate() << endl << endl;
+			//cout << "Value of the expression = " << pexp.evaluate() << endl << endl;
 		}
 		// catch an exception and output the error
 		catch (const ExpressionError& ee) {
@@ -66,8 +66,3 @@ int main() {
 
 	return 0;
 } //end main
-*/
-int main() {
-	myStack<int> test;
-	test.push(1);
-}
