@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "37697c5a-c34a-4104-b623-f2d778cd371a": {
+      "ProjectGuid": "37697c5a-c34a-4104-b623-f2d778cd371a",
+      "DisplayName": "BrainfuckInterpreter",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

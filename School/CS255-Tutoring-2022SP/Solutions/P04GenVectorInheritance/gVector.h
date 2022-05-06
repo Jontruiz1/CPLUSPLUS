@@ -41,8 +41,7 @@ gVector<T>::gVector(int low, int high) :
 template <class T>
 T& gVector<T>::operator[] (int i) {
 	// verify that i is in range (lower <= i <= upper)
-	if (i < lower || i > upper)
-		throw indexRangeError("gVector: index range error", i, (upper - lower + 1));
+	if (i < lower || i > upper) throw indexRangeError("gVector: index range error", i, (upper - lower + 1));
 
 	// call the base class index operator using this syntax
 	return vector<T>::operator[] (i - lower);
