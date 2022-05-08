@@ -28,7 +28,7 @@ template <class T>
 void gVector<T>::resize(int lowIndex, int highIndex) {
 	lower = lowIndex;
 	upper = highIndex;
-	vector<T>::resize(upper - lower + 1);
+	vector<T>::resize(upper - lower + 1);z
 	
 }
 #endif
