@@ -49,10 +49,10 @@ int main() {
 
 			// use PostfixEval object pexp
 			// store postfileExp string
-			//pexp.setPostfixExp(postfixExp);
+			pexp.setPostfixExp(postfixExp);
 
 			// Evaluate the postfix expression
-			//cout << "Value of the expression = " << pexp.evaluate() << endl << endl;
+			cout << "Value of the expression = " << pexp.evaluate() << endl << endl;
 		}
 		// catch an exception and output the error
 		catch (const ExpressionError& ee) {
