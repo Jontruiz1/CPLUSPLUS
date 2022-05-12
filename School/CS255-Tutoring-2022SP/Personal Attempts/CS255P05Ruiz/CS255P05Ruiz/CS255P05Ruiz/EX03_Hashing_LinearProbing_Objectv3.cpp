@@ -25,8 +25,8 @@ public:
 
 
 	friend ostream& operator<<(ostream& os, const Student& node) {
-		cout << "eNumber: " << setw(2) << node.id << "  Name: " << left << setw(6) << node.name
-			<< " Relationship: " << node.relationship;
+		cout << "eNumber: " << setw(2) << node.eNumber << "  Name: " << left << setw(6) << node.lName
+			<< " Relationship: " << node.major;
 		return os;
 	}
 
