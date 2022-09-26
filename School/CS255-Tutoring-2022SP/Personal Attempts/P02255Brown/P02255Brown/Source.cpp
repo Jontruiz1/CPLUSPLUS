@@ -4,24 +4,36 @@
 using namespace std;
 
 int main() {
-
-	CustomVector<int> firstVect(8);
-
+	srand(time(NULL));
+	CustomVector curr;
+	curr.createVector(8);
+	
 	cout << "*** P02: Classes ***" << endl << endl;
 
-	firstVect.pushToBack(10);
-	firstVect.pushToBack(15);
-	firstVect.pushToBack(5);
-	firstVect.pushToBack(9);
-	firstVect.pushToBack(21);
-	firstVect.pushToBack(6);
-	cout << "The vector currently stores " << firstVect.getSize() << " values" << endl;
+	curr.addVector(13);
+	curr.addVector(12);
+	curr.addVector(11);
+	curr.addVector(21);
+	curr.addVector(12);
+	curr.addVector(11);
 
-	firstVect.pushToBack(20);
-	firstVect.pushToBack(2);
+	cout << "The vector currently stores " << curr.getSize() << " values" << endl;
+	cout << "The vector can currently hold " << curr.getCapacity() << " values" << endl;
+	cout << "The value at location 4 is: " << curr.getItem(4) << endl;
 
-	cout << "The vector currently stores " << firstVect.getSize() << " values" << endl;
-	cout << "The vector can currently hold " << firstVect.getCapacity() << " values" << endl;
+	curr.addVector(22);
+	curr.addVector(54);
+	curr.addVector(8);
+	curr.addVector(9);
 
-	cout << "The value at location 4 is: " << firstVect.getElement(4) << endl;
+	cout << endl;
+	cout << "The vector can currently hold " << curr.getCapacity() << " values" << endl;
+	cout << "The vector currently stores " << curr.getSize() << " values" << endl;
+	cout << "The value at location 10 is: " << curr.getItem(10) << endl;
+
+	curr.getItem(20);
+
+	curr.destroyVector();
+
+
 }

@@ -1,2 +1,3 @@
 ﻿  Source.cpp
-  P02255Brown.vcxproj -> C:\Users\jontc\Desktop\CS-CGE\CS\CPLUSPLUS\School\CS255-Tutoring-2022SP\Personal Attempts\P02255Brown\x64\Debug\P02255Brown.exe
+A:\CS\CPLUSPLUS\School\CS255-Tutoring-2022SP\Personal Attempts\P02255Brown\P02255Brown\Source.cpp(7,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  P02255Brown.vcxproj -> A:\CS\CPLUSPLUS\School\CS255-Tutoring-2022SP\Personal Attempts\P02255Brown\x64\Debug\P02255Brown.exe

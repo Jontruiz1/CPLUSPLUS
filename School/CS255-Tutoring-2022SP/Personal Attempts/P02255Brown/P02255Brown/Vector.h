@@ -1,64 +1,107 @@
+#include <iostream>
 
+using namespace std;
 
-
-template <typename T>
 class CustomVector {
-
 private:
-	int size;
 	int capacity;
 	int back;
-	T* vector;
+	int* vect;
 
 public:
-	CustomVector(int c) {
-		vector = new T[c];
-		size = 0;
-		capacity = c;
+
+	CustomVector() {
+		back = 0;
+		capacity = 0;
+		vect = nullptr;
+	}
+
+	// output vector
+	void print() {
+		for (int i = 0; i < back; ++i) {
+			cout << "Index: " << i + 1  << " Values: " << vect[i] << " " << endl;
+		}
+		cout << endl;
+	}
+
+	// function to create vector
+	void createVector(int size) {
+		vect = new int[size];
+		capacity = size;
 		back = 0;
 	}
-	~CustomVector() {
-		delete[] vector;
-	}
 
-	template <typename T>
-	void pushToBack(T element) {
-		if (back > capacity) {
-			++capacity;
+	//destroy vector
+	void destroyVector() {
+		delete[] vect;
+	}
+	
+
+	// function to add an item to the end of the vector
+	bool addVector(int item) {
+		if (back > (capacity - 1)) {
+			int size = back;
+			int* newArray = new int[size * 2];
+			int* oldArray = vect;
+			for (int i = 0; i < size; i++) {
+				newArray[i] = oldArray[i];
+			}
+			delete[] vect;
+			capacity = size * 2;
+			vect = newArray;
 		}
-		vector[back] = element;
-		++size;
+
+		vect[back] = item;
 		back++;
+		return true;
 
 	}
 
-	void popFromBack() {
+	// function to remove an item from the end of the vector
+	bool removeVector() {
+		if (back < 0) {
+			cerr << "Error: No value is stored at the specified index";
+			return false;
+		}
+		vect[back] = INT_MAX;
+		--back;
+		return true;
+
+	}
+
+	// function to add an item to a random spot in the vector
+	bool addVectorRand(int item) {
+		int randIndex = rand() % back;
+
+
+		++back;
 
 	}
 
 
-	void pushToRandom() {
+	// function to remove an item from a random spot in the vector
 
+	
+
+	// function to return the item at a specified index
+	int getItem(int index) {
+		if (index < 0 || index > back+1) {
+			cerr << "Error: No value is stored at the specified index";
+			return false;
+		}
+		return vect[index - 1];
 	}
 
-	void remFromRandom() {
-
-	}
-
-	void output() {
-
-	}
-
-	int getSize() {
-		return size;
-	}
-
+	// function to return the size(capacity) of the vector
 	int getCapacity() {
 		return capacity;
 	}
 
-	T getElement(int i) {
-		return vector[i];
+	// function to return the number of items in the vector
+	int getSize() {
+		return back;
 	}
 
+
+	
 };
