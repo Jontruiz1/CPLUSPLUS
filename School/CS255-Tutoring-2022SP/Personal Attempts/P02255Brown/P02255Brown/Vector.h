@@ -29,6 +29,7 @@ public:
 		vect = new int[size];
 		capacity = size;
 		back = 0;
+		
 	}
 
 	//destroy vector
@@ -39,6 +40,8 @@ public:
 
 	// function to add an item to the end of the vector
 	bool addVector(int item) {
+
+		// 
 		if (back > (capacity - 1)) {
 			int size = back;
 			int* newArray = new int[size * 2];
