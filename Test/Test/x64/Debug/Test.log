@@ -1,5 +1,2 @@
-﻿  fucntions.h
-  helper.cpp
-  Generating Code...
-Source.obj : error LNK2005: "void __cdecl doSomethign(void)" (?doSomethign@@YAXXZ) already defined in helper.obj
-A:\CS\CPLUSPLUS\Test\x64\Debug\Test.exe : fatal error LNK1169: one or more multiply defined symbols found
+﻿  Source.cpp
+  Test.vcxproj -> A:\CS\CPLUSPLUS\Test\x64\Debug\Test.exe
