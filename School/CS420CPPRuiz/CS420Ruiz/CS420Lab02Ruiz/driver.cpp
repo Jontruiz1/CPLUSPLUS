@@ -3,7 +3,7 @@
 #include <thread>
 #include <vector>
 #include <algorithm>
-
+#include <string>
 using namespace std;
 
 void fileToMemoryTransfer(char* fileName, char** data, size_t& numOfBytes) {
@@ -24,12 +24,25 @@ void fileToMemoryTransfer(char* fileName, char** data, size_t& numOfBytes) {
 	inFile.close();
 	*data = buffer;
 	numOfBytes = size;
+	
 }
+
+/* binary vs text files 
+* read(ch)
+* map each value in an array to the value in the file
+* increment the value in the array when you find that value in the file
+* 
+*/
 
 
 int main() {
-	string filename;
-	cin >> filename;
-	fileToMemoryTransfer(filename);
+	//thread::hardware_concurrency();
+	
+	char fileName[] = "File1.txt";
+	size_t size;
 
+	fileToMemoryTransfer(fileName, buffer, size);
+	char* data = (char*)malloc(size * sizeof(char));
+
+	
 }
