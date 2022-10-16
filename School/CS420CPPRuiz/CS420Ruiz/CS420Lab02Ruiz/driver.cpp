@@ -3,8 +3,11 @@
 #include <thread>
 #include <vector>
 #include <algorithm>
+#include <string>
 
 using namespace std;
+
+long long int gH[255];
 
 void fileToMemoryTransfer(char* fileName, char** data, size_t& numOfBytes) {
 	streampos begin, end;
@@ -27,9 +30,35 @@ void fileToMemoryTransfer(char* fileName, char** data, size_t& numOfBytes) {
 }
 
 
+void globalHistogramOnly() {
+	char fileName[] = "File1.txt";
+	char* buffer[256];
+	size_t bytes;
+	string strbuffer;
+	long long int data[255];
+	
+
+	fileToMemoryTransfer(fileName, buffer, bytes);
+	strbuffer = *buffer;
+	while (getline(strbuffer, '\n')) {
+
+	}
+
+	// once you get the bytes you gotta divide the theads amongst these bytes evenly.
+
+	//cout << strbuffer[bytes-1];
+
+	//cout << "Run with one global histogram" << endl;
+	//// probably start a thread now
+	//for (int i = 0; i < 256; ++i) {
+	//	cout << gH[i] << ": h(" << i << ")" << endl;
+	//}
+
+
+}
+
 int main() {
-	string filename;
-	cin >> filename;
-	fileToMemoryTransfer(filename);
+	globalHistogramOnly();
+	
 
 }
