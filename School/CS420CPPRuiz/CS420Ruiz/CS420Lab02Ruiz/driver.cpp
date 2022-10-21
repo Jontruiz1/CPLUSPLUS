@@ -37,12 +37,10 @@ void globalHistogramOnly() {
 	string strbuffer;
 	long long int data[255];
 	
-
+	  
 	fileToMemoryTransfer(fileName, buffer, bytes);
-	strbuffer = *buffer;
-	while (getline(strbuffer, '\n')) {
+	string strbuffer = *buffer;
 
-	}
 
 	// once you get the bytes you gotta divide the theads amongst these bytes evenly.
 

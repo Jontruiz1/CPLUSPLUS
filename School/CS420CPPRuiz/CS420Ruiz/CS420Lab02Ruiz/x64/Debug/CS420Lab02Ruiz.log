@@ -1,2 +1,3 @@
 ﻿  driver.cpp
-  CS420Lab02Ruiz.vcxproj -> A:\CS\CPLUSPLUS\School\CS420CPPRuiz\CS420Ruiz\x64\Debug\CS420Lab02Ruiz.exe
+C:\Users\jontc\Desktop\CS\CPLUSPLUS\School\CS420CPPRuiz\CS420Ruiz\CS420Lab02Ruiz\driver.cpp(38,16): warning C4101: 'data': unreferenced local variable
+  CS420Lab02Ruiz.vcxproj -> C:\Users\jontc\Desktop\CS\CPLUSPLUS\School\CS420CPPRuiz\CS420Ruiz\x64\Debug\CS420Lab02Ruiz.exe

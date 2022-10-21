@@ -15,16 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="complex_jonathan.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="complex_mastio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="complex_driver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="complex.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="complex.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

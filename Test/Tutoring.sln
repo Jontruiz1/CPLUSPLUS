@@ -25,6 +25,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CS420HW04Ruiz", "CS420HW04R
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "_aaCS318Exam01Tutoring", "CS318Exam01Tutoring\CS318Exam01Tutoring.vcxproj", "{945109BF-B1B2-4297-9702-447CE514363C}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BrownCS255P03Ruiz", "BrownCS255P03Ruiz\BrownCS255P03Ruiz.vcxproj", "{0A0B0B3D-06E6-42AA-AD3D-F8ED347E7E89}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -121,6 +123,14 @@ Global
 		{945109BF-B1B2-4297-9702-447CE514363C}.Release|x64.Build.0 = Release|x64
 		{945109BF-B1B2-4297-9702-447CE514363C}.Release|x86.ActiveCfg = Release|Win32
 		{945109BF-B1B2-4297-9702-447CE514363C}.Release|x86.Build.0 = Release|Win32
+		{0A0B0B3D-06E6-42AA-AD3D-F8ED347E7E89}.Debug|x64.ActiveCfg = Debug|x64
+		{0A0B0B3D-06E6-42AA-AD3D-F8ED347E7E89}.Debug|x64.Build.0 = Debug|x64
+		{0A0B0B3D-06E6-42AA-AD3D-F8ED347E7E89}.Debug|x86.ActiveCfg = Debug|Win32
+		{0A0B0B3D-06E6-42AA-AD3D-F8ED347E7E89}.Debug|x86.Build.0 = Debug|Win32
+		{0A0B0B3D-06E6-42AA-AD3D-F8ED347E7E89}.Release|x64.ActiveCfg = Release|x64
+		{0A0B0B3D-06E6-42AA-AD3D-F8ED347E7E89}.Release|x64.Build.0 = Release|x64
+		{0A0B0B3D-06E6-42AA-AD3D-F8ED347E7E89}.Release|x86.ActiveCfg = Release|Win32
+		{0A0B0B3D-06E6-42AA-AD3D-F8ED347E7E89}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
