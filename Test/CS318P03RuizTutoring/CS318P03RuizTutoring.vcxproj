@@ -127,11 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="complex.cpp" />
-    <ClCompile Include="complex_driver.cpp" />
+    <ClInclude Include="complex_mastio.h" />
+    <ClInclude Include="complex_jonathan.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="complex.h" />
+    <ClCompile Include="complex_driver.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -6,16 +6,17 @@
 // Date: Fall 2022
 
 #include <iostream>
+//#include "complex_jonathan.h"
 #include "complex.h"
 #include <cmath>
 #include <assert.h>
 using namespace std;
-/*
+
 // test function that drives multiple infix operators over complex and double arguments
 complex f(const complex& z) {
 	return z * z * z - 3 * z * z + 4 * z - 2;
 }
-*/
+
 
 
 // if a function is defined within a class
