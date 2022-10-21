@@ -19,28 +19,30 @@ public:
 	complex& operator*=(const double z);
 	complex& operator/=(const double z);
 
-	double real() const ;
+	double real() const {
+		return re;
+	}
 	double imag() {
 		return im;
 	}
 	double magnitude() const;
-
-	void read(istream& in = cin) {
-		// have some kind of loop maybe?
-
-	};
 private:
 	 
 	double re, im;
 };
 
-complex operator+(const complex& z1, const complex& z2);
+complex operator+(const complex& z1, const complex& z2) {
+
+}
 complex operator+(const complex& z1, const double x);
 
 istream& operator>>(istream& in, complex rhs) {
 	
-	// in is like our cin here but it doesn't actually read the values into anything.
-	// it's more like an inbetween step
-	rhs.read(in);
+	char garb;
+	double a;
+	double b;
+	in >> garb >> a >> garb >> b >> garb;
+	rhs = complex(a, b);
 	return in;
 }
+
