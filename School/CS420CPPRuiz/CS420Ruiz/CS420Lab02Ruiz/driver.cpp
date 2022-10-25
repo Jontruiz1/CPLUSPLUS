@@ -10,25 +10,6 @@
 using namespace std;
 
 // global histogram for use of part 1
-long long int gH[256];
-
-void fileToMemoryTransfer(char* fileName, char** data, size_t& numOfBytes) {
-	streampos begin, end;
-	ifstream inFile(fileName, ios::in | ios::binary | ios::ate);
-	if (!inFile)
-	{
-		cerr << "Cannot open " << fileName << endl;
-		inFile.close();
-		exit(1);
-	}
-	size_t size = inFile.tellg();
-	char* buffer = new  char[size];
-	inFile.seekg(0, ios::beg);
-	inFile.read(buffer, size);
-	inFile.close();
-	*data = buffer;
-	numOfBytes = size;
-}
 
 /*
 * 
@@ -39,11 +20,18 @@ void fileToMemoryTransfer(char* fileName, char** data, size_t& numOfBytes) {
 int main(int argc, char** argv) {
 	// get core count, create buffer for file and size for bytes
 	const unsigned int THREAD_COUNT = thread::hardware_concurrency();
+	unsigned int bytesPerThread;
+	unsigned int remainingBytes;
+	long long int gH[256];
+	int start = 0;
+	int end;
+
+	
 	size_t bytes;
-	vector<thread> workers(THREAD_COUNT);
+	vector<thread> workers;
 	char* fileName = argv[1];
-	char curr;
-	int i = 0;
+	
+
 
 	ifstream inFile(fileName, ios::in | ios::binary | ios::ate);
 
@@ -53,16 +41,49 @@ int main(int argc, char** argv) {
 		inFile.close();
 		exit(1);
 	}
-	while (!inFile.eof()) {
-		inFile >> curr;
-		gH[curr]++;
-		++i;
-	}
 
 
-	for (int a = 0; a < 255; ++a) {
-		cout << gH[a] << endl;
+	bytes = inFile.tellg();		// get total number of bytes
+	inFile.seekg(0, ios::beg);	// go back to offset 0 (start of file)
+	bytesPerThread = bytes / THREAD_COUNT;
+	remainingBytes = bytes % bytesPerThread;
+	end = bytesPerThread;		// first n bytes set
+	
+	for (int i = 1; i <= THREAD_COUNT; ++i) {
+		if (i == THREAD_COUNT) {
+			end += remainingBytes;
+		}
+
+
+		workers.push_back(thread([gH](ifstream inFile, int start, int end) {
+			char curr;
+
+			curr = inFile.get();
+			while (inFile.good()) {
+				gH[curr]++;
+				curr = inFile.get();
+			}
+
+
+		}, inFile, start, end));
+		
+		start = end;
+		end = start + bytesPerThread;
+
 	}
+	
+	
+	for_each(workers.begin(), workers.end(), [](thread& t)
+		{
+			t.join();
+		}
+	);
+	
 
 	
+	inFile.close();
+
+	for (int i = 0; i < 256; ++i) {
+		cout << gH[i] << ": h(" << i << ")" << endl;
+	}
 }
