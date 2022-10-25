@@ -20,7 +20,17 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="File1.txt">
+    <Image Include="File1.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="File2.pgm">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="File3.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>

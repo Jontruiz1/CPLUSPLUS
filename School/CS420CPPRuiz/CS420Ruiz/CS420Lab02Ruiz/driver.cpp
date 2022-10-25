@@ -1,13 +1,16 @@
 #include <iostream>
 #include <fstream>
 #include <thread>
-#include <vector>
 #include <algorithm>
 #include <string>
+#include <sstream>
+#include <vector>
 
 using namespace std;
 
-long long int gH[255];
+// global histogram for use of part 1
+long long int gH[256];
+
 
 void fileToMemoryTransfer(char* fileName, char** data, size_t& numOfBytes) {
 	streampos begin, end;
@@ -29,8 +32,37 @@ void fileToMemoryTransfer(char* fileName, char** data, size_t& numOfBytes) {
 	numOfBytes = size;
 }
 
+void globalHistogram(char** buffer, const size_t& bytes, const unsigned int THREAD_COUNT) {
+	long long int data[256];
+	unsigned int i = 0;
+	unsigned int bytesPerThread;
 
-int main(int argc, char **argv) {
+	stringstream ss(*buffer);
+	string token;
 	
-	cout << argv[2];
+	
+	while (getline(ss, token, ' ')) { data[i] = stoi(token); i++; }
+
+	for (int a = 0; a < i; ++a) {
+		gH[data[a]]++;
+	}
+	for (int j = 0; j < 256; ++j) {
+		cout << gH[j] << ": h(" << j << ")" << endl;
+	}
+}
+
+
+int main(int argc, char** argv) {
+	// get core count, create buffer for file and size for bytes
+	const unsigned int THREAD_COUNT = thread::hardware_concurrency();
+	
+	char* buffer[256];
+	size_t bytes;
+	vector<thread> workers(THREAD_COUNT);
+
+	fileToMemoryTransfer(argv[1], buffer, bytes);
+	globalHistogram(buffer, bytes, THREAD_COUNT);
+
+
+	
 }

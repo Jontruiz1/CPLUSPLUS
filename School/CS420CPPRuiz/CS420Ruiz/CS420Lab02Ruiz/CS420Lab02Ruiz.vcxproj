@@ -130,7 +130,13 @@
     <ClCompile Include="driver.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="File1.txt" />
+    <Image Include="File1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="File2.pgm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="File3.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

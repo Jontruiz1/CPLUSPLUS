@@ -11,11 +11,4 @@ int main() {
 	else if (str == "Have a nice day") {
 
 	}
-
-	if (mod 4) {
-		if (century year) {
-			
-		}
-	}
-
 }
