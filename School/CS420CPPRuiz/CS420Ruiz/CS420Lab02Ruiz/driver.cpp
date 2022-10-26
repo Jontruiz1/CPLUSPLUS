@@ -3,6 +3,7 @@
 #include <thread>
 #include <vector>
 #include <algorithm>
+#include <mutex>
 
 using namespace std;
 
@@ -49,6 +50,8 @@ void globalThreadHistogram(char* fileName, const unsigned int THREAD_COUNT, vect
 	unsigned start = 0;
 	unsigned end;
 
+	mutex m;
+
 	ifstream inFile(fileName, ios::in | ios::binary | ios::ate);
 	fileValidation(inFile, fileName);
 
@@ -64,7 +67,8 @@ void globalThreadHistogram(char* fileName, const unsigned int THREAD_COUNT, vect
 		}
 
 
-		workers.push_back(thread([&gH, &inFile](unsigned start, unsigned end) {
+		workers.push_back(thread([&gH, &inFile](unsigned start, unsigned end, mutex m) {
+			m.lock();
 			inFile.seekg(start, ios::beg);
 			unsigned char curr;
 			for (unsigned j = start; j < end; ++j) {
@@ -72,8 +76,8 @@ void globalThreadHistogram(char* fileName, const unsigned int THREAD_COUNT, vect
 				gH[curr]++;
 			}
 
-
-			}, start, end));
+			m.unlock();
+			}, start, end, m));
 
 		start = end;
 		end = start + bytesPerThread;

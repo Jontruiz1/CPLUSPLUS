@@ -1,4 +1,33 @@
 ﻿  driver.cpp
-A:\CS\CPLUSPLUS\School\CS420CPPRuiz\CS420Ruiz\CS420Lab02Ruiz\driver.cpp(62,39): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
-A:\CS\CPLUSPLUS\School\CS420CPPRuiz\CS420Ruiz\CS420Lab02Ruiz\driver.cpp(52,11): warning C4101: 'curr': unreferenced local variable
-  CS420Lab02Ruiz.vcxproj -> A:\CS\CPLUSPLUS\School\CS420CPPRuiz\CS420Ruiz\x64\Debug\CS420Lab02Ruiz.exe
+C:\Users\jontc\Desktop\CS\CPLUSPLUS\School\CS420CPPRuiz\CS420Ruiz\CS420Lab02Ruiz\driver.cpp(60,39): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\jontc\Desktop\CS\CPLUSPLUS\School\CS420CPPRuiz\CS420Ruiz\CS420Lab02Ruiz\driver.cpp(48,11): warning C4101: 'curr': unreferenced local variable
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\memory(3437,35): error C2661: 'std::tuple<globalThreadHistogram::<lambda_1>,unsigned int,unsigned int,std::mutex>::tuple': no overloaded function takes 4 arguments
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\thread(66): message : see reference to function template instantiation 'std::unique_ptr<_Tuple,std::default_delete<_Tuple>> std::make_unique<_Tuple,_Ty,unsigned int&,unsigned int&,std::mutex&,0>(_Ty &&,unsigned int &,unsigned int &,std::mutex &)' being compiled
+          with
+          [
+              _Ty=globalThreadHistogram::<lambda_1>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\thread(89): message : see reference to function template instantiation 'void std::thread::_Start<_Ty,unsigned int&,unsigned int&,std::mutex&>(_Fn &&,unsigned int &,unsigned int &,std::mutex &)' being compiled
+          with
+          [
+              _Ty=globalThreadHistogram::<lambda_1>,
+              _Fn=globalThreadHistogram::<lambda_1>
+          ]
+C:\Users\jontc\Desktop\CS\CPLUSPLUS\School\CS420CPPRuiz\CS420Ruiz\CS420Lab02Ruiz\driver.cpp(80): message : see reference to function template instantiation 'std::thread::thread<globalThreadHistogram::<lambda_1>,unsigned int&,unsigned int&,std::mutex&,0>(_Fn &&,unsigned int &,unsigned int &,std::mutex &)' being compiled
+          with
+          [
+              _Fn=globalThreadHistogram::<lambda_1>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\thread(55,14): error C2672: 'invoke': no matching overloaded function found
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\type_traits(1552,19): message : could be 'unknown-type std::invoke(_Callable &&,_Ty1 &&,_Types2 &&...) noexcept(<expr>)'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\thread(55,14): message : Failed to specialize function template 'unknown-type std::invoke(_Callable &&,_Ty1 &&,_Types2 &&...) noexcept(<expr>)'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\type_traits(1552): message : see declaration of 'std::invoke'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\thread(51,5): message : With the following template arguments:
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\thread(51,5): message : '_Callable=globalThreadHistogram::<lambda_1>'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\thread(51,5): message : '_Ty1=unsigned int'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\thread(51,5): message : '_Types2={unsigned int, std::mutex}'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\type_traits(1546,19): message : or       'unknown-type std::invoke(_Callable &&) noexcept(<expr>)'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\thread(55,14): message : 'unknown-type std::invoke(_Callable &&) noexcept(<expr>)': expects 1 arguments - 4 provided
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\type_traits(1546): message : see declaration of 'std::invoke'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\thread(61): message : see reference to function template instantiation 'unsigned int std::thread::_Invoke<_Tuple,0,1,2,3>(void *) noexcept' being compiled
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\thread(66): message : see reference to function template instantiation 'unsigned int (__cdecl *std::thread::_Get_invoke<_Tuple,0,1,2,3>(std::integer_sequence<size_t,0,1,2,3>) noexcept)(void *)' being compiled
