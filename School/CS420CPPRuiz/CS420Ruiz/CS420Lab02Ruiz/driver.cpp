@@ -9,38 +9,66 @@ using namespace std;
 const int MAX = 256;
 long long unsigned gH[MAX];
 
+void sequentialHistogram(char* fileName) {
+	long long unsigned sH[MAX];
+	for (int i = 0; i < 256; ++i) {
+		sH[i] = 0;
+	}
+	unsigned char curr;
+	size_t bytes;
+	mutex m;
+
+	ifstream inFile(fileName, ios::in | ios::binary | ios::ate);
+	bytes = inFile.tellg();						// get total number of bytes
+	char* data = new char[bytes];
+	inFile.seekg(0, ios::beg);					// go back to offset 0 (start of file)
+	inFile.read(data, bytes);
+	inFile.seekg(0, ios::beg);	// go back to offset 0 (start of file)
+
+	inFile.close();
+
+	for (int i = 0; i < bytes; ++i) {
+		curr = data[i];
+		sH[curr]++;
+	}
+
+	for (unsigned i = 0; i < 256; ++i) {
+		cout << sH[i] << ": h(" << i << ")" << endl;
+	}
+
+}
+
 void globalThreadHistogram(char* fileName, const unsigned int THREAD_COUNT, vector<thread>& workers) {
 	size_t bytes;
 	size_t bytesPerThread;
 	unsigned remainingBytes;
-	unsigned char curr;
-	size_t start = 0;
-	size_t end;
-	
-
+	unsigned start = 0;
+	unsigned end;
 	mutex m;
+	
 
 	ifstream inFile(fileName, ios::in | ios::binary | ios::ate);
 
 	bytes = inFile.tellg();						// get total number of bytes
+	char* data = new char[bytes];
 	inFile.seekg(0, ios::beg);					// go back to offset 0 (start of file)
+	inFile.read(data, bytes);
 	bytesPerThread = bytes / THREAD_COUNT;
 	remainingBytes = bytes % THREAD_COUNT;		// extra bytes for one thread to process
 	end = bytesPerThread;						// range for first bytesPerThread bytes set
-
 
 	for (unsigned i = 1; i <= THREAD_COUNT; ++i) {
 		if (i == THREAD_COUNT) {
 			end += remainingBytes;
 		}
-		workers.push_back(thread([&bytesPerThread, &m, &inFile](unsigned start, unsigned end) {
-			char data[MAX];
-			inFile.seekg(start, ios::beg);
-			inFile.read(data, (end-1) - start);
+		workers.push_back(thread([&data, &m, &inFile](unsigned start, unsigned end) {
 
-			for (int i = 0; i < MAX; ++i) {
-				gH[data[i]]++;
+			for (unsigned j = start; j < end; ++j) {
+				unsigned char curr = data[j];
+				lock_guard<mutex> lg(m);
+				gH[curr]++;
 			}
+
 		}, start, end));
 
 		start = end;
@@ -64,7 +92,7 @@ int main(int argc, char** argv) {
 	char* fileName = argv[1];												// gets the file name;
 
 	cout << "Sequential Histogram: " << endl;								// sequential reading of the file into histogram
-	//sequentialHistogram(fileName);
+	sequentialHistogram(fileName);
 	cout << endl;
 	
 	cout << "Run with one global histogram: " << endl;						// thread processing of the file with a global histogram

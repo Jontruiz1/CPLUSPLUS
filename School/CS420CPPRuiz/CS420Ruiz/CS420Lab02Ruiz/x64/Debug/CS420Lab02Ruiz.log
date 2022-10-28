@@ -1,24 +1,4 @@
 ﻿  driver.cpp
-C:\Users\jontc\Desktop\CS\CPLUSPLUS\School\CS420CPPRuiz\CS420Ruiz\CS420Lab02Ruiz\driver.cpp(16,16): warning C4101: 'curr': unreferenced local variable
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\type_traits(1558,98): warning C4244: 'argument': conversion from 'unsigned __int64' to 'unsigned int', possible loss of data
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\thread(51): message : see reference to function template instantiation 'void std::invoke<globalThreadHistogram::<lambda_1>,unsigned __int64,unsigned __int64>(_Callable &&,_Ty1 &&,unsigned __int64 &&) noexcept(false)' being compiled
-          with
-          [
-              _Callable=globalThreadHistogram::<lambda_1>,
-              _Ty1=unsigned __int64
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\thread(61): message : see reference to function template instantiation 'unsigned int std::thread::_Invoke<_Tuple,0,1,2>(void *) noexcept' being compiled
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\thread(66): message : see reference to function template instantiation 'unsigned int (__cdecl *std::thread::_Get_invoke<_Tuple,0,1,2>(std::integer_sequence<size_t,0,1,2>) noexcept)(void *)' being compiled
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\thread(89): message : see reference to function template instantiation 'void std::thread::_Start<_Ty,size_t&,size_t&>(_Fn &&,size_t &,size_t &)' being compiled
-          with
-          [
-              _Ty=globalThreadHistogram::<lambda_1>,
-              _Fn=globalThreadHistogram::<lambda_1>
-          ]
-C:\Users\jontc\Desktop\CS\CPLUSPLUS\School\CS420CPPRuiz\CS420Ruiz\CS420Lab02Ruiz\driver.cpp(44): message : see reference to function template instantiation 'std::thread::thread<globalThreadHistogram::<lambda_1>,size_t&,size_t&,0>(_Fn &&,size_t &,size_t &)' being compiled
-          with
-          [
-              _Fn=globalThreadHistogram::<lambda_1>
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\type_traits(1558,67): warning C4244: 'argument': conversion from 'unsigned __int64' to 'unsigned int', possible loss of data
-  CS420Lab02Ruiz.vcxproj -> C:\Users\jontc\Desktop\CS\CPLUSPLUS\School\CS420CPPRuiz\CS420Ruiz\x64\Debug\CS420Lab02Ruiz.exe
+A:\CS\CPLUSPLUS\School\CS420CPPRuiz\CS420Ruiz\CS420Lab02Ruiz\driver.cpp(58,22): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
+A:\CS\CPLUSPLUS\School\CS420CPPRuiz\CS420Ruiz\CS420Lab02Ruiz\driver.cpp(77,31): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
+  CS420Lab02Ruiz.vcxproj -> A:\CS\CPLUSPLUS\School\CS420CPPRuiz\CS420Ruiz\x64\Debug\CS420Lab02Ruiz.exe

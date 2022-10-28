@@ -29,26 +29,7 @@ void fileToMemoryTransfer(char* fileName, char** data, size_t& numOfBytes) {
 }
 */
 
-void sequentialHistogram(char* fileName) {
-	long long unsigned sH[256];
-	unsigned count = 0;
-	for (unsigned i = 0; i < 256; ++i) { sH[i] = 0; }
 
-	ifstream inFile(fileName, ios::in | ios::binary | ios::ate);
-
-	inFile.seekg(0, ios::beg);	// go back to offset 0 (start of file)
-	unsigned char curr;
-	while (inFile.good() && !inFile.eof()) {
-		curr = inFile.get();
-		sH[curr]++;
-	}
-	inFile.close();
-
-	for (unsigned i = 0; i < 256; ++i) {
-		cout << sH[i] << ": h(" << i << ")" << endl;
-	}
-
-}
 
 
 void localThreadHistogram(char* fileName, const unsigned int THREAD_COUNT, vector<thread>& workers) {
