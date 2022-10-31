@@ -1,3 +1,9 @@
 ﻿  driver.cpp
-C:\Users\jontc\Desktop\CS\CPLUSPLUS\School\CS420CPPRuiz\CS420Ruiz\CS420Lab02Ruiz\driver.cpp(47,48): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
-  CS420Lab02Ruiz.vcxproj -> C:\Users\jontc\Desktop\CS\CPLUSPLUS\School\CS420CPPRuiz\CS420Ruiz\x64\Debug\CS420Lab02Ruiz.exe
+A:\CS\CPLUSPLUS\School\CS420CPPRuiz\CS420Ruiz\CS420Lab02Ruiz\driver.cpp(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+A:\CS\CPLUSPLUS\School\CS420CPPRuiz\CS420Ruiz\CS420Lab02Ruiz\driver.cpp(44,48): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
+A:\CS\CPLUSPLUS\School\CS420CPPRuiz\CS420Ruiz\CS420Lab02Ruiz\driver.cpp(81,48): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
+A:\CS\CPLUSPLUS\School\CS420CPPRuiz\CS420Ruiz\CS420Lab02Ruiz\driver.cpp(124,20): warning C4018: '<': signed/unsigned mismatch
+A:\CS\CPLUSPLUS\School\CS420CPPRuiz\CS420Ruiz\CS420Lab02Ruiz\driver.cpp(153,20): warning C4018: '<': signed/unsigned mismatch
+  helper_functions.cpp
+  Generating Code...
+  CS420Lab02Ruiz.vcxproj -> A:\CS\CPLUSPLUS\School\CS420CPPRuiz\CS420Ruiz\x64\Debug\CS420Lab02Ruiz.exe
