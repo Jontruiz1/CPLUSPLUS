@@ -127,9 +127,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Text Include="..\x64\Debug\File1_ParalellLocal_Results.txt" />
-    <Text Include="..\x64\Debug\File1_ParallelGlobal_Results.txt" />
-    <Text Include="..\x64\Debug\File1_Sequential_Results.txt" />
     <Text Include="File1.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -137,7 +134,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="driver.cpp" />
-    <ClCompile Include="helper_functions.cpp" />
+    <ClCompile Include="definitions.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="definitions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

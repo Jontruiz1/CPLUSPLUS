@@ -27,6 +27,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BrownCS255P03Ruiz", "BrownC
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CS318P04RuizTutoring", "CS318P04RuizTutoring\CS318P04RuizTutoring.vcxproj", "{F9F5B260-DDC8-48A1-9AA8-A9341EAAE9F9}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "_aCS318 Breakout02", "_aCS318 Breakout02\_aCS318 Breakout02.vcxproj", "{717ECA76-999F-4517-8331-47DD5D7D59A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -131,6 +133,14 @@ Global
 		{F9F5B260-DDC8-48A1-9AA8-A9341EAAE9F9}.Release|x64.Build.0 = Release|x64
 		{F9F5B260-DDC8-48A1-9AA8-A9341EAAE9F9}.Release|x86.ActiveCfg = Release|Win32
 		{F9F5B260-DDC8-48A1-9AA8-A9341EAAE9F9}.Release|x86.Build.0 = Release|Win32
+		{717ECA76-999F-4517-8331-47DD5D7D59A8}.Debug|x64.ActiveCfg = Debug|x64
+		{717ECA76-999F-4517-8331-47DD5D7D59A8}.Debug|x64.Build.0 = Debug|x64
+		{717ECA76-999F-4517-8331-47DD5D7D59A8}.Debug|x86.ActiveCfg = Debug|Win32
+		{717ECA76-999F-4517-8331-47DD5D7D59A8}.Debug|x86.Build.0 = Debug|Win32
+		{717ECA76-999F-4517-8331-47DD5D7D59A8}.Release|x64.ActiveCfg = Release|x64
+		{717ECA76-999F-4517-8331-47DD5D7D59A8}.Release|x64.Build.0 = Release|x64
+		{717ECA76-999F-4517-8331-47DD5D7D59A8}.Release|x86.ActiveCfg = Release|Win32
+		{717ECA76-999F-4517-8331-47DD5D7D59A8}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

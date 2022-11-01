@@ -18,15 +18,6 @@
     <Text Include="File1.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="..\x64\Debug\File1_ParallelGlobal_Results.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
-    <Text Include="..\x64\Debug\File1_Sequential_Results.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
-    <Text Include="..\x64\Debug\File1_ParalellLocal_Results.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
   </ItemGroup>
   <ItemGroup>
     <Image Include="File2.jpg">
@@ -37,8 +28,13 @@
     <ClCompile Include="driver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="helper_functions.cpp">
+    <ClCompile Include="definitions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="definitions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
