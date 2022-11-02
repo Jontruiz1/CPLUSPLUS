@@ -1,7 +1,3 @@
 ﻿  driver.cpp
-C:\Users\jontc\Desktop\CS\CPLUSPLUS\School\CS420CPPRuiz\CS420Ruiz\CS420Lab02Ruiz\driver.cpp(9,20): warning C4018: '<': signed/unsigned mismatch
-  definitions.cpp
-C:\Users\jontc\Desktop\CS\CPLUSPLUS\School\CS420CPPRuiz\CS420Ruiz\CS420Lab02Ruiz\definitions.cpp(4,48): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
-C:\Users\jontc\Desktop\CS\CPLUSPLUS\School\CS420CPPRuiz\CS420Ruiz\CS420Lab02Ruiz\definitions.cpp(40,48): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
-  Generating Code...
+C:\Users\jontc\Desktop\CS\CPLUSPLUS\School\CS420CPPRuiz\CS420Ruiz\CS420Lab02Ruiz\driver.cpp(17,20): warning C4018: '<': signed/unsigned mismatch
   CS420Lab02Ruiz.vcxproj -> C:\Users\jontc\Desktop\CS\CPLUSPLUS\School\CS420CPPRuiz\CS420Ruiz\x64\Debug\CS420Lab02Ruiz.exe
