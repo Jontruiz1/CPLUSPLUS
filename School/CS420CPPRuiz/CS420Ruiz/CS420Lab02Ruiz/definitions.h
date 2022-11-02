@@ -9,16 +9,16 @@
 
 using namespace std;
 
-// reads the file into memory
+// reads the file into a data buffer
 void fileToMemoryTransfer(char* fileName, char** data, size_t& numOfBytes);
 
-// testing function to see if the other functions are properly reading the data
+// histogram design without using threads, for testing purposes
 void sequentialHistogram(const unsigned MAX, const char* data, const size_t& bytes);
 
 // global histogram design
-void globalHistogram(const unsigned MAX, const unsigned THREAD_COUNT, const char* data, unsigned int* gH, const size_t& bytes, vector<thread>& workers);
+void globalHistogram(const unsigned MAX, const unsigned THREAD_COUNT, const char* data, unsigned long long int* gH, const size_t& bytes, vector<thread>& workers);
 
 // local histogram design
-void localHistogram(const unsigned MAX, const unsigned THREAD_COUNT, const char* data, unsigned int* gH, const size_t& bytes, vector<thread>& workers);
+void localHistogram(const unsigned MAX, const unsigned THREAD_COUNT, const char* data, unsigned long long int* gH, const size_t& bytes, vector<thread>& workers);
 
 #endif DEFINITIONS_H

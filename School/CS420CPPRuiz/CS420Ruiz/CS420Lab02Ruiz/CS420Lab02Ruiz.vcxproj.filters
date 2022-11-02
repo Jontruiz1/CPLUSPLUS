@@ -31,7 +31,10 @@
     <ClCompile Include="definitions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\..\Downloads\CS420Lab02Bustamante.cpp">
+    <ClCompile Include="sam_driver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jennifer_driver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -39,5 +42,10 @@
     <ClInclude Include="definitions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="File3.pgm">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
