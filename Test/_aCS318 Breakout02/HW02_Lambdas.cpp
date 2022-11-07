@@ -46,10 +46,8 @@ int main()
 	}
 	// Using "count_if" ... count the number of boxes with volume greater than 50
 	// Display the count from count_if
-	int count = count_if(boxes.begin(), boxes.end(), [](const Box& a) {
-		return a.getVolume() > 50;
-		});
-	cout << count;
+	
+	cout << count_if(boxes.begin(), boxes.end(), [](const Box& a) { return a.getVolume() > 50; });
     cout << endl;
     return 0;
 }
