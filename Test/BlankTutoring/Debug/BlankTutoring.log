@@ -1,8 +1,2 @@
 ﻿  Source.cpp
-C:\Users\jontc\Desktop\CS\CPLUSPLUS\Test\BlankTutoring\Source.cpp(15,6): error C2065: 'mod': undeclared identifier
-C:\Users\jontc\Desktop\CS\CPLUSPLUS\Test\BlankTutoring\Source.cpp(15,10): error C2143: syntax error: missing ')' before 'constant'
-C:\Users\jontc\Desktop\CS\CPLUSPLUS\Test\BlankTutoring\Source.cpp(15,11): error C2059: syntax error: ')'
-C:\Users\jontc\Desktop\CS\CPLUSPLUS\Test\BlankTutoring\Source.cpp(16,3): error C2059: syntax error: 'if'
-C:\Users\jontc\Desktop\CS\CPLUSPLUS\Test\BlankTutoring\Source.cpp(16,21): error C2143: syntax error: missing ';' before '{'
-C:\Users\jontc\Desktop\CS\CPLUSPLUS\Test\BlankTutoring\Source.cpp(21,1): error C2059: syntax error: '}'
-C:\Users\jontc\Desktop\CS\CPLUSPLUS\Test\BlankTutoring\Source.cpp(21,1): error C2143: syntax error: missing ';' before '}'
+  BlankTutoring.vcxproj -> C:\Users\jontc\Desktop\CS\CPLUSPLUS\Test\Debug\_aaBlankTutoring.exe
