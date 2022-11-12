@@ -28,7 +28,7 @@ public:
 
 // NOTE -- THIS SHOULD BE MODIFIED SLIGHTLY
 ostream& operator<<(ostream& out, const dog& d) {
-	out << d.getName() << ", " << d.getBreed() << ", " << d.getAge() << "\n";
+	out << "\n    " << d.getName() << ", " << d.getBreed() << ", " << d.getAge();
 	return out;
 }
 #endif

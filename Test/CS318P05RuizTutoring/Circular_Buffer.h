@@ -28,37 +28,22 @@ public:
 	using value_type = T;
 
 	//COMPLETE CONSTRUCTOR BELOW
-	CircularBuffer() {  
-
-		_head = 0;
-		_size = 0;
-		_tail = 0;
-		_current = 0;
-		_capacity = cap;
-
-	};
+	CircularBuffer() : _head(0), _size(0), _tail(0), _current(0), _capacity(cap) {};
 
 	//COMPLETE THE FUNCTIONS BELOW USING THE FUNCTION PROTOTYPE GIVEN
 
-	T& head() { return _head; }
-	T& tail() { return _tail; };
-	T const& head() const { return head(); };
-	T const& tail() const { return tail(); };
+	T const& head() const { return c[_head]; }
+	T const& tail() const { return c[_tail]; }
 
 	//COMPLETE THE push_back function -- circular buffer will overwrite
 	//		oldest data if buffer is full.  This function must update
 	//		appropriate instance variables
 	void push_back(T val) noexcept {
 		c[_current] = val;
-		_current = (_current + 1) % cap;
-		_tail = _current == 0 ? cap - 1 : _current - 1;
-		
-		if (_head == _current) {
-			_head++;
-		}
-		if (_head >= cap) _head = 0;
-
-		_size = _size >= cap ? cap : _size + 1;
+		_tail = _current;
+		_current = (_current + 1) % _capacity;
+		_head = _size >= _capacity ? _head + 1 : _head;
+		_size = _size >= _capacity ? _capacity : _size + 1;
 	} 
 
 	void pop() {
@@ -66,9 +51,8 @@ public:
 			throw std::underflow_error("pop(): empty buffer");
 		}
 		
-		cout << "Popping: ";
-		cout << c[_head];
-		_head++;
+		cout << "Popping: " << c[_head];
+		_head = (_head + 1) % _capacity;
 		_size--;
 
 		// COMPLETE THE REMAINDER OF THIS FUNCTION
@@ -87,14 +71,12 @@ public:
 	}
 
 	bool empty() const noexcept { 
-
-		return _size == 0;
+		return !_size;
 
 	} //returns true if buffer is empty
 
 	bool full() const noexcept { 
-
-		return _size != 0;
+		return _size;
 
 	}  //returns true if buffer is full
 
@@ -105,8 +87,7 @@ public:
 	// COMPLETE THE OVERLOADED << OPERATOR
 	friend std::ostream& operator<<(std::ostream& os, CircularBuffer& buf) {
 
-		os << "Buffer Info: head: " << buf.head() << ", tail: " << buf.tail() << ", current: " << buf._current << ", capacity: " << buf.capacity() << ", size: " << buf.size() << endl;
-		os << "\tContainer: ";
+		os << "Buffer Info: head: " << buf._head << ", tail: " << buf._tail << ", current: " << buf._current << ", capacity: " << buf.capacity() << ", size: " << buf.size() << endl << " Container: ";
 		for (auto i : buf) { os << i << " "; }
 		os << endl;
 		return os;
