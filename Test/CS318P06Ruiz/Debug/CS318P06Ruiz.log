@@ -1,0 +1,6 @@
+﻿  Polynomial.cpp
+  Source.cpp
+  Generating Code...
+  LINK : the 32-bit linker (A:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\bin\HostX86\x86\link.exe) failed to do memory mapped file I/O on `Debug\Polynomial.obj' and is going to restart linking with a 64-bit linker for better throughput
+  LINK : restarting link with 64-bit linker `A:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\bin\HostX64\x86\link.exe'
+  CS318P06Ruiz.vcxproj -> A:\CS\CPLUSPLUS\Test\Debug\CS318P06Ruiz.exe

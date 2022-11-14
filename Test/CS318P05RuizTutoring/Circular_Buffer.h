@@ -40,8 +40,7 @@ public:
 	//		appropriate instance variables
 	void push_back(T val) noexcept {
 		c[_current] = val;
-		_tail = _current;
-		_current = (_current + 1) % _capacity;
+		_tail = (_current = (_current + 1) % _capacity) ? _current - 1 : _capacity - 1;
 		_head = _size >= _capacity ? _head + 1 : _head;
 		_size = _size >= _capacity ? _capacity : _size + 1;
 	} 

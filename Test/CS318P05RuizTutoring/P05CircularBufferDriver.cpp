@@ -66,7 +66,6 @@ int main() {
     copy(dogs.begin(), dogs.end(), back_inserter(dogBuf));
     cout << dogBuf << endl;
     cout << boolalpha << "dogs Full?: " << dogBuf.full() << endl << endl;
-
     dogBuf.push_back(dog("Snoopy", "Beagle", 100));
     cout << dogBuf << endl;
 

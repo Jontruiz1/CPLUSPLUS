@@ -24,9 +24,6 @@
     <ClInclude Include="Circular_buffer_tutoring.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="circular_mastio.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="P05CircularBufferDriver.cpp">

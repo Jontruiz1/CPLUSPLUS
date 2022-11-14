@@ -44,7 +44,11 @@ public:
 	//		appropriate instance variables
 	void push_back(T val) noexcept {
 
-		_current++;
+		// put your value, val, at the position _current in the container
+		// move _current forward (if it's not already at the capacity)
+		// if it's at the capacity, move it back to the beginning of the container
+		// tail is always just 1 behind the current
+		// head only can incarease if the size == container
 
 	}
 
@@ -53,10 +57,15 @@ public:
 			throw std::underflow_error("pop(): empty buffer");
 		}
 
+		// 'take out' the oldest element in the buffer.
+		// head corresponds to the oldest element so just move the head forward in the buffer
+		// decrease size
+
 		// COMPLETE THE REMAINDER OF THIS FUNCTION
 	}
 
 	// COMPLETE THE FUNCTIONS BELOW
+	// these functions should just return a single value
 	int size() const noexcept {
 
 	}
