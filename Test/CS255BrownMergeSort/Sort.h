@@ -23,8 +23,8 @@ class Sort
         void _quickSort (int* sorted, int left, int right);
         
         //Functions for Merge Sort
-        void _mergeSort(int* A);
-        void _merge(int* A, int* B, int* C);
+        void _mergeSort(int* A, int n);
+        void _merge(int* A, int* B, int* C, int p, int q);
 
         //Functions for Quick Sort
         void choosePivot (int* sorted, int left, int right);

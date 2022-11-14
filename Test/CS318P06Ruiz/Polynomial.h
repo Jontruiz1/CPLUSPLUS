@@ -88,7 +88,17 @@ public:
 			int coef = it->coefficient();
 			int deg = it->degree();
 
-			cout << (coef > 0) << "x^" << deg << " ";
+			if (coef == 0) {
+				continue;
+			}
+
+
+			if (coef != 1) {
+				cout << coef;
+			}
+
+			cout << (coef > 0) << "x^" << deg;
+			cout << " + ";
 		}
 	}
 private:

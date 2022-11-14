@@ -1,4 +1,7 @@
+#pragma
 #include "Sort.h"
+#include <iostream>
+
 Sort::Sort(int sz) {
 	items = new int[sz];
 	size = sz;
@@ -116,35 +119,38 @@ int Sort::lamutoPartition(int* sorted, int left, int right) {
 }
 
 
-void Sort::_mergeSort(int* A) {
-	int n = sizeof(*A) / sizeof(A[0]);
-	int* B = new int[n / 2];
-	int* C = new int[n / 2];
+void Sort::_mergeSort(int* A, int n) {
+	int mid = n / 2;
+	int midExtra = (n % 2 != 0) ? (n - mid) : mid;
 
+	int* B = new int[midExtra];
+	int* C = new int[mid];
+
+	
 	if (n > 1) {
+
 		for (int i = 0; i < n; ++i) {
-			if (i == (n / 2)) {
-				C[i] = A[i];
+			if (i >= (n / 2)) {
+				B[i - mid] = A[i];
 			}
 			else {
-				B[i] = A[i];
+				C[i] = A[i];
 			}
 		}
 
-		_mergeSort(B);
-		_mergeSort(C);
-		_merge(B, C, A);
-	}
 
+		_mergeSort(B, midExtra);
+		_mergeSort(C, mid);
+		_merge(B, C, A, midExtra, mid);
+		delete[] B;
+		delete[] C;
+	}
 }
 
 
-void Sort::_merge(int* B, int* C, int* A) {
-	int i = 0;
-	int j = 0;
-	int k = 0;
-	int p = sizeof(*B) / sizeof(B[0]);
-	int q = sizeof(*C) / sizeof(C[0]);
+void Sort::_merge(int* B, int* C, int* A, int p, int q) {
+
+	int i = 0, j = 0, k = 0;
 
 	while (i < p && j < q) {
 		if (B[i] <= C[j]) {
@@ -157,8 +163,9 @@ void Sort::_merge(int* B, int* C, int* A) {
 		}
 		k++;
 	}
+
 	if (i == p) {
-		while (j < q && k < (p + q)) {
+		while (j < q && k < (p + q) ) {
 			A[k] = C[j];
 			j++;
 			k++;
@@ -167,14 +174,15 @@ void Sort::_merge(int* B, int* C, int* A) {
 	else {
 		while (i < p && k < (p + q)) {
 			A[k] = B[i];
-			i++;
 			k++;
+			i++;
 		}
 	}
 }
+
 int* Sort::mergeSort() {
 	int* sorted = clone();
-	_mergeSort(sorted);
+	_mergeSort(sorted, size);
 	return sorted;
 }
 
