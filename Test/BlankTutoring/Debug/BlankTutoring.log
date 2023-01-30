@@ -1,2 +1,7 @@
 ﻿  Source.cpp
+<<<<<<< Updated upstream
   BlankTutoring.vcxproj -> A:\CS\CPLUSPLUS\Test\Debug\_aaBlankTutoring.exe
+=======
+C:\Users\jontc\Desktop\CS\CPLUSPLUS\Test\BlankTutoring\Source.cpp(25,23): warning C4018: '<': signed/unsigned mismatch
+  BlankTutoring.vcxproj -> C:\Users\jontc\Desktop\CS\CPLUSPLUS\Test\Debug\_aaBlankTutoring.exe
+>>>>>>> Stashed changes

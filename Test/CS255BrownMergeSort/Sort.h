@@ -24,7 +24,11 @@ class Sort
         
         //Functions for Merge Sort
         void _mergeSort(int* A, int left, int right);
+<<<<<<< Updated upstream
         void _merge(int* A, int* B, int* C, int left, int right);
+=======
+        void _merge(int* A, int* B, int* C, int p, int q);
+>>>>>>> Stashed changes
 
         //Functions for Quick Sort
         void choosePivot (int* sorted, int left, int right);

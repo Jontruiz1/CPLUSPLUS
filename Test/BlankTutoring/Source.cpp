@@ -1,6 +1,12 @@
 #include <iostream> 
+<<<<<<< Updated upstream
 #include <vector>
 #include <fstream>
+=======
+#include <fstream>
+#include <vector>
+#include "statistics.h"
+>>>>>>> Stashed changes
 
 using namespace std;
 
@@ -35,6 +41,7 @@ void changeVect(vector<int>& arr) {
 }
 
 int main() {
+<<<<<<< Updated upstream
 	int arr[] = { 1, 2, 3 };
 	vector<int> barr = { 1, 2, 3 };
 
@@ -44,5 +51,9 @@ int main() {
 
 	changeVect(barr);
 	cout << barr[0];
+=======
+    
+
+>>>>>>> Stashed changes
 }
 

@@ -120,10 +120,14 @@ int Sort::lamutoPartition(int* sorted, int left, int right) {
 
 
 void Sort::_mergeSort(int* A, int left, int right) {
+<<<<<<< Updated upstream
 	// get the size of the array based on the position
 	int n = right - left;
 
 	// get the middle point
+=======
+	int n = right - left;
+>>>>>>> Stashed changes
 	int mid = n / 2;
 
 	// get the extra for the array if not even
@@ -136,15 +140,21 @@ void Sort::_mergeSort(int* A, int left, int right) {
 
 		for (int i = 0; i < n; ++i) {
 			if (i >= (n / 2)) {
-				B[i - mid] = A[i];
+				B[i - midExtra] = A[i];
 			}
 			else {a
 				C[i] = A[i];
 			}
 		}
 
+<<<<<<< Updated upstream
 		_mergeSort(B, 0, midExtra);
 		_mergeSort(C, 0, mid);
+=======
+
+		_mergeSort(B, 0, midExtra-1);
+		_mergeSort(C, 0, mid-1);
+>>>>>>> Stashed changes
 		_merge(B, C, A, midExtra, mid);
 		delete[] B;
 		delete[] C;
@@ -185,7 +195,11 @@ void Sort::_merge(int* B, int* C, int* A, int p, int q) {
 
 int* Sort::mergeSort() {
 	int* sorted = clone();
+<<<<<<< Updated upstream
 	_mergeSort(sorted, 0 , size);
+=======
+	_mergeSort(sorted, 0, size);
+>>>>>>> Stashed changes
 	return sorted;
 }
 

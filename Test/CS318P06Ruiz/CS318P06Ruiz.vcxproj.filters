@@ -23,5 +23,8 @@
     <ClInclude Include="Polynomial.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Polynomial1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
