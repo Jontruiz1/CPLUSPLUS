@@ -1,6 +1,5 @@
 #pragma
 #include "Sort.h"
-#include <iostream>
 
 Sort::Sort(int sz) {
 	items = new int[sz];
@@ -13,11 +12,12 @@ Sort::~Sort() {
 
 void Sort::_bubbleSort(int* sorted) {
 	int swap;
+
 	for (int i = 0; i < size; i++) {
 		for (int j = 0; j < size - 1; j++) {
 			if (sorted[j] > sorted[j + 1]) {
-				swap = sorted[i];
-				sorted[i] = sorted[j + 1];
+				swap = sorted[j];
+				sorted[j] = sorted[j + 1];
 				sorted[j + 1] = swap;
 			}
 		}
@@ -119,28 +119,32 @@ int Sort::lamutoPartition(int* sorted, int left, int right) {
 }
 
 
-void Sort::_mergeSort(int* A, int n) {
+void Sort::_mergeSort(int* A, int left, int right) {
+	// get the size of the array based on the position
+	int n = right - left;
+
+	// get the middle point
 	int mid = n / 2;
+
+	// get the extra for the array if not even
 	int midExtra = (n % 2 != 0) ? (n - mid) : mid;
 
 	int* B = new int[midExtra];
 	int* C = new int[mid];
 
-	
 	if (n > 1) {
 
 		for (int i = 0; i < n; ++i) {
 			if (i >= (n / 2)) {
 				B[i - mid] = A[i];
 			}
-			else {
+			else {a
 				C[i] = A[i];
 			}
 		}
 
-
-		_mergeSort(B, midExtra);
-		_mergeSort(C, mid);
+		_mergeSort(B, 0, midExtra);
+		_mergeSort(C, 0, mid);
 		_merge(B, C, A, midExtra, mid);
 		delete[] B;
 		delete[] C;
@@ -149,7 +153,6 @@ void Sort::_mergeSort(int* A, int n) {
 
 
 void Sort::_merge(int* B, int* C, int* A, int p, int q) {
-
 	int i = 0, j = 0, k = 0;
 
 	while (i < p && j < q) {
@@ -182,7 +185,7 @@ void Sort::_merge(int* B, int* C, int* A, int p, int q) {
 
 int* Sort::mergeSort() {
 	int* sorted = clone();
-	_mergeSort(sorted, size);
+	_mergeSort(sorted, 0 , size);
 	return sorted;
 }
 

@@ -1,63 +1,48 @@
 #include <iostream> 
+#include <vector>
+#include <fstream>
+
 using namespace std;
 
-int main() {
-    int x1;
-    int y1;
-    int x2;
-    int y2;
-    int z1;
-    int z2;
+// prototypes
+double returnsDouble(int a, int b, double c);
+int returnsInt();
+void returnsNothing(vector<double> a, int b, double c, char d, float f, bool e);
 
-    bool hasSolution = false;
-    int result1 = 0, result2 = 0, x, y;
-
-    cout << "*** Brute Force Equation Solver ***\n" << endl;
-
-    cout << "Enter coefficients (a, b, c) for first equation separated by spaces: ";
-    cin >> x1;
-    cin >> y1;
-    cin >> z1;
-
-    cout << "Enter coefficients (a, b, c) for second equation separated by spaces: ";
-    cin >> x2;
-    cin >> y2;
-    cin >> z2;
-
-    while (hasSolution == true) {
-        for (x = -10; x <= 10; x++) {
-            for (y = -10; y <= 10; y++) {
-                if ((x1 * x + y1 * y == z1) && (x2 * x + y2 * y == z2)) {
-                    result1 = x;
-                    result2 = y;
-                    hasSolution = true;
-                    break;
-                }
-            }
-            if (hasSolution = true) {
-                break;
-            }
-        }
-        if (hasSolution = true) {
-            cout << "x = " << result1 << ", y = " << result2;
-        }
-        else {
-            cout << "There is no solution";
-        }
-
-        cout << endl << endl;
-        cout << "*** Brute Force Equation Solver ***\n" << endl;
-
-        cout << "Enter coefficients (a, b, c) for first equation separated by spaces: ";
-        cin >> x1;
-        cin >> y1;
-        cin >> z1;
-
-        cout << "Enter coefficients (a, b, c) for second equation separated by spaces: ";
-        cin >> x2;
-        cin >> y2;
-        cin >> z2;
-    }
-
-    return 0;
+// defintions
+void returnsNothing(vector<double> a, int b, double c, char d, float f, bool e) {
+	cout << "nothing";
 }
+
+int returnsInt() {
+	return 1;
+}
+
+
+double returnsDouble(int a, int b, double c) {
+	return 0;
+}
+
+// passing an array to a function
+void changeArr(int arr[]) {
+	arr[0] = 2;
+	cout << arr[0] << endl;
+}
+
+void changeVect(vector<int>& arr) {
+	arr[0] = 2;
+	cout << arr[0] << endl;
+}
+
+int main() {
+	int arr[] = { 1, 2, 3 };
+	vector<int> barr = { 1, 2, 3 };
+
+
+	changeArr(arr);
+	cout << arr[0] << endl << endl;
+
+	changeVect(barr);
+	cout << barr[0];
+}
+

@@ -12,6 +12,7 @@ int main() {
 	Polynomial<int> p2;
 
 
+
 	cin >> p2;
 	cout << p2;
 }

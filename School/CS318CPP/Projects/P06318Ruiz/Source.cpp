@@ -8,7 +8,6 @@ void Polynomial<typename NumberType>::print(ostream& out) const {
 
 	for (auto it = tlist.begin(); it != tlist.end(); it++) {
 		if (it == tlist.begin()) {
-			if ();
 			out << (*it).coefficient();
 		}
 		else {
