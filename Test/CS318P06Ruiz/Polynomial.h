@@ -20,19 +20,15 @@ public:
 	int degree(void) const { return expo; };
 	void assign_coefficient(const NumT c) { coeff = c; };
 	void assign_degree(const int d) { expo = d; };
-<<<<<<< Updated upstream
-	
-	bool operator==(const Monomial<NumT>& m) const {
-		return (coeff == m.coeff && expo == m.expo);
-	}
-	
-=======
 
 	bool operator==(const Monomial<NumT>& m) const {
 		return (coeff == m.coeff && expo == m.expo);
 	}
 
->>>>>>> Stashed changes
+	bool operator==(const Monomial<NumT>& m) const {
+		return (coeff == m.coeff && expo == m.expo);
+	}
+
 	bool operator!=(const Monomial<NumT>& m) const {
 		return (coeff != m.coeff || expo != m.expo);
 	}
@@ -53,15 +49,13 @@ public:
 		number_of_terms = 1;
 		highest_degree = d;
 	}
-<<<<<<< Updated upstream
-	
+
 	// Type conversion construct -- DO NOT MODIFY
 	Polynomial<NumberType>(const Monomial<NumberType>& m) { 
-=======
 
 	// Type conversion construct -- DO NOT MODIFY
 	Polynomial<NumberType>(const Monomial<NumberType>& m) {
->>>>>>> Stashed changes
+
 		term_list.push_back(m);
 		number_of_terms = 1;
 		highest_degree = m.degree();
@@ -71,11 +65,9 @@ public:
 	~Polynomial<NumberType>() { term_list.clear(); }
 
 	// Copy Constructor -- DO NOT MODIFY
-<<<<<<< Updated upstream
 	Polynomial<NumberType>(const Polynomial<NumberType>& rhs)  
-=======
+
 	Polynomial<NumberType>(const Polynomial<NumberType>& rhs)
->>>>>>> Stashed changes
 		: term_list(rhs.term_list),
 		number_of_terms(rhs.number_of_terms),
 		highest_degree(rhs.highest_degree) {}
@@ -83,7 +75,7 @@ public:
 	int gethighestdegree() const { return highest_degree; }
 
 	// COMPLETE ALL OF THE FOLLOWING
-<<<<<<< Updated upstream
+
 	const Polynomial<NumberType>& operator=(const Polynomial<NumberType>& rhs); // copy assignment
 	const Polynomial<NumberType>& operator=(Polynomial<NumberType>&& rhs);// move assignment
 	
@@ -92,7 +84,7 @@ public:
 	Polynomial<NumberType> operator+=(const Polynomial<NumberType>& rhs);
 	const Polynomial<NumberType> operator+ (const Monomial<NumberType>& m)const;
 	const Polynomial<NumberType> operator+ (const Polynomial<NumberType>& rhs) const;
-=======
+
 	template <typename NumberType>
 	const Polynomial<NumberType>& operator=(const Polynomial<NumberType>& rhs) {
 

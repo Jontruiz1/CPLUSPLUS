@@ -1,7 +1,5 @@
-﻿  Source.cpp
-<<<<<<< Updated upstream
-  BlankTutoring.vcxproj -> A:\CS\CPLUSPLUS\Test\Debug\_aaBlankTutoring.exe
-=======
-C:\Users\jontc\Desktop\CS\CPLUSPLUS\Test\BlankTutoring\Source.cpp(25,23): warning C4018: '<': signed/unsigned mismatch
+﻿  statistics.cpp
+  Source.cpp
+  Generating Code...
+  LINK : C:\Users\jontc\Desktop\CS\CPLUSPLUS\Test\Debug\_aaBlankTutoring.exe not found or not built by the last incremental link; performing full link
   BlankTutoring.vcxproj -> C:\Users\jontc\Desktop\CS\CPLUSPLUS\Test\Debug\_aaBlankTutoring.exe
->>>>>>> Stashed changes

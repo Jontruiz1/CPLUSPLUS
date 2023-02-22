@@ -184,9 +184,4 @@ int main() {
         printMinCostTour(n, P, U, names);
         cout << "]" << endl;
     }
-    
-    
-    
-    
-    
 }

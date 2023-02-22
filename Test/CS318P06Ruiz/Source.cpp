@@ -14,11 +14,6 @@ int main() {
 	cin >> p1;
 	cout << p1;
 
-<<<<<<< Updated upstream
-
 	cin >> p2;
 	cout << p2;
-=======
-	
->>>>>>> Stashed changes
 }
