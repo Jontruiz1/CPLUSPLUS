@@ -1,9 +1,0 @@
-﻿  newmain.cpp
-C:\Users\jontc\Desktop\CS\CPLUSPLUS\School\CS320CPP\CS320P02Ruiz\newmain.cpp(165,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\jontc\Desktop\CS\CPLUSPLUS\School\CS320CPP\CS320P02Ruiz\newmain.cpp(78,1): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\jontc\Desktop\CS\CPLUSPLUS\School\CS320CPP\CS320P02Ruiz\newmain.cpp(136): message : see reference to function template instantiation 'void mergeSort<Point::CompareYCoordinate>(std::vector<Point,std::allocator<Point>> &,Comparable)' being compiled
-          with
-          [
-              Comparable=Point::CompareYCoordinate
-          ]
-  CS320P02Ruiz.vcxproj -> C:\Users\jontc\Desktop\CS\CPLUSPLUS\School\CS320CPP\CS320P02Ruiz\x64\Debug\CS320P02Ruiz.exe
