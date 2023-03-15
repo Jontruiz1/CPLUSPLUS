@@ -1,5 +1,0 @@
-﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(510,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (JobCode.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  Question1.cpp
-C:\Users\jontc\Desktop\CS-CGE\CS\JobStuff\JobCode\JobCode\Question1.cpp(35,42): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\jontc\Desktop\CS-CGE\CS\JobStuff\JobCode\JobCode\Question1.cpp(45,42): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
-  JobCode.vcxproj -> C:\Users\jontc\Desktop\CS-CGE\CS\JobStuff\JobCode\x64\Debug\Question1.exe

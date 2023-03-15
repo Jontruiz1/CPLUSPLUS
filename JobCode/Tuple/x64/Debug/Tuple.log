@@ -1,3 +1,0 @@
-﻿  Source.cpp
-C:\Users\jontc\Desktop\CS-CGE\CS\JobStuff\JobCode\Tuple\Source.cpp(7,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Tuple.vcxproj -> C:\Users\jontc\Desktop\CS-CGE\CS\JobStuff\JobCode\x64\Debug\Tuple.exe
