@@ -1,5 +1,0 @@
-﻿  driver.cpp
-C:\Users\jontc\Desktop\CS\CPLUSPLUS\Test\BrownCS255P03Ruiz\driver.cpp(45,9): error C2065: 'menuChoice': undeclared identifier
-C:\Users\jontc\Desktop\CS\CPLUSPLUS\Test\BrownCS255P03Ruiz\driver.cpp(50,14): error C2065: 'menuChoice': undeclared identifier
-C:\Users\jontc\Desktop\CS\CPLUSPLUS\Test\BrownCS255P03Ruiz\driver.cpp(74,31): error C2039: 'getTotalProfit': is not a member of 'InventoryManager'
-C:\Users\jontc\Desktop\CS\CPLUSPLUS\Test\BrownCS255P03Ruiz\InventoryManager.h(1): message : see declaration of 'InventoryManager'

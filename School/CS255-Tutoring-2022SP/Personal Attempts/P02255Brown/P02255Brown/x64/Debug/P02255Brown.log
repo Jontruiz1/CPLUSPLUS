@@ -1,4 +1,0 @@
-﻿  Source.cpp
-C:\Users\jontc\Desktop\CS\CPLUSPLUS\School\CS255-Tutoring-2022SP\Personal Attempts\P02255Brown\P02255Brown\Source.cpp(7,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  LINK : C:\Users\jontc\Desktop\CS\CPLUSPLUS\School\CS255-Tutoring-2022SP\Personal Attempts\P02255Brown\x64\Debug\P02255Brown.exe not found or not built by the last incremental link; performing full link
-  P02255Brown.vcxproj -> C:\Users\jontc\Desktop\CS\CPLUSPLUS\School\CS255-Tutoring-2022SP\Personal Attempts\P02255Brown\x64\Debug\P02255Brown.exe

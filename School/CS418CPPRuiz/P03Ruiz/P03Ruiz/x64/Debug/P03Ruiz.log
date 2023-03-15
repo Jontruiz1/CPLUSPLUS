@@ -1,5 +1,0 @@
-﻿  TSPSADriver.cpp
-  Tour.cpp
-C:\Users\jontc\Desktop\CS-CGE\CS\CPLUSPLUS\School\CS418CPPRuiz\P03Ruiz\P03Ruiz\Tour.cpp(62,62): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Generating Code...
-  P03Ruiz.vcxproj -> C:\Users\jontc\Desktop\CS-CGE\CS\CPLUSPLUS\School\CS418CPPRuiz\P03Ruiz\x64\Debug\P03Ruiz.exe

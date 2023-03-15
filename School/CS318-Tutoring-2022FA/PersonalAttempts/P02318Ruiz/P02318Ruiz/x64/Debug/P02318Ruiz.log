@@ -1,3 +1,0 @@
-﻿  Source.cpp
-A:\CS\CPLUSPLUS\School\CS318-Tutoring-2022FA\PersonalAttempts\P02318Ruiz\P02318Ruiz\Source.cpp(7,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  P02318Ruiz.vcxproj -> A:\CS\CPLUSPLUS\School\CS318-Tutoring-2022FA\PersonalAttempts\P02318Ruiz\x64\Debug\P02318Ruiz.exe

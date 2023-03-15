@@ -1,8 +1,0 @@
-﻿  main.cpp
-H:\CS318\Projects\P04318\main.cpp(8,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-H:\CS318\Projects\P04318\main.cpp(33,28): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
-          with
-          [
-              _Ty=int
-          ]
-H:\CS318\Projects\P04318\main.cpp(27): error C4700: uninitialized local variable 'count' used
