@@ -9,10 +9,10 @@ By considering the terms in the Fibonacci sequence whose values do not exceed fo
 using namespace std;
 
 int main() {
-  int f = 1;
-  int s = 2;
-  int t = 0;
-  int sum = 0;
+  unsigned long f = 1;
+  unsigned long s = 2;
+  unsigned long t = 0;
+  unsigned long sum = 0;
 
   while(f < 4000000){
 
