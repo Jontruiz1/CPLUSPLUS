@@ -1,3 +1,3 @@
-A few attempts and some Leetcode problems.
+A few attempts at some Leetcode problems.
 
 Some of the programs may not work.
