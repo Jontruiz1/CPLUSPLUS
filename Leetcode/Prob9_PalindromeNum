@@ -1,0 +1,10 @@
+#include <algorithm>
+
+
+bool isPalindrome(int x) {
+        std::string forward = to_string(x);
+        std::string copy = forward;
+        reverse(copy.begin(), copy.end());
+        
+        return forward == copy;
+}
