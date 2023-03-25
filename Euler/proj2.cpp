@@ -25,4 +25,3 @@ int main() {
 
   }
   cout << "Sum is: " << sum;
-}
