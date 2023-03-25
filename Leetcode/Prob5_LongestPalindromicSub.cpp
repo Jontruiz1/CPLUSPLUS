@@ -19,12 +19,11 @@ bool isPalindrome(string s){
 
 
 vector<string> substrings(const string& input){
-    vector<string> result = {input};
+    vector<string> result = {};
 
-    for(int i = 0; i < input.length(); ++i){
-        for(int j = i+1; j < input.length(); ++j){
-            result.push_back(input.substr(i, j));
-
+    for(int i = 0; i < input.size(); ++i){
+        for(int j = 0; j < input.size(); ++j){
+            if(isPalindrome(input.substr(i, j))) result.push_back(input.substr(i, j));
         }
     }
     sort(result.begin(), result.end(), 
