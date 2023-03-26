@@ -48,6 +48,7 @@
         "unordered_map": "cpp",
         "string_view": "cpp",
         "prob1_twosum": "cpp",
-        "prob9_palindromenum": "cpp"
+        "prob9_palindromenum": "cpp",
+        "deque": "cpp"
     }
 }
