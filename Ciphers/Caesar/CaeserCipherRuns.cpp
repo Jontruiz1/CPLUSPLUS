@@ -18,10 +18,5 @@ int main(){
     cout << "Bruteforce: ";
     cout << bruteforceDecrypt(encrypted);
 
-    cout << "How many characters were shifted: ";
-    cin >> shift;
-    cout << decrypt(encrypted, shift);
-
-
 
 }

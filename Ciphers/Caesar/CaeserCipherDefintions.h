@@ -50,7 +50,7 @@ string bruteforceDecrypt(string input){
             // this is ugly, I would never do this if I wanted to actually read the code but I just thought it was funny
             output += isalpha(c) ? (( curr = ( (c - 'a') - i) % 26 ) < 0 ? curr += 26 : 0), curr += 'a' : curr = c;
         }
-        output += "\nThis was shifted " + to_string(i) + " characters forward\n\n";
+        output += "\nThis was shifted " + to_string(i) + " characters\n\n";
     }
     
     return output;
