@@ -1,4 +1,5 @@
-#include "CaeserCipherDefintions.h"
+#include <iostream>
+#include "CaesarCipherDefintions.h"
 
 
 int main(){
@@ -18,5 +19,7 @@ int main(){
     cout << "Bruteforce: ";
     cout << bruteforceDecrypt(encrypted);
 
+    cout << "Caesar Cipher: ";
+    cout << "Do you want to encrypt or derypt a string?";
 
 }

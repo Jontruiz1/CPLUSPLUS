@@ -1,4 +1,3 @@
-#include <iostream>
 #include <string>
 
 using namespace std;
@@ -80,6 +79,3 @@ string decrypt(string input, int shift){
     }
     return output;
 }
-
-
-
