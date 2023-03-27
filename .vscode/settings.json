@@ -6,6 +6,9 @@
         "string": "cpp",
         "unordered_map": "cpp",
         "string_view": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "vector": "cpp",
+        "xstring": "cpp",
+        "xlocale": "cpp"
     }
 }
