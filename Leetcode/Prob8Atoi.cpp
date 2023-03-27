@@ -2,7 +2,7 @@
 #include <string>
 #include <vector>
 #include <cmath>
-#include <iomanip>
+#include <sstream>
 
 using namespace std;
 string alphaRemove(const string& s){
@@ -21,10 +21,12 @@ string signAndCut(const string& curr){
     bool sign = false;
     for(int i = 0; i < curr.size(); ++i){
         if(curr[i] != '0' || !leading) {
-            if( (curr[i] == '-' || curr[i] == '+') && !sign ){
-                result += curr[i];
-                sign = true;
-
+            if( (curr[i] == '-' || curr[i] == '+')){
+                if(!sign){
+                    result += curr[i];
+                    sign = true;
+                }
+                return "";
             }
             else if(curr[i] != '-' && curr[i] != '+'){
                 result += curr[i];
@@ -41,23 +43,16 @@ int myAtoi(string s){
     size_t strSize = curr.size();
     int result = 0;
     int exp = 0;
-    for(int i = strSize-1; i >= 0; --i){
-        if(curr[i] == '-' || curr[i] == '+') {
-            continue;
-        }
 
-        int temp = ((curr[i] - 48) * pow(10, exp));
-        if(temp == INT_MIN || temp == INT_MAX){
-            result += temp;
-            ++exp;
-        }
-
-    }
-    if(curr[0] == '-') result*=-1;
+    std::istringstream iss (curr);
+    iss >> result;
+    if(result == INT_MAX || result == INT_MIN) return INT_MIN;
+    
+    
     return result;
 }
 
 
 int main(){
-    cout << myAtoi("-91283472332");
+    cout << myAtoi("      -42");
 }
