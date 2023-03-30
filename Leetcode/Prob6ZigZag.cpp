@@ -4,18 +4,17 @@
 using namespace std;
 
 string convert(string s, int numRows){
+    if(numRows == 1) return s;
     vector<vector<char>> zigzag(numRows);
     string result = "";
     size_t j = 0;
     bool back = false;
-    if(numRows == 1) return s;
-
-    for(int i = 0; i < numRows; (back ? --i : ++i)){
+    
+    for(int i = 0; i < numRows; (back ? --i : ++i), ++j){
         if(j == s.size()) break;
         if(i == (numRows-1) ) back = true;
         if(i == 0) back = false;
         zigzag[i].push_back(s[j]);
-        ++j;
     }
 
     for(int i = 0; i < numRows; ++i){
@@ -24,10 +23,9 @@ string convert(string s, int numRows){
         }
     }
     return result;
-
 }
 
 int main(){
-    cout << convert("PAYPALISHIRING", 3);
+    cout << convert("ab", 1);
 
 }

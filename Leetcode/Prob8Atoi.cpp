@@ -7,7 +7,7 @@
 using namespace std;
 string alphaRemove(const string& s){
     string mid = "";
-    if(isalpha(s[0])) return mid;
+    if(isalpha(s[0]) || s.size()) return mid;
     for(int i = 0; i < s.size(); ++i){
         if((!isalpha(s[i]) && s[i] != 32 ) || s[i] == '-' || s[i] == '+') mid += s[i];
     }
