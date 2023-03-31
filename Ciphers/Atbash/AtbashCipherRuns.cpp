@@ -2,15 +2,34 @@
 #include "AtbashCipherDefinitions.h"
 
 int main(){
-    string input;
-    cout << "Enter a string to encrypt: ";
-    getline(cin, input);
-    for(char& c : input) c = tolower(c);
+    int shift;
+    char choice;
+    std::string message;
+    std::string decrypted;
+    std::cout << "Atbash Cipher Encrypter/Decrypter!\n\n";
+    std::cout << "Would you like to encrypt or decrypt a string?(e/d): ";
+    
+    std::cin >> choice;
+    while(choice != 'e' && choice != 'd'){
+        std::cout << "Please enter a valid choice: ";
+        std::cin >> choice;
+    }
 
-    string encrypted = encrypt(input);
-    cout << encrypted << endl;
+    if(choice == 'e'){
+        std::cin.ignore();
+        std::cout << "Enter a string to encrypt: ";
+        std::getline(std::cin, message);
+        
+        std::string encrypted = encrypt(message);
+        std::cout << "Encrypted string is: " << encrypted;
+    }
+    else{
+        std::cin.ignore();
+        std::cout << "Enter the encrypted string: ";
+        std::getline(std::cin, message);
 
-    string decrypted = decrypt(encrypted);
-    cout << decrypted;
+        decrypted = decrypt(message);
+        std::cout << "Decrypted string is: " << decrypted;
+    }
 
 }

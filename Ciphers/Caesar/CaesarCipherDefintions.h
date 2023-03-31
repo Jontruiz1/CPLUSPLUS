@@ -1,9 +1,7 @@
 #include <string>
 
-using namespace std;
-
-string encrypt(string input, int shift){
-    string output = "";
+std::string encrypt(const std::string& input, int shift){
+    std::string output = "";
     
     for(const char& c : input){
         char curr;
@@ -28,8 +26,8 @@ string encrypt(string input, int shift){
 }
 
 
-string bruteforceDecrypt(string input){
-    string output = "\nPossible solutions: \n";
+std::string bruteforceDecrypt(const std::string& input){
+    std::string output = "\nPossible solutions: \n\n";
     for(int i = 1; i <= 26; ++i){
         for(const char& c : input){
             char curr;
@@ -49,14 +47,14 @@ string bruteforceDecrypt(string input){
             // this is ugly, I would never do this if I wanted to actually read the code but I just thought it was funny
             output += isalpha(c) ? (( curr = ( (c - 'a') - i) % 26 ) < 0 ? curr += 26 : 0), curr += 'a' : curr = c;
         }
-        output += "\nThis was shifted " + to_string(i) + " characters\n\n";
+        output += "\nThis was shifted " + std::to_string(i) + " characters\n\n";
     }
     
     return output;
 }
 
-string decrypt(string input, int shift){
-    string output = "";
+std::string decrypt(const std::string& input, int shift){
+    std::string output = "";
     
     for(const char& c : input){
         char curr;
