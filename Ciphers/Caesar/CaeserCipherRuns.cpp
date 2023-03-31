@@ -3,23 +3,12 @@
 
 
 int main(){
-    string input;
-    
-    cout << "Enter a string to encrypt: ";
-    getline(cin, input);
-    for(char& c : input) c = tolower(c);
+    string encrypted = "iq ifcc vqqr fb rdq vfllcq na rdq cfjwhwz hr bnnb hcc hwwhbsqvqbre hwq vhlq";
 
-    cout << "Enter a number you wish to shift the sentence by (negative for backwards, positive for forwards): ";
-    int shift;
-    cin >> shift;
-
-    string encrypted = encrypt(input, shift);
-    cout << endl <<  encrypted << endl;
+    //string encrypted = encrypt(input, shift);
+    //cout << endl <<  encrypted << endl;
 
     cout << "Bruteforce: ";
     cout << bruteforceDecrypt(encrypted);
-
-    cout << "Caesar Cipher: ";
-    cout << "Do you want to encrypt or derypt a string?";
 
 }
