@@ -1,5 +1,6 @@
 #include <iostream>
 #include <numeric>
+#include <algorithm>
 #include "AffineCipherDefinitions.h"
 
 int main(){
@@ -24,8 +25,8 @@ int main(){
 
         std::cout << "Enter your a value: ";
         std::cin >> a;
-        while(std::gcd(a, 26) != 1){
-            std::cout << "Please enter a number that is co-prime to the length of the alphabet(26): ";
+        while(std::__gcd(a, 26) != 1){
+            std::cout << "Please enter a number that is co-prime to the length of the alphabet (26): ";
             std::cin >> a;
         }
 
