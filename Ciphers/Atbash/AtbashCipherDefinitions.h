@@ -1,3 +1,6 @@
+#ifndef __ATBASH__
+#define __ATBASH__
+
 #include <string>
 
 std::string encrypt(const std::string& input){
@@ -31,3 +34,5 @@ std::string decrypt(const std::string& input){
     }
     return output;
 }
+
+#endif
