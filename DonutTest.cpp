@@ -32,6 +32,6 @@ int main(){
             }
         }
         printf("\x1b[H", stdout);
-        for(int k = 0; k < 1761; ++k, B += 0.00006, A += 0.00006) cout << (k % 80 ? b[k] : '\n');
+        for(int k = 0; k < 1761; ++k, B += 0.00010, A += 0.00010) cout << (k % 80 ? b[k] : '\n');
     }
 }
