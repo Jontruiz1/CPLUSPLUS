@@ -1,0 +1,27 @@
+#include <algorithm>
+#include <vector>
+
+using namespace std;
+
+class Solution {
+public:
+    int findMaxK(vector<int>& nums) {
+        sort(nums.begin(), nums.end());
+
+        int b = nums.size()-1;
+
+        while(b > 0){
+            if(find(nums.begin(), nums.end(), -nums[b]) != nums.end()){
+                return nums[b];
+            }
+            b--;
+        }
+        return -1;
+
+    }
+};
+
+
+int main(){
+
+}
