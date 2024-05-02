@@ -1,58 +1,49 @@
 #include <iostream>
 #include <string>
-#include <vector>
 #include <cmath>
-#include <sstream>
 
 using namespace std;
-string alphaRemove(const string& s){
+
+class Solution {
+private:
     string mid = "";
-    if(isalpha(s[0]) || s.size()) return mid;
-    for(int i = 0; i < s.size(); ++i){
-        if((!isalpha(s[i]) && s[i] != 32 ) || s[i] == '-' || s[i] == '+') mid += s[i];
-    }
+    int result = 0;
+    int sign = 1;
+    int start = 0;
+public:
+    int myAtoi(string s) {
+        char ws = ' ';
+        s.erase(0, s.find_first_not_of(ws));
 
-    return mid;
-}
+        if(s[0] == '+'){
+            sign = 1; start = 1;
+        }
+        else if(s[0] == '-') {
+            sign = -1; start = 1;
+        }
 
-string signAndCut(const string& curr){
-    string result = "";
-    bool leading = true;
-    bool sign = false;
-    for(int i = 0; i < curr.size(); ++i){
-        if(curr[i] != '0' || !leading) {
-            if( (curr[i] == '-' || curr[i] == '+')){
-                if(!sign){
-                    result += curr[i];
-                    sign = true;
-                }
-                return "";
-            }
-            else if(curr[i] != '-' && curr[i] != '+'){
-                result += curr[i];
-                leading = false;
+        for(int i = start; i < s.length(); ++i){
+            if(isalpha(s[i]) || s[i] == '.' || s[i] == '+' || s[i] == '-' || s[i] == ' ') break;
+            mid += s[i];
+        }
+        if(mid.empty()) return 0;
+
+        try{
+            result = stoi(mid) * sign;
+        }
+        catch(out_of_range e){
+            if(sign < 0) result = -pow(2, 31);
+            else{
+                result = pow(2, 31) - 1;
             }
         }
+
+        return result;
     }
-    return result;
-}
-
-int myAtoi(string s){
-    string curr = alphaRemove(s);
-    curr = signAndCut(curr);
-    size_t strSize = curr.size();
-    int result = 0;
-    int exp = 0;
-
-    std::istringstream iss (curr);
-    iss >> result;
-    if(result == INT_MAX || result == INT_MIN) return INT_MIN;
-    
-    
-    return result;
-}
-
+};
 
 int main(){
-    cout << myAtoi("      -42");
+
+    Solution s;
+    cout << s.myAtoi("+-    12");
 }

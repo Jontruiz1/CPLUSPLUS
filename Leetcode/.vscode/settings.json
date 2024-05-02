@@ -50,6 +50,7 @@
         "prob1_twosum": "cpp",
         "prob9_palindromenum": "cpp",
         "deque": "cpp",
-        "array": "cpp"
+        "array": "cpp",
+        "map": "cpp"
     }
 }
